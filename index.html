@@ -192,8 +192,8 @@
               </h1>
 
               <p className="text-lg md:text-2xl text-gray-500 mb-10 md:mb-14 font-medium max-w-2xl mx-auto leading-relaxed break-keep">
-                문제는 스윙이 아니라 숏게임입니다.<br className="hidden md:block" />
-                <br />시즌 시작 전, 필드에서 즉시 통하는 실전력을 장착하세요.
+                문제는 스윙이 아니라 숏게임입니다.<br />
+시즌 시작 전, 필드에서 즉시 통하는 실전력을 장착하세요.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-md mx-auto sm:max-w-none">
@@ -222,54 +222,116 @@
       };
 
       const Features = () => {
-        const targets = useMemo(
-          () => [
-            { title: "필드 냉탕온탕 골퍼", desc: "연습장에선 완벽한 컨택 <br />그린 주변에서 항상 뒤땅/탑볼 치는 분", icon: "⛳" },
-            { title: "만년 백돌이 탈출", desc: "드라이버는 잘 치는데 <br />숏게임에서 타수 놓치는 80~110타 골퍼", icon: "🎯" },
-            { title: "패키지 레슨 피해자", desc: "수백만 원 다회권 끊어놓고 <br />프로랑 안 맞아서 돈 버린 분", icon: "💸" },
-            { title: "바쁜 비즈니스 골퍼", desc: "시간은 없고, <br />당장 이번 주 라운딩에서 망신당하기 싫은 분", icon: "💼" },
-            { title: "시즌 대비 열혈 골퍼", desc: "본격적인 시즌 시작 전, <br />확실한 무기 하나 만들고 싶은 분", icon: "🔥" },
-            { title: "독학의 한계", desc: "유튜브만 보고 따라하다가 <br />스윙 다 망가져서 스트레스 받는 분", icon: "📱" }
-          ],
-          []
-        );
+  const targets = useMemo(
+    () => [
+      {
+        title: "필드 냉탕온탕 골퍼",
+        desc: (
+          <>
+            연습장에선 완벽한 컨택<br />
+            그린 주변에서 항상 뒤땅/탑볼 치는 분
+          </>
+        ),
+        icon: "⛳"
+      },
+      {
+        title: "만년 백돌이 탈출",
+        desc: (
+          <>
+            드라이버는 잘 치는데<br />
+            숏게임에서 타수 놓치는 80~110타 골퍼
+          </>
+        ),
+        icon: "🎯"
+      },
+      {
+        title: "패키지 레슨 피해자",
+        desc: (
+          <>
+            수백만 원 다회권 끊어놓고<br />
+            프로랑 안 맞아서 돈 버린 분
+          </>
+        ),
+        icon: "💸"
+      },
+      {
+        title: "바쁜 비즈니스 골퍼",
+        desc: (
+          <>
+            시간은 없고,<br />
+            당장 이번 주 라운딩에서 망신당하기 싫은 분
+          </>
+        ),
+        icon: "💼"
+      },
+      {
+        title: "시즌 대비 열혈 골퍼",
+        desc: (
+          <>
+            본격적인 시즌 시작 전,<br />
+            확실한 무기 하나 만들고 싶은 분
+          </>
+        ),
+        icon: "🔥"
+      },
+      {
+        title: "독학의 한계",
+        desc: (
+          <>
+            유튜브만 보고 따라하다가<br />
+            스윙 다 망가져서 스트레스 받는 분
+          </>
+        ),
+        icon: "📱"
+      }
+    ],
+    []
+  );
 
-        return html`
-          <section className="py-24 px-6 md:py-32 bg-white">
-            <div className="max-w-7xl mx-auto">
-              <${FadeIn} className="text-center mb-16 md:mb-20">
-                <h2 className="text-3xl md:text-5xl font-black tracking-tighter mb-6">혹시 당신의 이야기인가요?</h2>
-                <p className="text-gray-500 text-lg md:text-xl font-medium">스승님은 이런 고민을 가진 골퍼를 위해 존재합니다.</p>
-              </${FadeIn}>
+  return (
+    <section className="py-24 px-6 md:py-32 bg-white">
+      <div className="max-w-7xl mx-auto">
+        <FadeIn className="text-center mb-16 md:mb-20">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tighter mb-6">
+            혹시 당신의 이야기인가요?
+          </h2>
+          <p className="text-gray-500 text-lg md:text-xl font-medium">
+            스승님은 이런 고민을 가진 골퍼를 위해 존재합니다.
+          </p>
+        </FadeIn>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                ${targets.map(
-                  (t, i) => html`
-                    <${FadeIn} key=${i}>
-                      <div
-                        className="h-full bg-gray-50 p-8 md:p-10 rounded-[40px] border border-transparent hover:border-emerald-100 hover:bg-white hover:shadow-2xl hover:shadow-emerald-50 transition-all group"
-                      >
-                        <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-500">${t.icon}</div>
-                        <h3 className="text-xl md:text-2xl font-bold mb-4 tracking-tight text-gray-900">${t.title}</h3>
-                        <p className="text-gray-500 text-base leading-relaxed font-medium break-keep">${t.desc}</p>
-                      </div>
-                    </${FadeIn}>
-                  `
-                )}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {targets.map((t, i) => (
+            <FadeIn key={i}>
+              <div className="h-full bg-gray-50 p-8 md:p-10 rounded-[40px] border border-transparent hover:border-emerald-100 hover:bg-white hover:shadow-2xl hover:shadow-emerald-50 transition-all group">
+                <div className="text-4xl mb-6">{t.icon}</div>
+
+                <h3 className="text-xl md:text-2xl font-bold mb-4 tracking-tight text-gray-900">
+                  {t.title}
+                </h3>
+
+                <p className="text-gray-500 text-base leading-relaxed font-medium break-keep">
+                  {t.desc}
+                </p>
               </div>
+            </FadeIn>
+          ))}
+        </div>
 
-              <${FadeIn} className="mt-16 text-center">
-                <a href="#custom-lesson" onClick=${(e) => (e.preventDefault(), scrollToId("custom-lesson"))} className="inline-flex items-center gap-2 text-emerald-600 font-bold text-lg hover:underline">
-                  내가 필요한 레슨, 전문 스승님 찾기
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
-              </${FadeIn}>
-            </div>
-          </section>
-        `;
-      };
+        <FadeIn className="mt-16 text-center">
+          <a
+            href="#custom-lesson"
+            className="inline-flex items-center gap-2 text-emerald-600 font-bold text-lg hover:underline"
+          >
+            내 고민 해결해줄 프로님 찾기 →
+          </a>
+        </FadeIn>
+      </div>
+    </section>
+  );
+};
+
+export default Features;
 
       const ShortGameSection = () => {
         const FORM_ENDPOINT = "https://formspree.io/f/mbdakbon";
@@ -910,6 +972,7 @@
     </script>
   </body>
 </html>
+
 
 
 
