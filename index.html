@@ -58,7 +58,7 @@
     </div>
   </nav>
 
-  <main class="relative min-h-screen bg-white pt-[72px]">
+  <main class="relative min-h-screen bg-white pt-[72px] pb-28 md:pb-0">
     <section class="relative h-[calc(100vh-72px)] flex flex-col justify-center items-center text-center px-6 overflow-hidden bg-[#FBFBFB]">
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] pointer-events-none opacity-20">
         <div class="absolute w-[600px] h-[600px] bg-emerald-50 rounded-full blur-[120px] -top-20 -left-20"></div>
@@ -87,7 +87,7 @@
       </div>
     </section>
 
-    <section id="short-game" class="py-20 px-6 md:py-32 bg-white scroll-mt-20">
+    <section id="short-game" class="py-20 px-6 md:py-32 bg-white scroll-mt-24">
       <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div class="fade-in-section">
           <div class="relative rounded-[32px] md:rounded-[40px] overflow-hidden bg-gray-50 aspect-[4/5] md:aspect-video lg:aspect-square group shadow-2xl shadow-gray-200/50">
@@ -108,10 +108,12 @@
 
             <div class="absolute inset-0 flex items-center justify-center p-6 z-10 transition-transform duration-700 group-hover:scale-105" id="shortgameVisual">
               <img
-                src="./assets/shortgame_pro.png"
+                src="./assets/shortgame_pro.png?v=2"
                 alt="스승님 X 서수연 프로"
                 class="w-full h-full object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.1)]"
                 id="shortgameImg"
+                loading="eager"
+                decoding="async"
               />
             </div>
 
@@ -170,7 +172,7 @@
       </div>
     </section>
 
-    <section id="custom-lesson" class="py-20 px-6 md:py-32 bg-[#F9FAFB] scroll-mt-20">
+    <section id="custom-lesson" class="py-20 px-6 md:py-32 bg-[#F9FAFB] scroll-mt-24">
       <div class="max-w-4xl mx-auto text-center mb-12 md:mb-16">
         <div class="fade-in-section">
           <span class="text-emerald-600 font-bold tracking-widest text-[10px] md:text-xs uppercase mb-3 md:mb-4 block">Personalized Matching</span>
@@ -249,152 +251,108 @@
       </div>
     </section>
 
-    <section class="py-24 px-6 md:py-32 bg-white">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-          <div class="fade-in-section">
-            <div class="h-full bg-white border border-gray-100 p-8 rounded-3xl hover:shadow-xl hover:shadow-gray-100 transition-all group flex flex-col justify-between">
-              <div>
-                <div class="text-4xl mb-6">🎯</div>
-                <h3 class="text-lg font-bold mb-3">1회 경험 후 결정</h3>
-                <p class="text-gray-500 text-sm leading-relaxed">고가의 패키지 결제 전, 1회 레슨으로 결정하세요</p>
-              </div>
+    <section id="faq" class="py-24 px-6 md:py-32 bg-[#F9FAFB] scroll-mt-28">
+      <div class="max-w-3xl mx-auto">
+        <div class="fade-in-section text-center mb-16">
+          <h2 class="text-4xl font-bold tracking-tight">자주 묻는 질문</h2>
+        </div>
+
+        <div class="space-y-4" id="faqList">
+          <div class="fade-in-section bg-white rounded-2xl border border-gray-100 overflow-hidden">
+            <button type="button" class="faq-btn w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-50 transition-colors" aria-expanded="false">
+              <span class="font-semibold text-gray-900">맞춤 요청을 하면 바로 레슨이 시작되나요?</span>
+              <span class="faq-icon transform transition-transform">
+                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+              </span>
+            </button>
+            <div class="faq-panel hidden px-8 pb-6 text-gray-500 text-sm leading-relaxed border-t border-gray-50 pt-4">
+              아닙니다. 먼저 프로님의 프로필과 가능한 일정을 안내드립니다. 확인 후 진행 의사를 밝혀주시면 연결됩니다.
             </div>
           </div>
 
-          <div class="fade-in-section">
-            <div class="h-full bg-white border border-gray-100 p-8 rounded-3xl hover:shadow-xl hover:shadow-gray-100 transition-all group flex flex-col justify-between">
-              <div>
-                <div class="text-4xl mb-6">🕊️</div>
-                <h3 class="text-lg font-bold mb-3">패키지 강요 없음</h3>
-                <p class="text-gray-500 text-sm leading-relaxed">필요한 만큼만, 합리적인 횟수로 진행합니다</p>
-              </div>
+          <div class="fade-in-section bg-white rounded-2xl border border-gray-100 overflow-hidden">
+            <button type="button" class="faq-btn w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-50 transition-colors" aria-expanded="false">
+              <span class="font-semibold text-gray-900">여러 프로님께 연락이 오면 번거롭지 않을까요?</span>
+              <span class="faq-icon transform transition-transform">
+                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+              </span>
+            </button>
+            <div class="faq-panel hidden px-8 pb-6 text-gray-500 text-sm leading-relaxed border-t border-gray-50 pt-4">
+              운영팀이 최적의 프로님 최대 3분만 엄선하여 안내드리며, 스승님 카카오톡 채널을 통해서만 연락을 주고받으실 수 있습니다.
             </div>
           </div>
 
-          <div class="fade-in-section">
-            <div class="h-full bg-white border border-gray-100 p-8 rounded-3xl hover:shadow-xl hover:shadow-gray-100 transition-all group flex flex-col justify-between">
-              <div>
-                <div class="text-4xl mb-6">🤝</div>
-                <h3 class="text-lg font-bold mb-3">조건 맞춤 연결</h3>
-                <p class="text-gray-500 text-sm leading-relaxed">지역, 예산, 고민에 맞는 최적의 프로만 연결합니다</p>
-              </div>
+          <div class="fade-in-section bg-white rounded-2xl border border-gray-100 overflow-hidden">
+            <button type="button" class="faq-btn w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-50 transition-colors" aria-expanded="false">
+              <span class="font-semibold text-gray-900">결제는 언제 어떻게 진행하나요?</span>
+              <span class="faq-icon transform transition-transform">
+                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+              </span>
+            </button>
+            <div class="faq-panel hidden px-8 pb-6 text-gray-500 text-sm leading-relaxed border-t border-gray-50 pt-4">
+              매칭된 프로님과 일정을 최종 확정한 뒤 결제하시면 됩니다. 체험형은 1회분만 먼저 결제 가능합니다.
             </div>
           </div>
 
-          <div class="fade-in-section">
-            <div class="h-full bg-white border border-gray-100 p-8 rounded-3xl hover:shadow-xl hover:shadow-gray-100 transition-all group flex flex-col justify-between">
-              <div>
-                <div class="text-4xl mb-6">⛳</div>
-                <h3 class="text-lg font-bold mb-3">실전 중심 레슨</h3>
-                <p class="text-gray-500 text-sm leading-relaxed">연습장이 아닌 필드에서 통하는 기술을 배웁니다</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="fade-in-section">
-            <div class="h-full bg-white border border-gray-100 p-8 rounded-3xl hover:shadow-xl hover:shadow-gray-100 transition-all group flex flex-col justify-between">
-              <div>
-                <div class="text-4xl mb-6">🛡️</div>
-                <h3 class="text-lg font-bold mb-3">운영팀 직접 관리</h3>
-                <p class="text-gray-500 text-sm leading-relaxed">불편함 없도록 스승님 운영팀이 상시 모니터링합니다</p>
-              </div>
+          <div class="fade-in-section bg-white rounded-2xl border border-gray-100 overflow-hidden">
+            <button type="button" class="faq-btn w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-50 transition-colors" aria-expanded="false">
+              <span class="font-semibold text-gray-900">환불이나 취소 규정은 어떻게 되나요?</span>
+              <span class="faq-icon transform transition-transform">
+                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+              </span>
+            </button>
+            <div class="faq-panel hidden px-8 pb-6 text-gray-500 text-sm leading-relaxed border-t border-gray-50 pt-4">
+              레슨 24시간 전까지는 100% 환불이 가능하며, 운영팀이 중재하여 안전한 결제 환경을 보장합니다.
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 이하(후기/비교/FAQ/푸터/모바일CTA/스크립트)는 너가 올린 원본 그대로라 길어서 생략한 게 아니라,
-         실제 배포용은 반드시 전체가 있어야 하니 아래에 그대로 붙여 넣으면 됨.
-         지금 너가 준 원본의 나머지 섹션들은 변경점이 없어서, 실수 방지 위해 그대로 유지하면 됨. -->
-
-    <section id="reviews" class="py-20 px-6 md:py-32 bg-[#F9FAFB] scroll-mt-20">
-      <div class="max-w-7xl mx-auto">
-        <div class="fade-in-section text-center mb-12 md:mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">수강생의 리얼한 목소리</h2>
-          <p class="text-gray-400 font-light text-sm md:text-base">직접 경험한 분들의 생생한 후기입니다</p>
+    <footer class="bg-white border-t border-gray-100 py-20 px-6">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+        <div class="space-y-4">
+          <div class="text-2xl font-bold tracking-tight">스승님</div>
+          <p class="text-gray-400 text-sm max-w-sm font-light">
+            당신에게 가장 필요한 단 한 명의 스승을 연결합니다<br />
+            실전과 맞춤형 연결을 통해 골프 라이프를 혁신하세요
+          </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="fade-in-section">
-            <div class="bg-white p-8 md:p-10 rounded-[32px] border border-gray-100 h-full flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
-              <p class="text-base md:text-lg text-gray-700 leading-relaxed italic mb-8 font-light">"기본기부터 차근차근 알려줘 처음 배우는 사람도 이해가 정말 쉬워요"</p>
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 bg-emerald-50 rounded-full flex items-center justify-center text-[10px] text-emerald-600 font-bold">Best</div>
-                <span class="font-semibold text-gray-900 text-sm">김*현 수강생</span>
-              </div>
-            </div>
+        <div class="grid grid-cols-2 gap-12 text-sm">
+          <div class="space-y-3">
+            <h5 class="font-bold text-gray-900">COMPANY</h5>
+            <ul class="text-gray-400 space-y-2 font-light">
+              <li class="hover:text-black cursor-pointer">이용약관</li>
+              <li class="hover:text-black cursor-pointer">개인정보처리방침</li>
+              <li class="hover:text-black cursor-pointer">사업자 정보</li>
+            </ul>
           </div>
 
-          <div class="fade-in-section">
-            <div class="bg-white p-8 md:p-10 rounded-[32px] border border-gray-100 h-full flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
-              <p class="text-base md:text-lg text-gray-700 leading-relaxed italic mb-8 font-light">"자세를 세세하게 잡아줘서 비거리와 정확도가 한 번에 개선되었습니다"</p>
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 bg-emerald-50 rounded-full flex items-center justify-center text-[10px] text-emerald-600 font-bold">Best</div>
-                <span class="font-semibold text-gray-900 text-sm">이*원 수강생</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="fade-in-section">
-            <div class="bg-white p-8 md:p-10 rounded-[32px] border border-gray-100 h-full flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
-              <p class="text-base md:text-lg text-gray-700 leading-relaxed italic mb-8 font-light">"개인 수준에 맞춰 설명해 부담이 없고 분위기가 너무 편안해요"</p>
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 bg-emerald-50 rounded-full flex items-center justify-center text-[10px] text-emerald-600 font-bold">Best</div>
-                <span class="font-semibold text-gray-900 text-sm">박*준 수강생</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="fade-in-section">
-            <div class="bg-white p-8 md:p-10 rounded-[32px] border border-gray-100 h-full flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
-              <p class="text-base md:text-lg text-gray-700 leading-relaxed italic mb-8 font-light">"단순 교정이 아니라 앞으로의 연습 방향까지 제시해줘서 대만족입니다"</p>
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 bg-emerald-50 rounded-full flex items-center justify-center text-[10px] text-emerald-600 font-bold">Best</div>
-                <span class="font-semibold text-gray-900 text-sm">최*아 수강생</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="fade-in-section">
-            <div class="bg-white p-8 md:p-10 rounded-[32px] border border-gray-100 h-full flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
-              <p class="text-base md:text-lg text-gray-700 leading-relaxed italic mb-8 font-light">"프로님의 친절함과 전문성에 반해 벌써 지인 3명에게 추천했어요"</p>
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 bg-emerald-50 rounded-full flex items-center justify-center text-[10px] text-emerald-600 font-bold">Best</div>
-                <span class="font-semibold text-gray-900 text-sm">정*우 수강생</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="fade-in-section">
-            <div class="bg-white p-8 md:p-10 rounded-[32px] border border-gray-100 h-full flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
-              <p class="text-base md:text-lg text-gray-700 leading-relaxed italic mb-8 font-light">"설명도 명확하고 피드백이 빨라서, 레슨이 끝나도 남는 게 많았습니다"</p>
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 bg-emerald-50 rounded-full flex items-center justify-center text-[10px] text-emerald-600 font-bold">Best</div>
-                <span class="font-semibold text-gray-900 text-sm">박*준 수강생</span>
-              </div>
-            </div>
+          <div class="space-y-3">
+            <h5 class="font-bold text-gray-900">CONTACT</h5>
+            <ul class="text-gray-400 space-y-2 font-light">
+              <li><a href="http://pf.kakao.com/_kxawRn/chat" class="hover:text-black">카카오톡 @스승님</a></li>
+              <li><a href="mailto:contact@seuseungnim.com" class="hover:text-black">contact@seuseungnim.com</a></li>
+            </ul>
           </div>
         </div>
       </div>
-    </section>
 
-    <section class="py-20 px-6 md:py-32 bg-white">
-      <div class="max-w-5xl mx-auto">
-        <div class="fade-in-section text-center mb-12 md:mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">나에게 맞는 레슨은?</h2>
-          <p class="text-gray-400 font-light text-sm md:text-base">목적과 환경에 맞는 최적의 선택을 도와드립니다</p>
+      <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-gray-50 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-gray-300 uppercase tracking-widest">
+        <span>© 2024 Seuseungnim All rights reserved</span>
+        <div class="flex gap-4">
+          <span class="hover:text-gray-600 cursor-pointer">Instagram</span>
+          <span class="hover:text-gray-600 cursor-pointer">Blog</span>
         </div>
-
-        <!-- (이하 비교/FAQ/푸터/모바일 CTA + script는 네 원본 그대로) -->
       </div>
-    </section>
+    </footer>
   </main>
 
-  <div class="md:hidden fixed bottom-0 left-0 w-full p-4 bg-gradient-to-t from-white via-white/90 to-transparent z-50">
+  <div class="md:hidden fixed bottom-0 left-0 w-full p-4 z-50 border-t border-white/20"
+       style="background:linear-gradient(135deg, rgba(16,185,129,.22), rgba(59,130,246,.18), rgba(168,85,247,.16)); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);">
     <div class="flex gap-2">
-      <a href="#short-game" class="flex-1 py-4 bg-gray-100 text-black text-center rounded-2xl font-bold text-sm">숏게임 신청</a>
+      <a href="#short-game" class="flex-1 py-4 bg-white/70 text-black text-center rounded-2xl font-bold text-sm border border-white/40">숏게임 신청</a>
       <a href="#custom-lesson" class="flex-1 py-4 bg-black text-white text-center rounded-2xl font-bold text-sm shadow-lg shadow-gray-200">맞춤레슨 요청</a>
     </div>
   </div>
@@ -433,7 +391,7 @@
             '<div class="text-center p-8">' +
               '<div class="inline-block px-3 py-1 bg-black text-white text-[9px] font-bold tracking-[0.2em] rounded-full mb-4 uppercase">Exclusive Masterclass</div>' +
               '<h3 class="text-4xl md:text-6xl font-black text-gray-900 mb-4 tracking-tight leading-none">스승님<br/><span class="text-emerald-500">X</span><br/>서수연 프로</h3>' +
-              '<p class="text-gray-400 font-light text-base">가장 완벽한 숏게임을 만나다</p>' +
+              '<p class="text-gray-400 font-light text-base">이미지 파일을 확인해주세요<br/><span class="text-xs">(./assets/shortgame_pro.png)</span></p>' +
             '</div>';
         });
       }
