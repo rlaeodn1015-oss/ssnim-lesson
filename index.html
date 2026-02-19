@@ -193,7 +193,7 @@
 
               <p className="text-lg md:text-2xl text-gray-500 mb-10 md:mb-14 font-medium max-w-2xl mx-auto leading-relaxed break-keep">
                 문제는 스윙이 아니라 숏게임입니다.<br className="hidden md:block" />
-                /n시즌 시작 전, 필드에서 즉시 통하는 실전력을 장착하세요.
+                <br />시즌 시작 전, 필드에서 즉시 통하는 실전력을 장착하세요.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-md mx-auto sm:max-w-none">
@@ -224,12 +224,12 @@
       const Features = () => {
         const targets = useMemo(
           () => [
-            { title: "필드 냉탕온탕 골퍼", desc: "연습장에선 완벽한 컨택 /n그린 주변에서 항상 뒤땅/탑볼 치는 분", icon: "⛳" },
-            { title: "만년 백돌이 탈출", desc: "드라이버는 잘 치는데 /n숏게임에서 타수 놓치는 80~110타 골퍼", icon: "🎯" },
-            { title: "패키지 레슨 피해자", desc: "수백만 원 다회권 끊어놓고 /n프로랑 안 맞아서 돈 버린 분", icon: "💸" },
-            { title: "바쁜 비즈니스 골퍼", desc: "시간은 없고, /n당장 이번 주 라운딩에서 망신당하기 싫은 분", icon: "💼" },
-            { title: "시즌 대비 열혈 골퍼", desc: "본격적인 시즌 시작 전, /n확실한 무기 하나 만들고 싶은 분", icon: "🔥" },
-            { title: "독학의 한계", desc: "유튜브만 보고 따라하다가 /n스윙 다 망가져서 스트레스 받는 분", icon: "📱" }
+            { title: "필드 냉탕온탕 골퍼", desc: "연습장에선 완벽한 컨택 <br />그린 주변에서 항상 뒤땅/탑볼 치는 분", icon: "⛳" },
+            { title: "만년 백돌이 탈출", desc: "드라이버는 잘 치는데 <br />숏게임에서 타수 놓치는 80~110타 골퍼", icon: "🎯" },
+            { title: "패키지 레슨 피해자", desc: "수백만 원 다회권 끊어놓고 <br />프로랑 안 맞아서 돈 버린 분", icon: "💸" },
+            { title: "바쁜 비즈니스 골퍼", desc: "시간은 없고, <br />당장 이번 주 라운딩에서 망신당하기 싫은 분", icon: "💼" },
+            { title: "시즌 대비 열혈 골퍼", desc: "본격적인 시즌 시작 전, <br />확실한 무기 하나 만들고 싶은 분", icon: "🔥" },
+            { title: "독학의 한계", desc: "유튜브만 보고 따라하다가 <br />스윙 다 망가져서 스트레스 받는 분", icon: "📱" }
           ],
           []
         );
@@ -436,7 +436,7 @@
                               ${status === "SUBMITTING" ? "처리 중..." : "지금 바로 특가로 신청하기"}
                             </button>
                             <p className="text-center text-xs text-gray-400 font-medium mt-4">
-                              클릭 시 결제가 바로 진행되지 않으며, /n안내 후 결정하실 수 있습니다.
+                              클릭 시 결제가 바로 진행되지 않으며, <br />사전 안내 후 결정하세요.
                             </p>
                             ${status === "ERROR"
                               ? html`<p className="text-center text-xs text-red-500 font-semibold">전송에 실패했습니다. 다시 시도해주세요.</p>`
@@ -910,6 +910,7 @@
     </script>
   </body>
 </html>
+
 
 
 
