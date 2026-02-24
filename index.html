@@ -2,12 +2,15 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>스승님 | 프리미엄 골프 레슨</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <style>
       body {
         font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -44,30 +47,30 @@
         }
       }
       @media (max-width: 640px) {
-  #root p,
-  #root li,
-  #root label,
-  #root input,
-  #root textarea,
-  #root select,
-  #root option,
-  #root button {
-    font-size: 0.95rem;
-    line-height: 1.55;
-  }
+        #root p,
+        #root li,
+        #root label,
+        #root input,
+        #root textarea,
+        #root select,
+        #root option,
+        #root button {
+          font-size: 0.95rem;
+          line-height: 1.55;
+        }
 
-  #root .text-gray-500,
-  #root .text-gray-400,
-  #root .text-gray-300 {
-    font-size: 0.9rem;
-    line-height: 1.55;
-  }
+        #root .text-gray-500,
+        #root .text-gray-400,
+        #root .text-gray-300 {
+          font-size: 0.9rem;
+          line-height: 1.55;
+        }
 
-  #root .text-xs {
-    font-size: 0.75rem;
-    line-height: 1.5;
-  }
-}
+        #root .text-xs {
+          font-size: 0.75rem;
+          line-height: 1.5;
+        }
+      }
     </style>
   </head>
   <body class="bg-white text-gray-900">
@@ -141,7 +144,11 @@
                 <a href="#short-game" onClick=${(e) => onNav(e, "short-game")} className="hover:text-black transition-colors">
                   숏게임 레슨
                 </a>
-                <a href="#custom-lesson" onClick=${(e) => onNav(e, "custom-lesson")} className="hover:text-black transition-colors">
+                <a
+                  href="#custom-lesson"
+                  onClick=${(e) => onNav(e, "custom-lesson")}
+                  className="hover:text-black transition-colors"
+                >
                   맞춤 레슨
                 </a>
                 <a href="#reviews" onClick=${(e) => onNav(e, "reviews")} className="hover:text-black transition-colors">
@@ -171,7 +178,9 @@
           <section
             className="relative h-[90vh] md:h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden bg-[#FBFBFB]"
           >
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] pointer-events-none opacity-20">
+            <div
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] pointer-events-none opacity-20"
+            >
               <div className="absolute w-[600px] h-[600px] bg-emerald-100 rounded-full blur-[120px] -top-20 -left-20"></div>
               <div className="absolute w-[400px] h-[400px] bg-blue-50 rounded-full blur-[100px] bottom-0 right-0"></div>
             </div>
@@ -193,7 +202,7 @@
 
               <p className="text-lg md:text-2xl text-gray-500 mb-10 md:mb-14 font-medium max-w-2xl mx-auto leading-relaxed break-keep">
                 문제는 스윙이 아니라 숏게임입니다.<br />
-시즌 시작 전, 필드에서 즉시 통하는 실전력을 장착하세요.
+                시즌 시작 전, 필드에서 즉시 통하는 실전력을 장착하세요.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-md mx-auto sm:max-w-none">
@@ -222,75 +231,75 @@
       };
 
       const Features = () => {
-  const targets = useMemo(
-    () => [
-      {
-        title: "필드 냉탕온탕 골퍼",
-        desc: html`연습장에선 완벽한 컨택<br />그린 주변에서 항상 뒤땅/탑볼 치는 분`,
-        icon: "⛳"
-      },
-      {
-        title: "만년 백돌이 탈출",
-        desc: html`드라이버는 잘 치는데<br />숏게임에서 타수 놓치는 80~110타 골퍼`,
-        icon: "🎯"
-      },
-      {
-        title: "패키지 레슨 피해자",
-        desc: html`수백만 원 다회권 끊어놓고<br />프로랑 안 맞아서 돈 버린 분`,
-        icon: "💸"
-      },
-      {
-        title: "바쁜 비즈니스 골퍼",
-        desc: html`시간은 없고,<br />당장 이번 주 라운딩에서 망신당하기 싫은 분`,
-        icon: "💼"
-      },
-      {
-        title: "시즌 대비 열혈 골퍼",
-        desc: html`본격적인 시즌 시작 전,<br />확실한 무기 하나 만들고 싶은 분`,
-        icon: "🔥"
-      },
-      {
-        title: "독학의 한계",
-        desc: html`유튜브만 보고 따라하다가<br />스윙 다 망가져서 스트레스 받는 분`,
-        icon: "📱"
-      }
-    ],
-    []
-  );
+        const targets = useMemo(
+          () => [
+            {
+              title: "필드 냉탕온탕 골퍼",
+              desc: html`연습장에선 완벽한 컨택<br />그린 주변에서 항상 뒤땅/탑볼 치는 분`,
+              icon: "⛳"
+            },
+            {
+              title: "만년 백돌이 탈출",
+              desc: html`드라이버는 잘 치는데<br />숏게임에서 타수 놓치는 80~110타 골퍼`,
+              icon: "🎯"
+            },
+            {
+              title: "패키지 레슨 피해자",
+              desc: html`수백만 원 다회권 끊어놓고<br />프로랑 안 맞아서 돈 버린 분`,
+              icon: "💸"
+            },
+            {
+              title: "바쁜 비즈니스 골퍼",
+              desc: html`시간은 없고,<br />당장 이번 주 라운딩에서 망신당하기 싫은 분`,
+              icon: "💼"
+            },
+            {
+              title: "시즌 대비 열혈 골퍼",
+              desc: html`본격적인 시즌 시작 전,<br />확실한 무기 하나 만들고 싶은 분`,
+              icon: "🔥"
+            },
+            {
+              title: "독학의 한계",
+              desc: html`유튜브만 보고 따라하다가<br />스윙 다 망가져서 스트레스 받는 분`,
+              icon: "📱"
+            }
+          ],
+          []
+        );
 
-  return html`
-    <section className="py-24 px-6 md:py-32 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <${FadeIn} className="text-center mb-16 md:mb-20">
-          <h2 className="text-3xl md:text-5xl font-black tracking-tighter mb-6">혹시 당신의 이야기인가요?</h2>
-          <p className="text-gray-500 text-lg md:text-xl font-medium">스승님은 이런 고민을 가진 골퍼를 위해 존재합니다.</p>
-        </${FadeIn}>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          ${targets.map(
-            (t, i) => html`
-              <${FadeIn} key=${i}>
-                <div
-                  className="h-full bg-gray-50 p-8 md:p-10 rounded-[40px] border border-transparent hover:border-emerald-100 hover:bg-white hover:shadow-2xl hover:shadow-emerald-50 transition-all group"
-                >
-                  <div className="text-4xl mb-6">${t.icon}</div>
-                  <h3 className="text-xl md:text-2xl font-bold mb-4 tracking-tight text-gray-900">${t.title}</h3>
-                  <p className="text-gray-500 text-base leading-relaxed font-medium break-keep">${t.desc}</p>
-                </div>
+        return html`
+          <section className="py-24 px-6 md:py-32 bg-white">
+            <div className="max-w-7xl mx-auto">
+              <${FadeIn} className="text-center mb-16 md:mb-20">
+                <h2 className="text-3xl md:text-5xl font-black tracking-tighter mb-6">혹시 당신의 이야기인가요?</h2>
+                <p className="text-gray-500 text-lg md:text-xl font-medium">스승님은 이런 고민을 가진 골퍼를 위해 존재합니다.</p>
               </${FadeIn}>
-            `
-          )}
-        </div>
 
-        <${FadeIn} className="mt-16 text-center">
-          <a href="#custom-lesson" className="inline-flex items-center gap-2 text-emerald-600 font-bold text-lg hover:underline">
-            내 고민 해결해줄 프로님 찾기 →
-          </a>
-        </${FadeIn}>
-      </div>
-    </section>
-  `;
-};
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                ${targets.map(
+                  (t, i) => html`
+                    <${FadeIn} key=${i}>
+                      <div
+                        className="h-full bg-gray-50 p-8 md:p-10 rounded-[40px] border border-transparent hover:border-emerald-100 hover:bg-white hover:shadow-2xl hover:shadow-emerald-50 transition-all group"
+                      >
+                        <div className="text-4xl mb-6">${t.icon}</div>
+                        <h3 className="text-xl md:text-2xl font-bold mb-4 tracking-tight text-gray-900">${t.title}</h3>
+                        <p className="text-gray-500 text-base leading-relaxed font-medium break-keep">${t.desc}</p>
+                      </div>
+                    </${FadeIn}>
+                  `
+                )}
+              </div>
+
+              <${FadeIn} className="mt-16 text-center">
+                <a href="#custom-lesson" className="inline-flex items-center gap-2 text-emerald-600 font-bold text-lg hover:underline">
+                  내 고민 해결해줄 프로님 찾기 →
+                </a>
+              </${FadeIn}>
+            </div>
+          </section>
+        `;
+      };
 
       const ShortGameSection = () => {
         const FORM_ENDPOINT = "https://formspree.io/f/mbdakbon";
@@ -325,13 +334,13 @@
                   className="bg-emerald-600 rounded-[40px] p-8 md:p-12 text-white flex flex-col md:flex-row justify-between items-center gap-8 shadow-2xl shadow-emerald-200"
                 >
                   <div className="space-y-4 text-center md:text-left">
-                    <span className="inline-block px-4 py-1 bg-white/20 rounded-full text-xs font-bold tracking-widest uppercase">2월 한정 마감임박</span>
+                    <span className="inline-block px-4 py-1 bg-white/20 rounded-full text-xs font-bold tracking-widest uppercase"
+                      >2월 한정 마감임박</span
+                    >
                     <h2 className="text-3xl md:text-5xl font-black tracking-tighter">단 1회 레슨으로<br />5타를 줄여드립니다.</h2>
                     <p className="text-emerald-50 opacity-90 text-lg font-medium">서수연 프로의 숏게임 마스터클래스</p>
                   </div>
-                  <div
-                    className="bg-white/10 p-6 md:p-8 rounded-[32px] backdrop-blur-md border border-white/20 text-center min-w-[280px]"
-                  >
+                  <div className="bg-white/10 p-6 md:p-8 rounded-[32px] backdrop-blur-md border border-white/20 text-center min-w-[280px]">
                     <div className="text-emerald-200 text-sm font-bold mb-2 uppercase tracking-widest">현재 잔여석</div>
                     <div className="text-5xl md:text-6xl font-black mb-4">3<span className="text-2xl ml-1">석</span></div>
                     <div className="text-xs text-emerald-100 font-medium">매일 오전 10시 업데이트</div>
@@ -348,7 +357,11 @@
                       ${imgError
                         ? html`
                             <div className="flex flex-col items-center justify-center text-center w-full h-full">
-                              <div className="w-48 h-48 md:w-64 md:h-64 bg-emerald-500 rounded-full flex items-center justify-center text-8xl shadow-2xl">🏌️‍♀️</div>
+                              <div
+                                className="w-48 h-48 md:w-64 md:h-64 bg-emerald-500 rounded-full flex items-center justify-center text-8xl shadow-2xl"
+                              >
+                                🏌️‍♀️
+                              </div>
                               <div className="mt-10 space-y-2">
                                 <h3 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tighter">서수연 프로</h3>
                                 <p className="text-emerald-600 font-bold text-lg italic">"필드에서 결과로 증명합니다"</p>
@@ -365,7 +378,9 @@
                           `}
                     </div>
 
-                    <div className="absolute bottom-8 left-8 right-8 z-20 glass-nav bg-white/70 border border-white/80 p-6 rounded-[32px] flex flex-col gap-4 shadow-2xl">
+                    <div
+                      className="absolute bottom-8 left-8 right-8 z-20 glass-nav bg-white/70 border border-white/80 p-6 rounded-[32px] flex flex-col gap-4 shadow-2xl"
+                    >
                       <div className="flex justify-between items-center">
                         <span className="text-xs font-black text-gray-400 uppercase tracking-widest">Place</span>
                         <span className="text-sm font-bold text-gray-900">판교 백야드 & 파3 필드</span>
@@ -442,6 +457,7 @@
                                 className="w-full px-6 py-5 bg-white border border-gray-200 rounded-2xl outline-none focus:border-emerald-500 transition-all font-medium"
                               />
                             </div>
+
                             <select
                               name="인원"
                               className="w-full px-6 py-5 bg-white border border-gray-200 rounded-2xl outline-none focus:border-emerald-500 transition-all appearance-none font-medium cursor-pointer"
@@ -449,6 +465,23 @@
                               <option value="1">1인 신청 (18.5만원)</option>
                               <option value="2">2인 신청 (입장료 2만원 지원)</option>
                             </select>
+
+                            <div className="flex items-start gap-3 px-2">
+                              <input
+                                required
+                                id="consent_short"
+                                name="개인정보동의"
+                                type="checkbox"
+                                className="mt-1 h-5 w-5 accent-emerald-600"
+                              />
+                              <label htmlFor="consent_short" className="text-sm text-gray-600 font-medium leading-relaxed">
+                                [필수] 개인정보 수집·이용에 동의합니다.{" "}
+                                <a href="#privacy" className="text-emerald-600 font-bold underline underline-offset-2">
+                                  개인정보처리방침 보기
+                                </a>
+                              </label>
+                            </div>
+
                             <button
                               disabled=${status === "SUBMITTING"}
                               type="submit"
@@ -456,6 +489,7 @@
                             >
                               ${status === "SUBMITTING" ? "처리 중..." : "지금 바로 특가로 신청하기"}
                             </button>
+
                             <p className="text-center text-xs text-gray-400 font-medium mt-4">
                               클릭 시 결제가 바로 진행되지 않으며, <br />사전 안내 후 결정하세요.
                             </p>
@@ -522,7 +556,9 @@
                   </ul>
                 </${FadeIn}>
 
-                <${FadeIn} className="bg-emerald-600 p-8 md:p-12 rounded-[40px] md:scale-110 md:z-10 shadow-3xl shadow-emerald-500/20">
+                <${FadeIn}
+                  className="bg-emerald-600 p-8 md:p-12 rounded-[40px] md:scale-110 md:z-10 shadow-3xl shadow-emerald-500/20"
+                >
                   <h3 className="text-2xl font-black mb-10 flex items-center gap-3">
                     <span className="w-10 h-10 bg-white text-emerald-600 rounded-full flex items-center justify-center text-xl">✅</span>
                     스승님 (Seuseungnim)
@@ -562,12 +598,30 @@
       const Reviews = () => {
         const reviews = useMemo(
           () => [
-            { text: "드라이버는 220m 나가는데 맨날 그린 주변에서 냉탕온탕 하다 타수 다 까먹던 1인입니다. 서수연 프로님 수업 듣고 어프로치 자신감 생기니 스코어 6타 바로 줄였네요.", author: "닉네임: 싱글가자 (105타 → 99타)" },
-            { text: "연습장 레슨만 3년 받았는데 필드 가면 스윙이 안 나와서 포기하려다 마지막으로 신청했어요. 역시 실전 레슨은 다르네요. 필드에서 어떻게 쳐야 하는지 이제야 알 것 같습니다.", author: "닉네임: 평일골퍼 (110타 → 102타)" },
-            { text: "다른 곳처럼 비싼 패키지 강요 안 해서 너무 좋았어요. 1회 받아보고 '아 이 분이다' 싶어서 추가 결제했습니다. 맞춤 요청 서비스 진짜 편하네요.", author: "닉네임: 주말라운딩 (98타 → 94타)" },
-            { text: "2월 숏게임 클래스 지인이랑 같이 들었는데 지원금까지 주니 가성비 최고네요. 실내랑 야외 숏게임장 같이 하니까 확실히 감각이 빨리 올라와요.", author: "닉네임: 숏게임신 (102타 → 95타)" },
-            { text: "프로님들이 진짜 친절하고 열정적입니다. 예산에 맞춰서 추천해주신 프로님 대만족이에요. 레슨 고민하시는 분들 일단 요청서라도 써보시길.", author: "닉네임: 골프사랑 (115타 → 108타)" },
-            { text: "구력은 오래됐는데 숏게임만 하면 긴장해서 삑사리 나던 고질병 고쳤습니다. 기술도 기술인데 멘탈이랑 루틴 잡아주신 게 정말 큰 도움이 됐어요.", author: "닉네임: 구력10년 (92타 → 88타)" }
+            {
+              text: "드라이버는 220m 나가는데 맨날 그린 주변에서 냉탕온탕 하다 타수 다 까먹던 1인입니다. 서수연 프로님 수업 듣고 어프로치 자신감 생기니 스코어 6타 바로 줄였네요.",
+              author: "닉네임: 싱글가자 (105타 → 99타)"
+            },
+            {
+              text: "연습장 레슨만 3년 받았는데 필드 가면 스윙이 안 나와서 포기하려다 마지막으로 신청했어요. 역시 실전 레슨은 다르네요. 필드에서 어떻게 쳐야 하는지 이제야 알 것 같습니다.",
+              author: "닉네임: 평일골퍼 (110타 → 102타)"
+            },
+            {
+              text: "다른 곳처럼 비싼 패키지 강요 안 해서 너무 좋았어요. 1회 받아보고 '아 이 분이다' 싶어서 추가 결제했습니다. 맞춤 요청 서비스 진짜 편하네요.",
+              author: "닉네임: 주말라운딩 (98타 → 94타)"
+            },
+            {
+              text: "2월 숏게임 클래스 지인이랑 같이 들었는데 지원금까지 주니 가성비 최고네요. 실내랑 야외 숏게임장 같이 하니까 확실히 감각이 빨리 올라와요.",
+              author: "닉네임: 숏게임신 (102타 → 95타)"
+            },
+            {
+              text: "프로님들이 진짜 친절하고 열정적입니다. 예산에 맞춰서 추천해주신 프로님 대만족이에요. 레슨 고민하시는 분들 일단 요청서라도 써보시길.",
+              author: "닉네임: 골프사랑 (115타 → 108타)"
+            },
+            {
+              text: "구력은 오래됐는데 숏게임만 하면 긴장해서 삑사리 나던 고질병 고쳤습니다. 기술도 기술인데 멘탈이랑 루틴 잡아주신 게 정말 큰 도움이 됐어요.",
+              author: "닉네임: 구력10년 (92타 → 88타)"
+            }
           ],
           []
         );
@@ -667,7 +721,9 @@
                 ${steps.map(
                   (s, i) => html`
                     <${FadeIn} key=${i}>
-                      <div className="relative bg-white p-8 rounded-[40px] border border-gray-100 shadow-sm flex flex-col items-center text-center">
+                      <div
+                        className="relative bg-white p-8 rounded-[40px] border border-gray-100 shadow-sm flex flex-col items-center text-center"
+                      >
                         <div className="text-emerald-500 font-black text-3xl mb-4 italic opacity-30">${s.num}</div>
                         <h4 className="text-xl font-bold mb-3 text-gray-900">${s.title}</h4>
                         <p className="text-gray-400 font-medium text-sm leading-relaxed break-keep">${s.desc}</p>
@@ -765,6 +821,22 @@
                             </div>
                           </div>
 
+                          <div className="flex items-start gap-3 px-2">
+                            <input
+                              required
+                              id="consent_custom"
+                              name="개인정보동의"
+                              type="checkbox"
+                              className="mt-1 h-5 w-5 accent-black"
+                            />
+                            <label htmlFor="consent_custom" className="text-sm text-gray-600 font-medium leading-relaxed">
+                              [필수] 개인정보 수집·이용에 동의합니다.{" "}
+                              <a href="#privacy" className="text-gray-900 font-bold underline underline-offset-2">
+                                개인정보처리방침 보기
+                              </a>
+                            </label>
+                          </div>
+
                           <p className="text-center text-xs text-gray-400 font-medium">
                             본 요청은 무료이며, 프로님의 정보를 먼저 확인하고 진행 여부를 결정하세요.
                           </p>
@@ -783,8 +855,14 @@
       const FAQ = () => {
         const faqs = useMemo(
           () => [
-            { q: "맞춤 요청을 하면 바로 레슨이 시작되나요?", a: "아닙니다. 먼저 프로님의 프로필과 가능한 일정을 안내드립니다. 확인 후 진행 의사를 밝혀주시면 연결됩니다." },
-            { q: "여러 프로님께 연락이 오면 번거롭지 않을까요?", a: "운영팀이 최적의 프로님 최대 3분만 엄선하여 안내드리며, 스승님 카카오톡 채널을 통해서만 연락을 주고받으실 수 있습니다." },
+            {
+              q: "맞춤 요청을 하면 바로 레슨이 시작되나요?",
+              a: "아닙니다. 먼저 프로님의 프로필과 가능한 일정을 안내드립니다. 확인 후 진행 의사를 밝혀주시면 연결됩니다."
+            },
+            {
+              q: "여러 프로님께 연락이 오면 번거롭지 않을까요?",
+              a: "운영팀이 최적의 프로님 최대 3분만 엄선하여 안내드리며, 스승님 카카오톡 채널을 통해서만 연락을 주고받으실 수 있습니다."
+            },
             { q: "결제는 언제 어떻게 진행하나요?", a: "매칭된 프로님과 일정을 최종 확정한 뒤 결제하시면 됩니다. 체험형은 1회분만 먼저 결제 가능합니다." },
             { q: "환불이나 취소 규정은 어떻게 되나요?", a: "레슨 24시간 전까지는 100% 환불이 가능하며, 운영팀이 중재하여 안전한 결제 환경을 보장합니다." },
             { q: "완전 초보인데도 수강이 가능한가요?", a: "네. 기초 스윙부터 단계별로 지도하는 프로님들이 계시며, 맞춤 요청 시 '초보'임을 기재해주시면 더 적합한 분을 매칭해드립니다." },
@@ -831,6 +909,43 @@
         `;
       };
 
+      const PrivacyPolicy = () => {
+        return html`
+          <section id="privacy" className="py-20 px-6 bg-white border-t border-gray-100 scroll-mt-24">
+            <div className="max-w-4xl mx-auto">
+              <${FadeIn}>
+                <h2 className="text-2xl md:text-3xl font-black tracking-tight mb-6">개인정보 수집·이용 안내</h2>
+
+                <div className="bg-gray-50 border border-gray-100 rounded-3xl p-8 space-y-4 text-gray-700">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <div className="text-xs font-black text-gray-400 uppercase tracking-widest mb-2">수집 항목</div>
+                      <div className="font-medium">이름, 연락처, (선택) 지역/예산/고민사항/인원</div>
+                    </div>
+                    <div>
+                      <div className="text-xs font-black text-gray-400 uppercase tracking-widest mb-2">수집 목적</div>
+                      <div className="font-medium">레슨 신청 및 상담 안내</div>
+                    </div>
+                    <div>
+                      <div className="text-xs font-black text-gray-400 uppercase tracking-widest mb-2">보유 기간</div>
+                      <div className="font-medium">상담 종료 후 3개월 보관 후 파기</div>
+                    </div>
+                    <div>
+                      <div className="text-xs font-black text-gray-400 uppercase tracking-widest mb-2">처리 위탁</div>
+                      <div className="font-medium">Formspree 문의 폼 사용</div>
+                    </div>
+                  </div>
+
+                  <div className="pt-4 border-t border-gray-200/60 text-sm text-gray-600">
+                    동의를 거부할 권리가 있으며, 거부 시 신청이 제한될 수 있습니다.
+                  </div>
+                </div>
+              </${FadeIn}>
+            </div>
+          </section>
+        `;
+      };
+
       const Footer = () => {
         return html`
           <footer className="bg-white border-t border-gray-100 py-20 px-6 pb-28 md:pb-20">
@@ -846,16 +961,18 @@
                 <div className="space-y-3">
                   <h5 className="font-bold text-gray-900">COMPANY</h5>
                   <ul className="text-gray-400 space-y-2 font-light">
-                    <li className="hover:text-black cursor-pointer">이용약관</li>
-                    <li className="hover:text-black cursor-pointer">개인정보처리방침</li>
-                    <li className="hover:text-black cursor-pointer">사업자 정보</li>
+                    <li><a href="#terms" className="hover:text-black">이용약관</a></li>
+                    <li><a href="#privacy" className="hover:text-black">개인정보처리방침</a></li>
+                    <li><a href="#business" className="hover:text-black">사업자 정보</a></li>
                   </ul>
                 </div>
                 <div className="space-y-3">
                   <h5 className="font-bold text-gray-900">CONTACT</h5>
                   <ul className="text-gray-400 space-y-2 font-light">
                     <li>
-                      <a href="http://pf.kakao.com/_kxawRn/chat" className="hover:text-black" target="_blank" rel="noreferrer">카카오톡 @스승님</a>
+                      <a href="http://pf.kakao.com/_kxawRn/chat" className="hover:text-black" target="_blank" rel="noreferrer"
+                        >카카오톡 @스승님</a
+                      >
                     </li>
                     <li>
                       <a href="mailto:contact@seuseungnim.com" className="hover:text-black">contact@seuseungnim.com</a>
@@ -917,6 +1034,7 @@
               <${Reviews} />
               <${CustomLessonSection} />
               <${FAQ} />
+              <${PrivacyPolicy} />
             </main>
             <${Footer} />
             <${MobileStickyCTA} />
@@ -931,10 +1049,3 @@
     </script>
   </body>
 </html>
-
-
-
-
-
-
-
