@@ -343,10 +343,10 @@
                 >
                   <div className="space-y-4 text-center md:text-left">
                     <span className="inline-block px-4 py-1 bg-white/20 rounded-full text-xs font-bold tracking-widest uppercase"
-                      >2월 한정 마감임박</span
+                      >2월 이벤트 마</span
                     >
-                    <h2 className="text-3xl md:text-5xl font-black tracking-tighter">단 1회 레슨으로<br />5타를 줄여드립니다.</h2>
-                    <p className="text-emerald-50 opacity-90 text-lg font-medium">서수연 프로의 숏게임 마스터클래스</p>
+                    <h2 className="text-3xl md:text-5xl font-black tracking-tighter">단 1회 레슨으로<br />10타를 줄여드립니다.</h2>
+                    <p className="text-emerald-50 opacity-90 text-lg font-medium">서수연 프로의 숏게임 마스터 실전 레슨</p>
                   </div>
                   <div className="bg-white/10 p-6 md:p-8 rounded-[32px] backdrop-blur-md border border-white/20 text-center min-w-[280px]">
                     <div className="text-emerald-200 text-sm font-bold mb-2 uppercase tracking-widest">현재 잔여석</div>
@@ -391,7 +391,7 @@
                     >
                       <div className="flex justify-between items-center">
                         <span className="text-xs font-black text-gray-400 uppercase tracking-widest">Place</span>
-                        <span className="text-sm font-bold text-gray-900">판교 백야드 & 파3 필드</span>
+                        <span className="text-sm font-bold text-gray-900">실내 숏게임 & 야외 숏게임/파3 </span>
                       </div>
                       <div className="h-[1px] bg-gray-200/50 w-full"></div>
                       <div className="flex justify-between items-center">
@@ -404,7 +404,7 @@
                         rel="noreferrer"
                         className="w-full py-4 bg-white text-gray-900 rounded-2xl font-black text-base border border-white/80 hover:bg-gray-50 transition-colors text-center"
                       >
-                        서수연 프로 누군지 보러가기
+                        서수연 스승 레슨 보러가기
                       </a>
                     </div>
                   </div>
@@ -417,8 +417,8 @@
                       ${[
                         "어프로치 뒤땅/탑볼의 근본적인 원인 해결",
                         "상황별(러프, 벙커, 경사면) 실전 대응 능력 장착",
-                        "투퍼팅 이내로 마무리하는 거리감 교정",
-                        "서수연 프로의 1:1 밀착 코칭 및 데이터 분석"
+                        "투 퍼팅 이내로 마무리하는 거리감 교정",
+                        "서수연 프로의 1:1 밀착 코칭 및 실수 분석"
                       ].map(
                         (item, idx) => html`
                           <li key=${idx} className="flex items-start gap-3">
@@ -507,7 +507,7 @@
                             </button>
 
                             <p className="text-center text-xs text-gray-400 font-medium mt-4">
-                              클릭 시 결제가 바로 진행되지 않으며, <br />사전 안내 후 결정하세요.
+                              신청 시 결제가 바로 진행되지 않습니다, <br />사전 안내 후 결정하세요.
                             </p>
                             ${status === "ERROR"
                               ? html`<p className="text-center text-xs text-red-500 font-semibold">전송에 실패했습니다. 다시 시도해주세요.</p>`
@@ -616,7 +616,7 @@
           () => [
             {
               text: "드라이버는 220m 나가는데 맨날 그린 주변에서 냉탕온탕 하다 타수 다 까먹던 1인입니다. 서수연 프로님 수업 듣고 어프로치 자신감 생기니 스코어 6타 바로 줄였네요.",
-              author: "닉네임: 싱글가자 (105타 → 99타)"
+              author: "닉네임: 싱글가자 (105타 → 94타)"
             },
             {
               text: "연습장 레슨만 3년 받았는데 필드 가면 스윙이 안 나와서 포기하려다 마지막으로 신청했어요. 역시 실전 레슨은 다르네요. 필드에서 어떻게 쳐야 하는지 이제야 알 것 같습니다.",
@@ -624,19 +624,19 @@
             },
             {
               text: "다른 곳처럼 비싼 패키지 강요 안 해서 너무 좋았어요. 1회 받아보고 '아 이 분이다' 싶어서 추가 결제했습니다. 맞춤 요청 서비스 진짜 편하네요.",
-              author: "닉네임: 주말라운딩 (98타 → 94타)"
+              author: "닉네임: 주말라운딩 (98타 → 88타)"
             },
             {
               text: "2월 숏게임 클래스 지인이랑 같이 들었는데 지원금까지 주니 가성비 최고네요. 실내랑 야외 숏게임장 같이 하니까 확실히 감각이 빨리 올라와요.",
-              author: "닉네임: 숏게임신 (102타 → 95타)"
+              author: "닉네임: 숏게임신 (102타 → 91타)"
             },
             {
               text: "프로님들이 진짜 친절하고 열정적입니다. 예산에 맞춰서 추천해주신 프로님 대만족이에요. 레슨 고민하시는 분들 일단 요청서라도 써보시길.",
-              author: "닉네임: 골프사랑 (115타 → 108타)"
+              author: "닉네임: 골프사랑 (115타 → 96타)"
             },
             {
               text: "구력은 오래됐는데 숏게임만 하면 긴장해서 삑사리 나던 고질병 고쳤습니다. 기술도 기술인데 멘탈이랑 루틴 잡아주신 게 정말 큰 도움이 됐어요.",
-              author: "닉네임: 구력10년 (92타 → 88타)"
+              author: "닉네임: 구력10년 (92타 → 81타)"
             }
           ],
           []
@@ -1059,4 +1059,5 @@
     </script>
   </body>
 </html>
+
 
