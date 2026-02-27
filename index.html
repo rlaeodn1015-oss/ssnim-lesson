@@ -343,15 +343,15 @@
                 >
                   <div className="space-y-4 text-center md:text-left">
                     <span className="inline-block px-4 py-1 bg-white/20 rounded-full text-xs font-bold tracking-widest uppercase"
-                      >2월 이벤트 마</span
+                      >이벤트 마감 임박</span
                     >
-                    <h2 className="text-3xl md:text-5xl font-black tracking-tighter">단 1회 레슨으로<br />10타를 줄여드립니다.</h2>
-                    <p className="text-emerald-50 opacity-90 text-lg font-medium">서수연 프로의 숏게임 마스터 실전 레슨</p>
+                    <h2 className="text-3xl md:text-5xl font-black tracking-tighter">단 1회 레슨으로<br />5타 이상 줄여드립니다✨</h2>
+                    <p className="text-emerald-50 opacity-90 text-lg font-medium">서수연 스승님의 숏게임 마스터 실전 레슨</p>
                   </div>
                   <div className="bg-white/10 p-6 md:p-8 rounded-[32px] backdrop-blur-md border border-white/20 text-center min-w-[280px]">
-                    <div className="text-emerald-200 text-sm font-bold mb-2 uppercase tracking-widest">현재 잔여석</div>
-                    <div className="text-5xl md:text-6xl font-black mb-4">3<span className="text-2xl ml-1">석</span></div>
-                    <div className="text-xs text-emerald-100 font-medium">매일 오전 10시 업데이트</div>
+                    <div className="text-emerald-200 text-sm font-bold mb-2 uppercase tracking-widest">3월 1일 현재 잔여석</div>
+                    <div className="text-5xl md:text-6xl font-black mb-4">1<span className="text-2xl ml-1">석</span></div>
+                    <div className="text-xs text-emerald-100 font-medium">3월 1일 오전 10시 확정</div>
                   </div>
                 </div>
               </${FadeIn}>
@@ -391,7 +391,7 @@
                     >
                       <div className="flex justify-between items-center">
                         <span className="text-xs font-black text-gray-400 uppercase tracking-widest">Place</span>
-                        <span className="text-sm font-bold text-gray-900">실내 숏게임 & 야외 숏게임/파3 </span>
+                        <span className="text-sm font-bold text-gray-900">실내 & 야외 숏게임/파3 집중 </span>
                       </div>
                       <div className="h-[1px] bg-gray-200/50 w-full"></div>
                       <div className="flex justify-between items-center">
@@ -416,9 +416,9 @@
                     <ul className="space-y-4">
                       ${[
                         "어프로치 뒤땅/탑볼의 근본적인 원인 해결",
-                        "상황별(러프, 벙커, 경사면) 실전 대응 능력 장착",
-                        "투 퍼팅 이내로 마무리하는 거리감 교정",
-                        "서수연 프로의 1:1 밀착 코칭 및 실수 분석"
+                        "상황별(러프, 벙커, 경사면) 실전 대응 능력과 거리감",
+                        "투 퍼팅 이내로 마무리하는 퍼터 거리감 교정",
+                        "서수연 프로의 1:1 밀착 코칭 및 노하우 전수"
                       ].map(
                         (item, idx) => html`
                           <li key=${idx} className="flex items-start gap-3">
@@ -452,7 +452,7 @@
                           <div className="text-center py-6">
                             <div className="text-5xl mb-4">🎯</div>
                             <h4 className="text-2xl font-black text-gray-900 mb-2">신청이 완료되었습니다!</h4>
-                            <p className="text-gray-500 font-medium">운영팀이 곧 연락드리겠습니다.</p>
+                            <p className="text-gray-500 font-medium">운영팀이 곧 연락드리겠습니다⭐</p>
                           </div>
                         `
                       : html`
@@ -503,7 +503,7 @@
                               type="submit"
                               className="w-full py-6 bg-emerald-600 text-white rounded-2xl font-black text-xl hover:bg-emerald-700 transition-all shadow-xl shadow-emerald-200 disabled:bg-gray-400 disabled:shadow-none"
                             >
-                              ${status === "SUBMITTING" ? "처리 중..." : "지금 바로 특가로 신청하기"}
+                              ${status === "SUBMITTING" ? "처리 중..." : "지금 바로 이벤트가 신청하기"}
                             </button>
 
                             <p className="text-center text-xs text-gray-400 font-medium mt-4">
@@ -536,10 +536,10 @@
         const rightItems = useMemo(
           () => [
             "1회 체험 레슨 후 추가 여부 본인 결정",
-            "내 예산과 지역에 맞는 프로 직접 선별",
-            "그린/벙커/경사 등 100% 필드 실전 중심",
+            "내 예산과 지역에 맞는 스승 직접 선별&선택",
+            "그린/벙커/경사 등 100% 현장 실전 중심",
             "운영팀의 엄격한 모니터링 및 중재",
-            "무조건 '스코어'를 줄이는 실전 기술 전수"
+            "'스코어'를 줄이는 실전 기술 전수"
           ],
           []
         );
@@ -615,27 +615,27 @@
         const reviews = useMemo(
           () => [
             {
-              text: "드라이버는 220m 나가는데 맨날 그린 주변에서 냉탕온탕 하다 타수 다 까먹던 1인입니다. 서수연 프로님 수업 듣고 어프로치 자신감 생기니 스코어 6타 바로 줄였네요.",
+              text: "드라이버는 230m치는데 항상 그린 주변에서 왔다갔다 하며 스코어 다 까먹은 1인입니다. 서수연 프로님 수업 듣고 어프로치 자신감 생기니 스코어 11타 바로 줄었네요. 최고입니다!",
               author: "닉네임: 싱글가자 (105타 → 94타)"
             },
             {
-              text: "연습장 레슨만 3년 받았는데 필드 가면 스윙이 안 나와서 포기하려다 마지막으로 신청했어요. 역시 실전 레슨은 다르네요. 필드에서 어떻게 쳐야 하는지 이제야 알 것 같습니다.",
+              text: "레슨만 3년 받았는데 필드 가면 스코어 안 나와서 포기하려다 혹시나 하는 마음에 신청했어요. 역시 오프라인 레슨은 다르네요. 잔디에서 어떻게 쳐야 하는지 이제야 알게 되었어요.",
               author: "닉네임: 평일골퍼 (110타 → 102타)"
             },
             {
-              text: "다른 곳처럼 비싼 패키지 강요 안 해서 너무 좋았어요. 1회 받아보고 '아 이 분이다' 싶어서 추가 결제했습니다. 맞춤 요청 서비스 진짜 편하네요.",
+              text: "레슨 영업 없이 강요 안 해서 너무 좋았어요. 1회 받아보고 '너무 괜찮다' 싶어서 추가 10회 결제했습니다. 맞춤 요청 레슨 서비스 진짜 편리합니다.",
               author: "닉네임: 주말라운딩 (98타 → 88타)"
             },
             {
-              text: "2월 숏게임 클래스 지인이랑 같이 들었는데 지원금까지 주니 가성비 최고네요. 실내랑 야외 숏게임장 같이 하니까 확실히 감각이 빨리 올라와요.",
+              text: "2월 숏게임 마스터 클래스 지인이랑 같이 신청하고 지원금받고 레슨 했는데 정말 가성비 최고네요. 야외 숏게임장 집중 2시간 받으니까 확실히 감각이 빨리 올라와요.",
               author: "닉네임: 숏게임신 (102타 → 91타)"
             },
             {
-              text: "프로님들이 진짜 친절하고 열정적입니다. 예산에 맞춰서 추천해주신 프로님 대만족이에요. 레슨 고민하시는 분들 일단 요청서라도 써보시길.",
+              text: "서수연프로님 진짜 친절하고 열정적입니다. 그리고 1:1 레슨 예산에 맞춰서 추천해주신 조이현프로님 대만족이에요. 레슨 고민하시는 분들 일단 요청서라도 써보세요. 적극 추천합니다👍",
               author: "닉네임: 골프사랑 (115타 → 96타)"
             },
             {
-              text: "구력은 오래됐는데 숏게임만 하면 긴장해서 삑사리 나던 고질병 고쳤습니다. 기술도 기술인데 멘탈이랑 루틴 잡아주신 게 정말 큰 도움이 됐어요.",
+              text: "구력은 오래됐는데 트러블샷에서 항상 실수하는데 이제는 커버도 잘 합니다. 기술도 기술이지만 상황별 멘탈 잡는 방법을 알려주신게 정말 큰 도움이 됐습니다.",
               author: "닉네임: 구력10년 (92타 → 81타)"
             }
           ],
@@ -646,8 +646,8 @@
           <section id="reviews" className="py-24 px-6 md:py-40 bg-white scroll-mt-24">
             <div className="max-w-7xl mx-auto">
               <${FadeIn} className="text-center mb-16 md:mb-24">
-                <h2 className="text-3xl md:text-5xl font-black tracking-tighter mb-6">스승님을 만난 후 바뀐 스코어카드</h2>
-                <p className="text-gray-500 text-lg md:text-xl font-medium">조작 없는 100% 실제 수강생 후기입니다.</p>
+                <h2 className="text-3xl md:text-5xl font-black tracking-tighter mb-6">스승님을 만난 후 바뀐 리얼 스코어카드</h2>
+                <p className="text-gray-500 text-lg md:text-xl font-medium">조작 없는 100% 실제 결제 수강생 후기입니다.</p>
               </${FadeIn}>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -765,7 +765,7 @@
                         <div className="text-6xl mb-8">✨</div>
                         <h4 className="text-2xl md:text-3xl font-black text-gray-900 mb-4">프로필 선별 중입니다</h4>
                         <p className="text-gray-500 mb-10 font-medium text-lg leading-relaxed break-keep">
-                          가장 실력 있는 프로님들의 정보를 정리하여<br />1시간 내로 안내해 드리겠습니다.
+                          가장 실력 있는 스승님들의 정보를 정리하여<br />1시간 내로 안내해 드리겠습니다.
                         </p>
                         <a
                           href="http://pf.kakao.com/_kxawRn/chat"
@@ -1059,5 +1059,6 @@
     </script>
   </body>
 </html>
+
 
 
