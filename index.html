@@ -2,1438 +2,1060 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-    <title>제주 서수연 프리미엄 골프 캠프 | 1박 2일 36H 2:1 밀착 필드레슨</title>
-
-    <meta property="og:title" content="제주 서수연 프리미엄 골프 캠프 | 1박 2일 36H 2:1 밀착 필드레슨" />
-    <meta
-      property="og:description"
-      content="제주 아덴힐 CC · 3/22-23(일,월) · 36홀 · 2:1 코칭(프로 플레이 없음) · 올인클루시브(항공/캐디피 제외) · 스승님 신청가: 주중 160 / 주말 180 · 3/10 신청 마감"
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>스승님 | 아벤트 실전 골프 레슨</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
     />
-    <meta property="og:type" content="website" />
-
     <style>
-      :root {
-        --bg: #fafaf9;
-        --card: #ffffff;
-        --text: #1c1917;
-        --muted: #57534e;
-        --line: #e7e5e4;
-        --line2: #d6d3d1;
-        --green: #064e3b;
-        --green2: #065f46;
-        --soft: rgba(6, 78, 59, 0.08);
-        --soft2: rgba(6, 78, 59, 0.12);
-        --shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
-        --max: 720px;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
       body {
-        margin: 0;
-        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Apple SD Gothic Neo", "Noto Sans KR",
-          "Malgun Gothic", Arial, sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        line-height: 1.55;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        scroll-behavior: smooth;
         -webkit-font-smoothing: antialiased;
-        text-rendering: optimizeLegibility;
-        padding-bottom: calc(92px + env(safe-area-inset-bottom));
-      }
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-      .wrap {
-        width: min(var(--max), calc(100% - 32px));
-        margin: 0 auto;
-      }
-
-      .topbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 50;
-        background: rgba(255, 255, 255, 0.92);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid var(--line);
-        padding-top: env(safe-area-inset-top);
-      }
-      .topbar .in {
-        height: 56px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .brand {
-        font-weight: 950;
-        letter-spacing: -0.02em;
-        color: var(--green);
-        font-size: 15px;
-        line-height: 1.1;
-      }
-      .brand small {
-        display: block;
-        color: #78716c;
-        font-weight: 800;
-        font-size: 12px;
-        letter-spacing: -0.01em;
-        margin-top: 2px;
-      }
-      .topcta {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        background: var(--green);
-        color: #fff;
-        font-weight: 900;
-        border: 0;
-        padding: 10px 14px;
-        border-radius: 999px;
-        font-size: 13px;
-      }
-
-      .hero {
-        padding-top: calc(56px + env(safe-area-inset-top) + 18px);
-        padding-bottom: 18px;
-        position: relative;
-        overflow: hidden;
-      }
-      .hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(1200px 700px at 10% -10%, rgba(6, 78, 59, 0.18), transparent 55%),
-          linear-gradient(135deg, #f5f5f4, #e7e5e4);
-        z-index: -2;
-      }
-      .hero::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        opacity: 0.1;
-        background-image: radial-gradient(#10b981 1px, transparent 1px);
-        background-size: 18px 18px;
-        z-index: -1;
-      }
-      .pill {
-        display: inline-flex;
-        gap: 8px;
-        align-items: center;
-        padding: 7px 12px;
-        border-radius: 999px;
-        background: var(--soft2);
-        color: var(--green);
-        font-size: 11px;
-        font-weight: 950;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-      }
-      .h1 {
-        margin: 12px 0 10px 0;
-        font-size: 28px;
-        line-height: 1.15;
-        letter-spacing: -0.03em;
-        font-weight: 950;
-      }
-      .h1 .accent {
-        color: var(--green);
-      }
-      .lead {
-        margin: 0 0 14px 0;
-        color: #44403c;
-        font-size: 14px;
-        line-height: 1.6;
-      }
-
-      .card {
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 16px;
-        padding: 14px;
-        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
-      }
-      .heroCard {
-        margin-top: 14px;
-      }
-      .row {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 10px;
-      }
-      .k {
-        font-size: 12px;
-        color: var(--muted);
-        font-weight: 900;
-      }
-      .v {
-        font-size: 13px;
-        color: var(--text);
-        font-weight: 950;
-        text-align: right;
-      }
-      .sep {
-        height: 1px;
-        background: var(--line);
-        margin: 12px 0;
-      }
-
-      .priceBlock {
-        display: grid;
-        gap: 10px;
-      }
-      .priceTop {
-        display: grid;
-        gap: 6px;
-      }
-      .priceLabel {
-        font-size: 12px;
-        font-weight: 950;
-        color: var(--muted);
-      }
-      .priceMain {
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        gap: 10px;
-      }
-      .priceMain b {
-        font-size: 22px;
-        font-weight: 1000;
-        letter-spacing: -0.03em;
-        color: var(--green);
-      }
-      .strike {
-        font-size: 13px;
-        font-weight: 900;
-        color: #78716c;
-        text-decoration: line-through;
-        text-decoration-thickness: 2px;
-        text-decoration-color: rgba(120, 113, 108, 0.6);
-      }
-      .badges {
-        display: grid;
-        gap: 8px;
-      }
-      .badge {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-        padding: 10px 12px;
-        border: 1px solid rgba(6, 78, 59, 0.16);
-        background: rgba(6, 78, 59, 0.06);
-        border-radius: 14px;
-      }
-      .badge strong {
-        font-size: 13px;
-        font-weight: 1000;
-        color: var(--green);
-        letter-spacing: -0.02em;
-      }
-      .badge span {
-        font-size: 12px;
-        font-weight: 900;
-        color: #292524;
-        text-align: right;
-      }
-      .benefits {
-        border: 1px solid rgba(6, 78, 59, 0.16);
-        background: rgba(6, 78, 59, 0.05);
-        border-radius: 14px;
-        padding: 12px;
-      }
-      .benefits .t {
-        font-size: 15px;
-        font-weight: 1000;
-        letter-spacing: -0.02em;
-        color: var(--green);
-        margin: 0 0 10px 0;
-      }
-      .benefits .brow {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        gap: 10px;
-        padding: 8px 0;
-        border-top: 1px dashed rgba(6, 78, 59, 0.18);
-      }
-      .benefits .brow:first-of-type {
-        border-top: 0;
-        padding-top: 0;
-      }
-      .benefits .brow b {
-        font-size: 14px;
-        font-weight: 1000;
-        color: #111827;
-      }
-      .benefits .brow span {
-        font-size: 12px;
-        font-weight: 900;
-        color: #44403c;
-        text-align: right;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        background: var(--green);
-        color: #fff;
-        font-weight: 1000;
-        border: 0;
-        padding: 14px 14px;
-        border-radius: 14px;
-        font-size: 15px;
-        letter-spacing: -0.02em;
-      }
-      .btn:active {
-        transform: translateY(1px);
-      }
-      .btn.sub {
-        background: #ffffff;
-        color: var(--green);
-        border: 1px solid rgba(6, 78, 59, 0.2);
-      }
-
-      .section {
-        padding: 18px 0;
-      }
-      .h2 {
-        margin: 0 0 10px 0;
-        font-size: 18px;
-        font-weight: 1000;
-        letter-spacing: -0.02em;
-      }
-      .p {
-        margin: 0;
-        font-size: 14px;
-        color: #44403c;
-        line-height: 1.65;
-      }
-      .mini {
-        font-size: 12px;
-        color: var(--muted);
-        font-weight: 800;
-      }
-
-      .stack {
-        display: grid;
-        gap: 12px;
-      }
-
-      .bullets {
-        display: grid;
-        gap: 10px;
-        padding: 0;
-        margin: 0;
-        list-style: none;
-      }
-      .bullets li {
-        display: flex;
-        gap: 10px;
-        align-items: flex-start;
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        background: #fff;
-        padding: 12px;
-      }
-      .dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 999px;
-        background: #10b981;
-        margin-top: 6px;
-        flex: 0 0 auto;
-      }
-      .bullets b {
-        font-size: 13px;
-        font-weight: 1000;
-        display: block;
-        margin-bottom: 2px;
-        letter-spacing: -0.02em;
-      }
-      .bullets span {
-        font-size: 13px;
-        color: #44403c;
-        line-height: 1.6;
-      }
-
-      .dark {
-        background: var(--green);
-        color: #fff;
-        border-radius: 20px;
-        padding: 16px;
-      }
-      .dark .h2 {
-        color: #fff;
-        margin-bottom: 8px;
-      }
-      .dark .p {
-        color: rgba(255, 255, 255, 0.84);
-      }
-      .focus3 {
-        display: grid;
-        gap: 10px;
-        margin-top: 12px;
-      }
-      .focus3 .it {
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        background: rgba(255, 255, 255, 0.06);
-        border-radius: 14px;
-        padding: 12px;
-      }
-      .focus3 .it b {
-        display: block;
-        font-size: 14px;
-        font-weight: 1000;
-        color: #a7f3d0;
-        margin-bottom: 4px;
-      }
-      .focus3 .it span {
-        font-size: 13px;
-        color: rgba(255, 255, 255, 0.84);
-        line-height: 1.55;
-      }
-
-      .timeline {
-        display: grid;
-        gap: 10px;
-      }
-      .tcard {
-        background: #fff;
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 12px;
-      }
-      .tcard .top {
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        gap: 10px;
-      }
-      .tcard .top b {
-        font-size: 14px;
-        font-weight: 1000;
-        letter-spacing: -0.02em;
-      }
-      .tcard .top span {
-        font-size: 12px;
-        font-weight: 900;
-        color: var(--green);
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      }
-      .tcard .desc {
-        margin-top: 6px;
-        font-size: 13px;
-        color: #44403c;
-        line-height: 1.6;
-      }
-
-      .profile {
-        display: grid;
-        gap: 12px;
-      }
-      .avatar {
-        width: 92px;
-        height: 92px;
-        border-radius: 999px;
-        background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.18), transparent 60%),
-          linear-gradient(135deg, #065f46, #052e24);
-        box-shadow: var(--shadow);
-        position: relative;
-        overflow: hidden;
-      }
-      .avatar::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        opacity: 0.18;
-        background-image: radial-gradient(#ffffff 1px, transparent 1px);
-        background-size: 10px 10px;
-      }
-      .avatar svg {
-        position: absolute;
-        inset: 0;
-        margin: auto;
-        width: 40px;
-        height: 40px;
-        color: rgba(255, 255, 255, 0.86);
-      }
-      .coach {
-        display: flex;
-        gap: 12px;
-        align-items: center;
-      }
-      .coach .meta b {
-        font-size: 16px;
-        font-weight: 1000;
-        letter-spacing: -0.02em;
-      }
-      .coach .meta div {
-        font-size: 12px;
-        font-weight: 900;
-        color: var(--muted);
-        margin-top: 2px;
-      }
-      .quote {
-        margin: 0;
-        font-size: 13px;
-        color: #44403c;
-        line-height: 1.65;
-      }
-      .checks {
-        display: grid;
-        gap: 8px;
-        margin-top: 8px;
-      }
-      .checks .c {
-        display: flex;
-        gap: 10px;
-        align-items: flex-start;
-        font-size: 13px;
-        color: #292524;
-      }
-      .checks i {
-        width: 18px;
-        height: 18px;
-        border-radius: 999px;
-        background: rgba(6, 78, 59, 0.12);
-        border: 1px solid rgba(6, 78, 59, 0.22);
-        flex: 0 0 auto;
-        margin-top: 2px;
-        position: relative;
-      }
-      .checks i::after {
-        content: "";
-        position: absolute;
-        left: 5px;
-        top: 3px;
-        width: 6px;
-        height: 10px;
-        border-right: 2px solid var(--green);
-        border-bottom: 2px solid var(--green);
-        transform: rotate(40deg);
-      }
-
-      .reviews {
-        display: grid;
-        gap: 12px;
-      }
-      .r {
-        border: 1px solid var(--line);
-        background: #fff;
-        border-radius: 14px;
-        padding: 12px;
-      }
-      .tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-        margin-bottom: 8px;
-      }
-      .tag {
-        font-size: 11px;
-        font-weight: 950;
-        color: #44403c;
-        border: 1px solid var(--line2);
-        background: #fff;
-        padding: 5px 8px;
-        border-radius: 999px;
-      }
-      .r p {
-        margin: 0;
-        font-size: 13px;
-        color: #292524;
-        line-height: 1.65;
-      }
-
-      .faq {
-        display: grid;
-        gap: 10px;
-      }
-      .fi {
-        border: 1px solid var(--line);
-        background: #fff;
-        border-radius: 14px;
-        overflow: hidden;
-      }
-      .fq {
-        width: 100%;
-        text-align: left;
-        border: 0;
-        background: transparent;
-        padding: 14px 12px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-        font-weight: 1000;
-        font-size: 14px;
-        color: #292524;
-        cursor: pointer;
-      }
-      .fa {
+        word-break: keep-all;
+        overflow-x: hidden;
+      }
+      .fade-in-section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .fade-in-section.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .glass-nav {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+      .hide-scrollbar::-webkit-scrollbar {
         display: none;
-        border-top: 1px solid var(--line);
-        padding: 12px;
-        font-size: 13px;
-        color: #44403c;
-        line-height: 1.65;
-        background: #fafaf9;
       }
-      .fi.open .fa {
-        display: block;
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
       }
-      .chev {
-        width: 18px;
-        height: 18px;
-        color: #78716c;
-        flex: 0 0 auto;
-      }
-      .fi.open .chev {
-        transform: rotate(180deg);
-        color: var(--green);
-      }
-
-      .apply {
-        border: 1px solid rgba(6, 78, 59, 0.12);
-        background: #ffffff;
-        border-radius: 18px;
-        box-shadow: var(--shadow);
-        overflow: hidden;
-      }
-      .applyHead {
-        padding: 16px 14px;
-        background: linear-gradient(135deg, rgba(6, 78, 59, 0.08), rgba(6, 78, 59, 0.03));
-        border-bottom: 1px solid rgba(6, 78, 59, 0.12);
-        text-align: center;
-      }
-      .applyHead b {
-        display: block;
-        font-size: 18px;
-        font-weight: 1000;
-        letter-spacing: -0.02em;
-        color: #111827;
-      }
-      .applyHead span {
-        display: block;
-        margin-top: 4px;
-        font-size: 13px;
-        font-weight: 900;
-        color: var(--green2);
-      }
-      .applyBody {
-        padding: 14px;
-        display: grid;
-        gap: 12px;
-      }
-      .grid2 {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-      .field label {
-        display: block;
-        font-size: 12px;
-        font-weight: 1000;
-        color: #78716c;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        margin: 0 0 8px 2px;
-      }
-      .input,
-      .textarea {
-        width: 100%;
-        border: 1px solid transparent;
-        background: #f5f5f4;
-        padding: 14px 14px;
-        border-radius: 14px;
-        outline: none;
-        font-size: 14px;
-        font-weight: 700;
-        color: #111827;
-        transition: 0.15s ease;
-      }
-      .textarea {
-        min-height: 120px;
-        resize: none;
-        line-height: 1.6;
-      }
-      .input:focus,
-      .textarea:focus {
-        background: #ffffff;
-        border-color: rgba(6, 78, 59, 0.35);
-        box-shadow: 0 0 0 4px rgba(6, 78, 59, 0.08);
-      }
-      .radioWrap {
-        display: grid;
-        gap: 10px;
-      }
-      .radioItem {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-        background: #f5f5f4;
-        border: 1px solid transparent;
-        border-radius: 14px;
-        padding: 12px 12px;
-        cursor: pointer;
-      }
-      .radioItem:has(input:checked) {
-        background: rgba(6, 78, 59, 0.06);
-        border-color: rgba(6, 78, 59, 0.22);
-      }
-      .radioLeft {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-      .radioItem input {
-        width: 18px;
-        height: 18px;
-        accent-color: var(--green2);
-      }
-      .radioItem .t {
-        font-size: 14px;
-        font-weight: 900;
-        color: #1c1917;
-      }
-      .radioItem .p {
-        font-size: 13px;
-        font-weight: 1000;
-        color: #111827;
-      }
-      .note {
-        font-size: 12px;
-        color: #57534e;
-        font-weight: 800;
-        line-height: 1.6;
-        padding: 0 2px;
-      }
-      .payBox {
-        border: 1px solid rgba(6, 78, 59, 0.16);
-        background: rgba(6, 78, 59, 0.06);
-        border-radius: 16px;
-        padding: 12px;
-        display: grid;
-        gap: 10px;
-      }
-      .payRow {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        gap: 10px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid rgba(6, 78, 59, 0.18);
-      }
-      .payRow span {
-        font-size: 13px;
-        font-weight: 900;
-        color: #44403c;
-      }
-      .payRow b {
-        font-size: 16px;
-        font-weight: 1000;
-        color: #111827;
-      }
-      .payTitle {
-        font-size: 15px;
-        font-weight: 1000;
-        color: var(--green);
-        letter-spacing: -0.02em;
-      }
-      .payDesc {
-        font-size: 13px;
-        color: #065f46;
-        font-weight: 800;
-        line-height: 1.6;
-      }
-      .bank {
-        border: 1px solid rgba(6, 78, 59, 0.14);
-        background: #fff;
-        border-radius: 14px;
-        padding: 12px;
-        text-align: center;
-      }
-      .bank b {
-        display: block;
-        font-size: 16px;
-        font-weight: 1000;
-        letter-spacing: -0.02em;
-        color: #111827;
-      }
-      .bank span {
-        display: block;
-        margin-top: 6px;
-        font-size: 12px;
-        font-weight: 900;
-        color: #6b7280;
-      }
-      .consent {
-        display: flex;
-        gap: 10px;
-        align-items: flex-start;
-        padding: 2px 2px;
-      }
-      .consent input {
-        width: 18px;
-        height: 18px;
-        margin-top: 3px;
-        accent-color: var(--green2);
-      }
-      .consent label {
-        font-size: 13px;
-        color: #44403c;
-        font-weight: 800;
-        line-height: 1.6;
-      }
-      .submitBtn {
-        width: 100%;
-        padding: 16px 14px;
-        border: 0;
-        border-radius: 14px;
-        background: #111827;
-        color: #fff;
-        font-size: 16px;
-        font-weight: 1000;
-        letter-spacing: -0.02em;
-        cursor: pointer;
-        box-shadow: 0 14px 30px rgba(17, 24, 39, 0.18);
-      }
-      .submitBtn:active {
-        transform: translateY(1px);
-      }
-      .submitBtn[disabled] {
-        opacity: 0.65;
-        cursor: not-allowed;
-      }
-      .err {
-        display: none;
-        text-align: center;
-        font-size: 13px;
-        font-weight: 900;
-        color: #ef4444;
-      }
-      .err.show {
-        display: block;
-      }
-      .successBox {
-        padding: 18px 14px;
-        text-align: center;
-      }
-      .successBox .emo {
-        font-size: 44px;
-        margin-bottom: 10px;
-      }
-      .successBox b {
-        display: block;
-        font-size: 18px;
-        font-weight: 1000;
-        letter-spacing: -0.02em;
-        color: #111827;
-      }
-      .successBox .msg {
-        margin: 12px 0 0 0;
-        background: #f5f5f4;
-        border-radius: 16px;
-        padding: 14px;
-        font-size: 13px;
-        color: #44403c;
-        font-weight: 800;
-        line-height: 1.7;
-      }
-      .successBox .sub {
-        margin-top: 10px;
-        font-size: 12px;
-        color: #9ca3af;
-        font-weight: 800;
-      }
-
-      .footer {
-        margin-top: 10px;
-        padding: 18px 0 10px 0;
-        color: #a8a29e;
-        font-size: 12px;
-      }
-      .footer .box {
-        background: #1c1917;
-        border-radius: 16px;
-        padding: 14px;
-        color: #a8a29e;
-      }
-      .footer b {
-        color: #fff;
-        font-weight: 1000;
-        display: block;
-        margin-bottom: 6px;
-      }
-
-      .sticky {
-        position: fixed;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 60;
-        padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
-        background: rgba(255, 255, 255, 0.96);
-        backdrop-filter: blur(10px);
-        border-top: 1px solid var(--line);
-      }
-      .sticky .in {
-        width: min(var(--max), calc(100% - 24px));
-        margin: 0 auto;
-        display: grid;
-        gap: 8px;
-      }
-      .minirow {
-        display: flex;
-        justify-content: space-between;
-        gap: 10px;
-        font-size: 12px;
-        color: #44403c;
-        font-weight: 900;
-      }
-      .minirow b {
-        color: var(--green);
-        font-weight: 1000;
-      }
-      .minirow .dline {
-        color: #78716c;
-        text-decoration: line-through;
-        font-weight: 900;
-      }
-
-      @media (min-width: 820px) {
-        body {
-          display: flex;
-          justify-content: center;
+      @media (max-width: 640px) {
+        .mobile-tight {
+          letter-spacing: -0.05em;
+          line-height: 1.25;
         }
-        .desktopHint {
-          position: fixed;
-          top: 14px;
-          right: 14px;
-          z-index: 999;
-          background: rgba(28, 25, 23, 0.9);
-          color: #fff;
-          font-size: 12px;
-          padding: 10px 12px;
-          border-radius: 12px;
-          max-width: 240px;
+      }
+      @media (max-width: 640px) {
+        #root p,
+        #root li,
+        #root label,
+        #root input,
+        #root textarea,
+        #root select,
+        #root option,
+        #root button {
+          font-size: 0.95rem;
+          line-height: 1.55;
+        }
+
+        #root .text-gray-500,
+        #root .text-gray-400,
+        #root .text-gray-300 {
+          font-size: 0.9rem;
+          line-height: 1.55;
+        }
+
+        #root .text-xs {
+          font-size: 0.75rem;
           line-height: 1.5;
         }
       }
     </style>
   </head>
+  <body class="bg-white text-gray-900">
+    <div id="root"></div>
 
-  <body>
-    <div class="topbar">
-      <div class="wrap in">
-        <div class="brand">
-          SSNIM 제주 캠프
-          <small>서수연 프로 · 36H 2:1 밀착</small>
-        </div>
-        <a class="topcta" href="#apply">신청하기</a>
-      </div>
-    </div>
+    <script type="module">
+      import React, { useEffect, useMemo, useRef, useState } from "https://esm.sh/react@19.2.0";
+      import ReactDOM from "https://esm.sh/react-dom@19.2.0/client";
+      import htm from "https://esm.sh/htm@3.1.1";
 
-    <main class="wrap">
-      <section class="hero" id="top">
-        <div class="pill">Premium Field Lesson</div>
-        <h1 class="h1">
-          제주에서 끝내는<br />
-          <span class="accent">36홀 2:1 밀착 필드레슨</span>
-        </h1>
-        <p class="lead">
-          프로가 본인 라운딩하는 레슨 말고, <b>두 분에게만 계속 붙어서</b> 샷·루틴·코스 공략을 같이 잡아드립니다.
-        </p>
+      const html = htm.bind(React.createElement);
 
-        <div class="card heroCard">
-          <div class="row">
-            <div class="k">장소</div>
-            <div class="v">제주 아덴힐 CC</div>
+      const scrollToId = (id) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const offset = 80;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = el.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+      };
+
+      const FadeIn = ({ children, className = "" }) => {
+        const [isVisible, setVisible] = useState(false);
+        const domRef = useRef(null);
+
+        useEffect(() => {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  setVisible(true);
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.1 }
+          );
+
+          if (domRef.current) observer.observe(domRef.current);
+
+          return () => {
+            if (domRef.current) observer.unobserve(domRef.current);
+          };
+        }, []);
+
+        return html`
+          <div ref=${domRef} className=${`fade-in-section ${isVisible ? "is-visible" : ""} ${className}`}>
+            ${children}
           </div>
-          <div class="sep"></div>
-          <div class="row">
-            <div class="k">일정</div>
-            <div class="v">3/22-23 (일,월) · 1박 2일</div>
-          </div>
-          <div class="sep"></div>
-          <div class="row">
-            <div class="k">형태</div>
-            <div class="v">2:1 코칭 · 프로 플레이 없음</div>
-          </div>
-          <div class="sep"></div>
-          <div class="row">
-            <div class="k">개별 신청</div>
-            <div class="v">1인 가능 · 2인(부부/연인/친구) 가능</div>
-          </div>
-          <div class="sep"></div>
+        `;
+      };
 
-          <div class="priceBlock">
-            <div class="priceTop">
-              <div class="priceLabel">스승님 신청가 (혜택 기본 포함)</div>
-              <div class="priceMain">
-                <div>
-                  <div class="strike">주중 170 / 주말 190</div>
-                  <div style="height: 2px"></div>
-                  <b>주중 160 / 주말 180</b>
-                </div>
-                <div style="text-align:right;">
-                  <div style="font-size:12px; font-weight:1000; color:var(--muted);">신청 마감</div>
-                  <div style="font-size:14px; font-weight:1000; color:#292524;">3월 10일</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="badges">
-              <div class="badge">
-                <strong>지금 신청해야 하는 이유</strong>
-                <span>주중 170→160 / 주말 190→180</span>
-              </div>
-              <div class="badge">
-                <strong>올인클루시브</strong>
-                <span>항공/캐디피 제외 핵심비용 포함</span>
-              </div>
-            </div>
-
-            <div class="benefits">
-              <p class="t">혜택 (기본 포함)</p>
-              <div class="brow">
-                <b>5만원 포인트</b>
-                <span>캠프 종료 후 앱 사용</span>
-              </div>
-              <div class="brow">
-                <b>스승님 시그니처 롱티</b>
-                <span>참가자 전원 증정</span>
-              </div>
-            </div>
-
-            <a class="btn" href="#apply">지금 신청서 작성하기</a>
-            <a class="btn sub" href="#detail">캠프 구성 자세히 보기</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="detail">
-        <h2 class="h2">이 캠프가 딱 필요한 분</h2>
-        <ul class="bullets">
-          <li>
-            <span class="dot"></span>
-            <div>
-              <b>연습장에선 괜찮은데 필드에서 무너지는 분</b>
-              <span>라이·바람·경사 변수에서 “어떻게 치는지”를 실제 상황으로 잡아드립니다.</span>
-            </div>
-          </li>
-          <li>
-            <span class="dot"></span>
-            <div>
-              <b>세컨·숏게임에서 타수 잃는 패턴이 있는 분</b>
-              <span>어프로치/퍼팅 루틴과 코스 매니지먼트로 “안전하게 줄이는 방법”을 세팅합니다.</span>
-            </div>
-          </li>
-          <li>
-            <span class="dot"></span>
-            <div>
-              <b>시즌 첫 라운딩을 망치고 싶지 않은 분</b>
-              <span>3월 말 집중 36홀로 감각을 끌어올려 4~5월에 바로 써먹게 만듭니다.</span>
-            </div>
-          </li>
-        </ul>
-      </section>
-
-      <section class="section">
-        <div class="dark">
-          <h2 class="h2">오직 두 분의 수강생에게만 100% 집중합니다</h2>
-          <p class="p">
-            프로가 본인 플레이를 하며 “틈틈이 봐주는” 방식이 아닙니다. 두 분이 치는 모든 샷에서 판단과 루틴을 같이 맞춥니다.
-          </p>
-
-          <div class="focus3">
-            <div class="it">
-              <b>티샷 & 세컨샷</b>
-              <span>에이밍, 프리샷 루틴, 경사·바람에서의 클럽 선택과 스윙 포인트</span>
-            </div>
-            <div class="it">
-              <b>숏게임 & 퍼팅</b>
-              <span>라이별 어프로치, 그린 읽기, 거리감·방향성 루틴 확립</span>
-            </div>
-            <div class="it">
-              <b>멘탈 & 매니지먼트</b>
-              <span>미스샷 이후 손실 최소화, 안전/공격 구분, 스코어 지키는 공략</span>
-            </div>
-          </div>
-
-          <div style="margin-top:12px;">
-            <a class="btn" href="#apply">2:1 코칭 신청하기</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2 class="h2">캠프 일정(안)</h2>
-        <div class="mini">현지 사정에 따라 시간은 일부 조정될 수 있으며, 확정 일정은 신청 후 안내드립니다.</div>
-
-        <div class="stack" style="margin-top:12px;">
-          <div class="timeline">
-            <div class="tcard">
-              <div class="top"><b>1일차 (3/22 일)</b><span>Day 1</span></div>
-              <div class="desc">
-                10:00 공항 미팅 → 12:00 오리엔테이션/중식 → 13:00 18홀 필드 레슨 → 18:00 숙소 이동 → 19:00 석식/리뷰
-              </div>
-            </div>
-            <div class="tcard">
-              <div class="top"><b>2일차 (3/23 월)</b><span>Day 2</span></div>
-              <div class="desc">
-                06:00 조식 → 07:00 18홀 필드 레슨(전일 피드백 적용) → 12:00 최종 리뷰/중식 → 14:00 공항 샌딩/해산
-              </div>
-            </div>
-          </div>
-
-          <a class="btn sub" href="#apply">일정 확정/항공 추천 받기</a>
-        </div>
-      </section>
-
-      <section class="section" id="apply">
-        <div class="apply" id="applyCard">
-          <div class="applyHead">
-            <b>서수연 스승 VVIP 제주 캠프</b>
-            <span>3월 22일(일) - 23일(월) / 잔여 1석</span>
-          </div>
-
-          <div class="applyBody" id="applyBody">
-            <form id="applyForm" class="stack" autocomplete="on" novalidate>
-              <div class="grid2">
-                <div class="field">
-                  <label for="name">신청자 성함</label>
-                  <input id="name" class="input" name="이름" type="text" placeholder="홍길동" required />
-                </div>
-                <div class="field">
-                  <label for="phone">연락처</label>
-                  <input id="phone" class="input" name="연락처" type="tel" placeholder="010-0000-0000" required />
-                </div>
-              </div>
-
-              <div class="field">
-                <label>참가 타입</label>
-                <div class="radioWrap">
-                  <label class="radioItem">
-                    <span class="radioLeft">
-                      <input type="radio" name="참가타입" value="주중(일,월) 160만원" checked required />
-                      <span class="t">주중(일,월)</span>
-                    </span>
-                    <span class="p">1,600,000원</span>
-                  </label>
-
-                  <label class="radioItem">
-                    <span class="radioLeft">
-                      <input type="radio" name="참가타입" value="주말 180만원" required />
-                      <span class="t">주말</span>
-                    </span>
-                    <span class="p">1,800,000원</span>
-                  </label>
-                </div>
-                <div class="note">3월 10일 신청 마감 전 신청 시 위 가격 적용. 5만원 포인트 + 스승님 시그니처 롱티는 기본 포함입니다.</div>
-              </div>
-
-              <div class="field">
-                <label for="worry">필드에서 진행했으면 하는 부분 (필수)</label>
-                <textarea
-                  id="worry"
-                  class="textarea"
-                  name="레슨고민"
-                  placeholder="예: 드라이버 악성 슬라이스, 어프로치 뒷땅 등 현장에서 프로님이 가장 집중적으로 봐주셨으면 하는 부분을 적어주세요."
-                  required
-                ></textarea>
-              </div>
-
-              <div class="payBox">
-                <div class="payRow">
-                  <span>총 캠프 비용</span>
-                  <b id="totalPrice">1,600,000원</b>
-                </div>
-
-                <div class="payTitle">예약금 입금 안내</div>
-                <div class="payDesc">
-                  소수 정예(2:1) 프리미엄 레슨 특성상, 노쇼 방지를 위해 <b style="background:rgba(6,78,59,0.18); padding:0 4px; border-radius:6px;">예약금 50만 원</b>을 입금해 주셔야
-                  잔여석 선점 및 최종 예약이 확정됩니다. 카드 결제도 가능합니다.
-                </div>
-
-                <div class="bank">
-                  <b>국민은행 786101-00-105688</b>
-                  <span>예금주 : 주식회사 스승님(또는 대표자명)</span>
-                </div>
-
-                <div class="note" style="text-align:center;">
-                  * 캠프 시작 14일 전 취소 시 100% 환불됩니다. (잔금은 추후 별도 안내)
-                </div>
-              </div>
-
-              <div class="consent">
-                <input id="consent_camp" name="예약금동의" type="checkbox" required />
-                <label for="consent_camp">[필수] 예약금 입금 및 환불 규정을 확인하였으며, 위 계좌로 예약금을 입금하겠습니다.</label>
-              </div>
-
-              <button id="submitBtn" class="submitBtn" type="submit">잔여석 선점 및 참가 신청하기</button>
-              <div id="errMsg" class="err">일시적인 오류가 발생했습니다. 잠시 후 다시 시도해주세요.</div>
-            </form>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2 class="h2">코치 소개</h2>
-        <div class="card profile">
-          <div class="coach">
-            <div class="avatar" aria-label="서수연 프로 이미지 자리">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"></path>
-                <path d="M4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
-              </svg>
-            </div>
-            <div class="meta">
-              <b>서수연 프로</b>
-              <div>Head Coach · 필드/숏게임 실전 코칭</div>
-            </div>
-          </div>
-
-          <p class="quote">
-            “필드에서는 스윙을 새로 만드는 게 아니라, 지금 가진 스윙으로 최선의 결과를 만드는 방법을 배워야 합니다.”
-          </p>
-
-          <div class="checks">
-            <div class="c"><i></i><div>코스 매니지먼트 중심으로 스코어를 줄이는 방법</div></div>
-            <div class="c"><i></i><div>제주 바람/경사/트러블 상황 대응</div></div>
-            <div class="c"><i></i><div>숏게임/퍼팅 루틴 확립</div></div>
-            <div class="c"><i></i><div>프로 플레이 없이 코칭에만 집중</div></div>
-          </div>
-
-          <a class="btn" style="margin-top:10px;" href="#apply">지금 신청하기</a>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2 class="h2">실제 수강생 후기(발췌)</h2>
-        <div class="reviews">
-          <div class="r">
-            <div class="tags"><span class="tag">#숏게임</span><span class="tag">#코스매니지먼트</span></div>
-            <p>“필드에서 상황별로 어떻게 쳐야 하는지 바로 잡아주셔서 정말 좋았습니다. 특히 어프로치 실수가 확 줄었어요.”</p>
-          </div>
-          <div class="r">
-            <div class="tags"><span class="tag">#멘탈</span><span class="tag">#루틴</span></div>
-            <p>“첫 홀에서 늘 무너졌는데, 프리샷 루틴을 잡고 나서 스코어가 안정됐습니다.”</p>
-          </div>
-          <div class="r">
-            <div class="tags"><span class="tag">#피드백밀도</span></div>
-            <p>“프로님이 본인 플레이를 안 하시고 계속 봐주셔서 레슨 밀도가 엄청났어요. 돈이 아깝지 않았습니다.”</p>
-          </div>
-        </div>
-
-        <div style="margin-top:12px;">
-          <a class="btn" href="#apply">후기 보고 신청하기</a>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2 class="h2">비용 및 포함사항</h2>
-        <div class="card">
-          <div class="priceLabel">스승님 신청가 (3/10 마감 · 혜택 기본 포함)</div>
-          <div class="sep"></div>
-
-          <div class="row">
-            <div class="k">주중</div>
-            <div class="v"><span class="dline">170</span> → <b style="color:var(--green);">160만원</b></div>
-          </div>
-          <div class="sep"></div>
-          <div class="row">
-            <div class="k">주말</div>
-            <div class="v"><span class="dline">190</span> → <b style="color:var(--green);">180만원</b></div>
-          </div>
-
-          <div class="sep"></div>
-          <div class="stack" style="gap:10px;">
-            <div class="badge">
-              <strong>포함</strong>
-              <span>36홀 그린피 · 카트비 · 필드레슨비 · 40평 리조트 · 이동차량 · 조식</span>
-            </div>
-            <div class="badge" style="border-color:rgba(0,0,0,0.08); background:rgba(0,0,0,0.03);">
-              <strong style="color:#78716c;">불포함</strong>
-              <span>왕복 항공권 · 캐디피 · 개인 식사/그늘집</span>
-            </div>
-          </div>
-
-          <div class="sep"></div>
-          <div class="mini">카드 결제 가능 · 상담 후 확정 · 추가 결제 유도 없음</div>
-
-          <div style="margin-top:12px;">
-            <a class="btn" href="#apply">비용/항공/픽업 한번에 신청</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2 class="h2">자주 묻는 질문</h2>
-        <div class="faq" style="margin-top:12px;">
-          <div class="fi">
-            <button class="fq" type="button">
-              <span>Q. 항공권은 어떻게 하나요?</span>
-              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6 9l6 6 6-6"></path>
-              </svg>
-            </button>
-            <div class="fa">A. 항공권은 불포함이며 개별 예약입니다. 추천 항공편 시간대는 신청 후 안내드립니다.</div>
-          </div>
-
-          <div class="fi">
-            <button class="fq" type="button">
-              <span>Q. 우천 시 진행은요?</span>
-              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6 9l6 6 6-6"></path>
-              </svg>
-            </button>
-            <div class="fa">A. 골프장 규정에 따라 진행됩니다. 라운딩이 불가할 경우 대체 프로그램 또는 일부 환불 규정이 적용될 수 있습니다.</div>
-          </div>
-
-          <div class="fi">
-            <button class="fq" type="button">
-              <span>Q. 초보도 가능한가요?</span>
-              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6 9l6 6 6-6"></path>
-              </svg>
-            </button>
-            <div class="fa">A. 가능합니다. 2:1 밀착 코칭이라 레벨에 맞춰 진행됩니다. 필드 경험이 적어도 괜찮습니다.</div>
-          </div>
-
-          <div class="fi">
-            <button class="fq" type="button">
-              <span>Q. 혼자 신청해도 되나요?</span>
-              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6 9l6 6 6-6"></path>
-              </svg>
-            </button>
-            <div class="fa">A. 가능합니다. 1인 신청 시 비슷한 수준의 참가자와 2인 1조로 매칭될 수 있습니다. (부부/연인/친구 2인 신청도 가능)</div>
-          </div>
-
-          <div class="fi">
-            <button class="fq" type="button">
-              <span>Q. 결제는 어떻게 진행되나요?</span>
-              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6 9l6 6 6-6"></path>
-              </svg>
-            </button>
-            <div class="fa">A. 신청서 접수 후 예약금 입금 시 가확정, 잔금은 캠프 시작 2주 전까지 결제합니다. 카드 결제도 가능합니다.</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="footer">
-        <div class="box">
-          <b>서수연 프로 3월 제주도 캠프</b>
-          <div>제주 아덴힐 CC · 1박 2일 · 36홀 2:1 밀착 필드레슨</div>
-          <div style="margin-top:8px;">본 페이지는 안내용이며, 잔여석/세부 일정은 신청서 접수 및 상담으로 확정됩니다.</div>
-          <div style="margin-top:8px;">Copyright © 2026 SSNIM. All rights reserved.</div>
-        </div>
-      </section>
-    </main>
-
-    <div class="sticky">
-      <div class="in">
-        <div class="minirow">
-          <span>3/10 마감</span>
-          <span><span class="dline">주중 170</span> → <b>160</b> / <span class="dline">주말 190</span> → <b>180</b></span>
-        </div>
-        <a class="btn" href="#apply">지금 신청서 작성하기</a>
-      </div>
-    </div>
-
-    <div class="desktopHint">이 페이지는 모바일 최적화 버전입니다. PC에서도 보이지만 모바일에서 가장 보기 좋게 설계했습니다.</div>
-
-    <script>
-      (function () {
-        var FORM_ENDPOINT = "https://formspree.io/f/mbdakbon";
-
-        var items = document.querySelectorAll(".fi");
-        for (var i = 0; i < items.length; i++) {
-          (function (item) {
-            var btn = item.querySelector(".fq");
-            btn.addEventListener("click", function () {
-              var isOpen = item.classList.contains("open");
-              for (var j = 0; j < items.length; j++) items[j].classList.remove("open");
-              if (!isOpen) item.classList.add("open");
-            });
-          })(items[i]);
-        }
-
-        var form = document.getElementById("applyForm");
-        var submitBtn = document.getElementById("submitBtn");
-        var errMsg = document.getElementById("errMsg");
-        var applyBody = document.getElementById("applyBody");
-        var totalPrice = document.getElementById("totalPrice");
-        var typeRadios = document.querySelectorAll('input[name="참가타입"]');
-
-        function setTotal() {
-          var v = "";
-          for (var i = 0; i < typeRadios.length; i++) if (typeRadios[i].checked) v = typeRadios[i].value;
-          if (v.indexOf("180") !== -1) totalPrice.textContent = "1,800,000원";
-          else totalPrice.textContent = "1,600,000원";
-        }
-        for (var i = 0; i < typeRadios.length; i++) typeRadios[i].addEventListener("change", setTotal);
-        setTotal();
-
-        function renderSuccess() {
-          applyBody.innerHTML =
-            '<div class="successBox">' +
-            '<div class="emo">✈️</div>' +
-            "<b>신청서 접수가 완료되었습니다!</b>" +
-            '<div class="msg">회원님, 예약금 입금이 확인되는 즉시 제주 캠프 최종 확정 안내를 도와드립니다.<br /><br />폼에 남겨주신 스윙 고민은 서수연 프로님께 사전 전달하여, 1일차 필드 레슨부터 지체 없이 집중 교정이 들어갈 수 있도록 완벽하게 준비하겠습니다.</div>' +
-            '<div class="sub">입금 확인 후 알림톡(또는 문자)으로 확정 메시지가 발송됩니다.</div>' +
-            "</div>";
-        }
-
-        async function handleSubmit(e) {
+      const Header = () => {
+        const onNav = (e, id) => {
           e.preventDefault();
-          errMsg.classList.remove("show");
-          submitBtn.disabled = true;
-          submitBtn.textContent = "신청서 접수 중...";
+          scrollToId(id);
+        };
 
-          var fd = new FormData(form);
-          var data = {};
-          fd.forEach(function (value, key) {
-            data[key] = value;
-          });
+        return html`
+          <nav className="fixed top-0 left-0 w-full z-50 glass-nav border-b border-gray-100">
+            <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+              <div
+                className="text-xl font-bold tracking-tight text-gray-900 cursor-pointer"
+                onClick=${() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              >
+                스승님
+              </div>
+              <div className="flex space-x-6 md:space-x-8 text-sm font-medium text-gray-500">
+                <a href="#short-game" onClick=${(e) => onNav(e, "short-game")} className="hover:text-black transition-colors">
+                  숏게임 레슨
+                </a>
+                <a
+                  href="#custom-lesson"
+                  onClick=${(e) => onNav(e, "custom-lesson")}
+                  className="hover:text-black transition-colors"
+                >
+                  맞춤 레슨
+                </a>
+                <a href="#reviews" onClick=${(e) => onNav(e, "reviews")} className="hover:text-black transition-colors">
+                  수강 후기
+                </a>
+                <a
+                  href="http://pf.kakao.com/_kxawRn/chat"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-black transition-colors text-emerald-600 font-bold"
+                >
+                  문의하기
+                </a>
+              </div>
+            </div>
+          </nav>
+        `;
+      };
+
+      const Hero = () => {
+        const onNav = (e, id) => {
+          e.preventDefault();
+          scrollToId(id);
+        };
+
+        return html`
+          <section
+            className="relative h-[90vh] md:h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden bg-[#FBFBFB]"
+          >
+            <div
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] pointer-events-none opacity-20"
+            >
+              <div className="absolute w-[600px] h-[600px] bg-emerald-100 rounded-full blur-[120px] -top-20 -left-20"></div>
+              <div className="absolute w-[400px] h-[400px] bg-blue-50 rounded-full blur-[100px] bottom-0 right-0"></div>
+            </div>
+
+            <${FadeIn} className="max-w-4xl relative z-10 w-full px-2">
+              <div
+                className="inline-flex items-center gap-2 px-4 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-xs md:text-sm font-bold mb-6 md:mb-8 border border-emerald-100"
+              >
+                <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-ping"></span>
+                2월 한정: 숏게임 마스터 클래스 마감 임박
+              </div>
+
+              <h1
+                className="text-[32px] sm:text-5xl md:text-7xl font-black tracking-tighter text-gray-900 leading-[1.1] md:leading-[1.1] mb-6 md:mb-10 break-keep"
+              >
+                스크린에서는 싱글,<br />
+                필드만 나가면 <span className="text-emerald-500">100타?</span>
+              </h1>
+
+              <p className="text-lg md:text-2xl text-gray-500 mb-10 md:mb-14 font-medium max-w-2xl mx-auto leading-relaxed break-keep">
+                문제는 스윙이 아니라 숏게임입니다.<br />
+                시즌 라운딩 전, 필드에서 즉시 통하는 실전 감각을 느껴보세요.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-md mx-auto sm:max-w-none">
+                <a
+                  href="#short-game"
+                  onClick=${(e) => onNav(e, "short-game")}
+                  className="w-full sm:w-auto px-10 py-5 bg-black text-white rounded-2xl text-base md:text-lg font-bold hover:scale-[1.02] transition-transform shadow-2xl shadow-black/20"
+                >
+                  숏게임/파3 레슨 신청
+                </a>
+                <a
+                  href="#custom-lesson"
+                  onClick=${(e) => onNav(e, "custom-lesson")}
+                  className="w-full sm:w-auto px-10 py-5 bg-white text-black border border-gray-200 rounded-2xl text-base md:text-lg font-bold hover:bg-gray-50 transition-colors shadow-sm"
+                >
+                  내 조건 맞춤 스승님 찾기
+                </a>
+                <a
+                  href="https://www.instagram.com/p/DU7Gc-gjwRd/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full sm:w-auto px-10 py-5 bg-white text-black border border-gray-200 rounded-2xl text-base md:text-lg font-bold hover:bg-gray-50 transition-colors shadow-sm"
+                >
+                  서수연 프로 소개 보기
+                </a>
+              </div>
+
+              <p className="mt-8 text-xs md:text-sm text-gray-400 font-medium">
+                이미 1,200+명의 골퍼가 '스승님'에서 진짜 본인의 실력을 찾았습니다
+              </p>
+            </${FadeIn}>
+          </section>
+        `;
+      };
+
+      const Features = () => {
+        const targets = useMemo(
+          () => [
+            {
+              title: "필드 냉탕온탕 골퍼",
+              desc: html`연습장과 스크린에선 완벽한 컨택<br />필드 그린 주변에서 항상 뒤땅/탑볼 치는 분`,
+              icon: "⛳"
+            },
+            {
+              title: "만년 백돌이 탈출",
+              desc: html`드라이버는 잘 치는데<br />세컨에서 타수 놓치는 80~110타 골퍼`,
+              icon: "🎯"
+            },
+            {
+              title: "다회 레슨 영업 피해자",
+              desc: html`수백만 원 다회권 끊어놓고<br />프로랑 안 맞아서 돈 버린 분`,
+              icon: "💸"
+            },
+            {
+              title: "바쁜 비즈니스 골퍼",
+              desc: html`시간은 없고,<br />당장 이번 주 라운딩에서 망신당하기 싫은 분`,
+              icon: "💼"
+            },
+            {
+              title: "시즌 대비 열혈 골퍼",
+              desc: html`본격적인 시즌 시작 전,<br />확실한 숏게임 만들고 싶은 분`,
+              icon: "🔥"
+            },
+            {
+              title: "독학의 한계",
+              desc: html`유튜브만 보고 따라하다가<br />스윙 다 망가져서 스트레스 받는 분`,
+              icon: "📱"
+            }
+          ],
+          []
+        );
+
+        return html`
+          <section className="py-24 px-6 md:py-32 bg-white">
+            <div className="max-w-7xl mx-auto">
+              <${FadeIn} className="text-center mb-16 md:mb-20">
+                <h2 className="text-3xl md:text-5xl font-black tracking-tighter mb-6">혹시 당신의 이야기인가요?</h2>
+                <p className="text-gray-500 text-lg md:text-xl font-medium">스승님은 이런 고민을 가진 골퍼를 위해 존재합니다.</p>
+              </${FadeIn}>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                ${targets.map(
+                  (t, i) => html`
+                    <${FadeIn} key=${i}>
+                      <div
+                        className="h-full bg-gray-50 p-8 md:p-10 rounded-[40px] border border-transparent hover:border-emerald-100 hover:bg-white hover:shadow-2xl hover:shadow-emerald-50 transition-all group"
+                      >
+                        <div className="text-4xl mb-6">${t.icon}</div>
+                        <h3 className="text-xl md:text-2xl font-bold mb-4 tracking-tight text-gray-900">${t.title}</h3>
+                        <p className="text-gray-500 text-base leading-relaxed font-medium break-keep">${t.desc}</p>
+                      </div>
+                    </${FadeIn}>
+                  `
+                )}
+              </div>
+
+              <${FadeIn} className="mt-16 text-center">
+                <a href="#custom-lesson" className="inline-flex items-center gap-2 text-emerald-600 font-bold text-lg hover:underline">
+                  내 고민 해결해줄 프로님 찾기 →
+                </a>
+              </${FadeIn}>
+            </div>
+          </section>
+        `;
+      };
+
+      const ShortGameSection = () => {
+        const FORM_ENDPOINT = "https://formspree.io/f/mbdakbon";
+        const [status, setStatus] = useState("IDLE");
+        const [imgError, setImgError] = useState(false);
+
+        const handleSubmit = async (e) => {
+          e.preventDefault();
+          setStatus("SUBMITTING");
+          const formData = new FormData(e.currentTarget);
+          const data = Object.fromEntries(formData.entries());
 
           try {
-            var res = await fetch(FORM_ENDPOINT, {
+            const response = await fetch(FORM_ENDPOINT, {
               method: "POST",
-              body: JSON.stringify(Object.assign({}, data, { _subject: "[스승님] 3월 제주 캠프 다이렉트 신청 및 입금 예정" })),
+              body: JSON.stringify({ ...data, _subject: "[스승님] 숏게임 실전 레슨 신청 도착" }),
               headers: { Accept: "application/json", "Content-Type": "application/json" }
             });
 
-            if (res.ok) {
-              renderSuccess();
-              return;
-            }
-
-            errMsg.classList.add("show");
-          } catch (e2) {
-            errMsg.classList.add("show");
-          } finally {
-            submitBtn.disabled = false;
-            submitBtn.textContent = "잔여석 선점 및 참가 신청하기";
+            if (response.ok) setStatus("SUCCESS");
+            else setStatus("ERROR");
+          } catch {
+            setStatus("ERROR");
           }
-        }
+        };
 
-        form.addEventListener("submit", handleSubmit);
-      })();
+        return html`
+          <section id="short-game" className="py-20 px-6 md:py-32 bg-white scroll-mt-20">
+            <div className="max-w-7xl mx-auto">
+              <${FadeIn} className="mb-20">
+                <div
+                  className="bg-emerald-600 rounded-[40px] p-8 md:p-12 text-white flex flex-col md:flex-row justify-between items-center gap-8 shadow-2xl shadow-emerald-200"
+                >
+                  <div className="space-y-4 text-center md:text-left">
+                    <span className="inline-block px-4 py-1 bg-white/20 rounded-full text-xs font-bold tracking-widest uppercase"
+                      >이벤트 마감 임박</span
+                    >
+                    <h2 className="text-3xl md:text-5xl font-black tracking-tighter">단 1회 레슨으로<br />5타 이상 줄여드립니다✨</h2>
+                    <p className="text-emerald-50 opacity-90 text-lg font-medium">서수연 스승님의 숏게임 마스터 실전 레슨</p>
+                  </div>
+                  <div className="bg-white/10 p-6 md:p-8 rounded-[32px] backdrop-blur-md border border-white/20 text-center min-w-[280px]">
+                    <div className="text-emerald-200 text-sm font-bold mb-2 uppercase tracking-widest">3월 1일 현재 잔여석</div>
+                    <div className="text-5xl md:text-6xl font-black mb-4">1<span className="text-2xl ml-1">석</span></div>
+                    <div className="text-xs text-emerald-100 font-medium">3월 1일 오전 10시 확정</div>
+                  </div>
+                </div>
+              </${FadeIn}>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24 items-start">
+                <${FadeIn}>
+                  <div className="relative rounded-[40px] md:rounded-[56px] overflow-hidden bg-gray-50 aspect-square group shadow-xl">
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-emerald-50/30"></div>
+
+                    <div className="absolute inset-0 flex items-center justify-center p-8 z-10">
+                      ${imgError
+                        ? html`
+                            <div className="flex flex-col items-center justify-center text-center w-full h-full">
+                              <div
+                                className="w-48 h-48 md:w-64 md:h-64 bg-emerald-500 rounded-full flex items-center justify-center text-8xl shadow-2xl"
+                              >
+                                🏌️‍♀️
+                              </div>
+                              <div className="mt-10 space-y-2">
+                                <h3 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tighter">서수연 프로</h3>
+                                <p className="text-emerald-600 font-bold text-lg italic">"필드에서 결과로 증명합니다"</p>
+                              </div>
+                            </div>
+                          `
+                        : html`
+                            <img
+                              src="assets/3d_golf_instructor.png"
+                              alt="Professional 3D Golf Instructor"
+                              className="w-full h-full object-contain drop-shadow-[0_32px_40px_rgba(0,0,0,0.15)] transition-all duration-700 group-hover:scale-105"
+                              onError=${() => setImgError(true)}
+                            />
+                          `}
+                    </div>
+
+                    <div
+                      className="absolute bottom-8 left-8 right-8 z-20 glass-nav bg-white/70 border border-white/80 p-6 rounded-[32px] flex flex-col gap-4 shadow-2xl"
+                    >
+                      <div className="flex justify-between items-center">
+                        <span className="text-xs font-black text-gray-400 uppercase tracking-widest">Place</span>
+                        <span className="text-sm font-bold text-gray-900">실내 & 야외 숏게임/파3 집중 </span>
+                      </div>
+                      <div className="h-[1px] bg-gray-200/50 w-full"></div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-xs font-black text-gray-400 uppercase tracking-widest">Special</span>
+                        <span className="text-sm font-bold text-emerald-600">2인 동반 시 입장료 2만원 지원</span>
+                      </div>
+                      <a
+                        href="https://www.instagram.com/p/DU7Gc-gjwRd/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                        target="_blank"
+                        rel="noreferrer"
+                        className="w-full py-4 bg-white text-gray-900 rounded-2xl font-black text-base border border-white/80 hover:bg-gray-50 transition-colors text-center"
+                      >
+                        서수연 스승 레슨 보러가기
+                      </a>
+                    </div>
+                  </div>
+                </${FadeIn}>
+
+                <div className="space-y-10">
+                  <div className="space-y-6">
+                    <h3 className="text-2xl md:text-3xl font-black tracking-tighter text-gray-900">왜 숏게임 클래스인가요?</h3>
+                    <ul className="space-y-4">
+                      ${[
+                        "어프로치 뒤땅/탑볼의 근본적인 원인 해결",
+                        "상황별(러프, 벙커, 경사면) 실전 대응 능력과 거리감",
+                        "투 퍼팅 이내로 마무리하는 퍼터 거리감 교정",
+                        "서수연 프로의 1:1 밀착 코칭 및 노하우 전수"
+                      ].map(
+                        (item, idx) => html`
+                          <li key=${idx} className="flex items-start gap-3">
+                            <span className="text-emerald-500 mt-1">
+                              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                  fillRule="evenodd"
+                                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                  clipRule="evenodd"
+                                />
+                              </svg>
+                            </span>
+                            <span className="text-gray-600 font-medium text-lg">${item}</span>
+                          </li>
+                        `
+                      )}
+                    </ul>
+                  </div>
+
+                  <div className="bg-gray-50 p-8 md:p-10 rounded-[40px] border border-gray-100">
+                    <div className="flex items-baseline gap-4 mb-8">
+                      <span className="text-gray-300 line-through text-lg">250,000원</span>
+                      <span className="font-black text-4xl md:text-5xl text-gray-900 tracking-tighter">
+                        185,000<span className="text-xl md:text-2xl font-bold ml-1">원</span>
+                      </span>
+                      <span className="px-3 py-1 bg-red-100 text-red-600 rounded-lg font-black text-sm">26% OFF</span>
+                    </div>
+
+                    ${status === "SUCCESS"
+                      ? html`
+                          <div className="text-center py-6">
+                            <div className="text-5xl mb-4">🎯</div>
+                            <h4 className="text-2xl font-black text-gray-900 mb-2">신청이 완료되었습니다!</h4>
+                            <p className="text-gray-500 font-medium">운영팀이 곧 연락드리겠습니다⭐</p>
+                          </div>
+                        `
+                      : html`
+                          <form onSubmit=${handleSubmit} className="space-y-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                              <input
+                                required
+                                name="이름"
+                                type="text"
+                                placeholder="성함"
+                                className="w-full px-6 py-5 bg-white border border-gray-200 rounded-2xl outline-none focus:border-emerald-500 transition-all font-medium"
+                              />
+                              <input
+                                required
+                                name="연락처"
+                                type="tel"
+                                placeholder="연락처"
+                                className="w-full px-6 py-5 bg-white border border-gray-200 rounded-2xl outline-none focus:border-emerald-500 transition-all font-medium"
+                              />
+                            </div>
+
+                            <select
+                              name="인원"
+                              className="w-full px-6 py-5 bg-white border border-gray-200 rounded-2xl outline-none focus:border-emerald-500 transition-all appearance-none font-medium cursor-pointer"
+                            >
+                              <option value="1">1인 신청 (18.5만원)</option>
+                              <option value="2">2인 신청 (입장료 2만원 지원)</option>
+                            </select>
+
+                            <div className="flex items-start gap-3 px-2">
+                              <input
+                                required
+                                id="consent_short"
+                                name="개인정보동의"
+                                type="checkbox"
+                                className="mt-1 h-5 w-5 accent-emerald-600"
+                              />
+                              <label htmlFor="consent_short" className="text-sm text-gray-600 font-medium leading-relaxed">
+                                [필수] 개인정보 수집·이용에 동의합니다.{" "}
+                                <a href="#privacy" className="text-emerald-600 font-bold underline underline-offset-2">
+                                  개인정보처리방침 보기
+                                </a>
+                              </label>
+                            </div>
+
+                            <button
+                              disabled=${status === "SUBMITTING"}
+                              type="submit"
+                              className="w-full py-6 bg-emerald-600 text-white rounded-2xl font-black text-xl hover:bg-emerald-700 transition-all shadow-xl shadow-emerald-200 disabled:bg-gray-400 disabled:shadow-none"
+                            >
+                              ${status === "SUBMITTING" ? "처리 중..." : "지금 바로 이벤트가 신청하기"}
+                            </button>
+
+                            <p className="text-center text-xs text-gray-400 font-medium mt-4">
+                              신청 시 결제가 바로 진행되지 않습니다, <br />사전 안내 후 결정하세요.
+                            </p>
+                            ${status === "ERROR"
+                              ? html`<p className="text-center text-xs text-red-500 font-semibold">전송에 실패했습니다. 다시 시도해주세요.</p>`
+                              : null}
+                          </form>
+                        `}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        `;
+      };
+
+      const Comparison = () => {
+        const leftItems = useMemo(
+          () => [
+            "10회~20회 고가 패키지 선결제 강요",
+            "프로의 실력이나 성격 확인 불가",
+            "연습장 기계만 보고 치는 스윙 교정",
+            "불친절하거나 프로 위주의 시간 예약",
+            "필드에선 도저히 쓸 수 없는 이론들"
+          ],
+          []
+        );
+        const rightItems = useMemo(
+          () => [
+            "1회 체험 레슨 후 추가 여부 본인 결정",
+            "내 예산과 지역에 맞는 스승 직접 선별&선택",
+            "그린/벙커/경사 등 100% 현장 실전 중심",
+            "운영팀의 엄격한 모니터링 및 중재",
+            "'스코어'를 줄이는 실전 기술 전수"
+          ],
+          []
+        );
+
+        return html`
+          <section className="py-24 px-6 md:py-40 bg-gray-900 text-white overflow-hidden">
+            <div className="max-w-5xl mx-auto">
+              <${FadeIn} className="text-center mb-16 md:mb-24">
+                <h2 className="text-3xl md:text-5xl font-black tracking-tighter mb-6">
+                  아직도 비싼 패키지 레슨에<br />돈을 버리고 계신가요?
+                </h2>
+                <p className="text-gray-400 font-medium text-lg md:text-xl italic">"레슨은 골퍼가 갑(甲)이어야 합니다"</p>
+              </${FadeIn}>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0">
+                <${FadeIn} className="bg-gray-800/50 p-8 md:p-12 rounded-[40px] md:rounded-r-none border border-gray-700">
+                  <h3 className="text-2xl font-bold mb-10 flex items-center gap-3">
+                    <span className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center text-xl">❌</span>
+                    전통적인 레슨 방식
+                  </h3>
+                  <ul className="space-y-6">
+                    ${leftItems.map(
+                      (item, idx) => html`
+                        <li key=${idx} className="flex items-center gap-4 text-gray-400 font-medium">
+                          <span className="w-1.5 h-1.5 bg-gray-600 rounded-full"></span>
+                          ${item}
+                        </li>
+                      `
+                    )}
+                  </ul>
+                </${FadeIn}>
+
+                <${FadeIn}
+                  className="bg-emerald-600 p-8 md:p-12 rounded-[40px] md:scale-110 md:z-10 shadow-3xl shadow-emerald-500/20"
+                >
+                  <h3 className="text-2xl font-black mb-10 flex items-center gap-3">
+                    <span className="w-10 h-10 bg-white text-emerald-600 rounded-full flex items-center justify-center text-xl">✅</span>
+                    스승님 (Seuseungnim)
+                  </h3>
+                  <ul className="space-y-6">
+                    ${rightItems.map(
+                      (item, idx) => html`
+                        <li key=${idx} className="flex items-center gap-4 text-white font-black">
+                          <svg className="w-6 h-6 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                              fillRule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                          ${item}
+                        </li>
+                      `
+                    )}
+                  </ul>
+                  <div className="mt-12 text-center">
+                    <a
+                      href="#custom-lesson"
+                      onClick=${(e) => (e.preventDefault(), scrollToId("custom-lesson"))}
+                      className="inline-block w-full py-5 bg-white text-emerald-600 rounded-2xl font-black text-lg hover:bg-emerald-50 transition-colors"
+                    >
+                      지금 바로 스승님 찾기
+                    </a>
+                  </div>
+                </${FadeIn}>
+              </div>
+            </div>
+          </section>
+        `;
+      };
+
+      const Reviews = () => {
+        const reviews = useMemo(
+          () => [
+            {
+              text: "드라이버는 230m치는데 항상 그린 주변에서 왔다갔다 하며 스코어 다 까먹은 1인입니다. 서수연 프로님 수업 듣고 어프로치 자신감 생기니 스코어 11타 바로 줄었네요. 최고입니다!",
+              author: "닉네임: 싱글가자 (105타 → 94타)"
+            },
+            {
+              text: "레슨만 3년 받았는데 필드 가면 스코어 안 나와서 포기하려다 혹시나 하는 마음에 신청했어요. 역시 오프라인 레슨은 다르네요. 잔디에서 어떻게 쳐야 하는지 이제야 알게 되었어요.",
+              author: "닉네임: 평일골퍼 (110타 → 102타)"
+            },
+            {
+              text: "레슨 영업 없이 강요 안 해서 너무 좋았어요. 1회 받아보고 '너무 괜찮다' 싶어서 추가 10회 결제했습니다. 맞춤 요청 레슨 서비스 진짜 편리합니다.",
+              author: "닉네임: 주말라운딩 (98타 → 88타)"
+            },
+            {
+              text: "2월 숏게임 마스터 클래스 지인이랑 같이 신청하고 지원금받고 레슨 했는데 정말 가성비 최고네요. 야외 숏게임장 집중 2시간 받으니까 확실히 감각이 빨리 올라와요.",
+              author: "닉네임: 숏게임신 (102타 → 91타)"
+            },
+            {
+              text: "서수연프로님 진짜 친절하고 열정적입니다. 그리고 1:1 레슨 예산에 맞춰서 추천해주신 조이현프로님 대만족이에요. 레슨 고민하시는 분들 일단 요청서라도 써보세요. 적극 추천합니다👍",
+              author: "닉네임: 골프사랑 (115타 → 96타)"
+            },
+            {
+              text: "구력은 오래됐는데 트러블샷에서 항상 실수하는데 이제는 커버도 잘 합니다. 기술도 기술이지만 상황별 멘탈 잡는 방법을 알려주신게 정말 큰 도움이 됐습니다.",
+              author: "닉네임: 구력10년 (92타 → 81타)"
+            }
+          ],
+          []
+        );
+
+        return html`
+          <section id="reviews" className="py-24 px-6 md:py-40 bg-white scroll-mt-24">
+            <div className="max-w-7xl mx-auto">
+              <${FadeIn} className="text-center mb-16 md:mb-24">
+                <h2 className="text-3xl md:text-5xl font-black tracking-tighter mb-6">스승님을 만난 후 바뀐 리얼 스코어카드</h2>
+                <p className="text-gray-500 text-lg md:text-xl font-medium">조작 없는 100% 실제 결제 수강생 후기입니다.</p>
+              </${FadeIn}>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                ${reviews.map(
+                  (r, i) => html`
+                    <${FadeIn} key=${i}>
+                      <div
+                        className="bg-gray-50 p-10 rounded-[48px] border border-transparent hover:border-emerald-100 hover:bg-white hover:shadow-2xl transition-all h-full flex flex-col justify-between"
+                      >
+                        <div>
+                          <div className="flex text-emerald-500 mb-6">
+                            ${Array.from({ length: 5 }).map(
+                              (_, idx) => html`
+                                <svg key=${idx} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                  <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                  />
+                                </svg>
+                              `
+                            )}
+                          </div>
+                          <p className="text-gray-700 text-lg leading-relaxed font-medium break-keep mb-10">"${r.text}"</p>
+                        </div>
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-xl">👤</div>
+                          <span className="font-bold text-gray-900 text-sm">${r.author}</span>
+                        </div>
+                      </div>
+                    </${FadeIn}>
+                  `
+                )}
+              </div>
+            </div>
+          </section>
+        `;
+      };
+
+      const CustomLessonSection = () => {
+        const FORM_ENDPOINT = "https://formspree.io/f/mbdakbon";
+        const [status, setStatus] = useState("IDLE");
+
+        const steps = useMemo(
+          () => [
+            { num: "01", title: "레슨 요청", desc: "지역, 금액, 고민을 입력하세요" },
+            { num: "02", title: "스승 선별", desc: "운영팀이 스승님 1분을 추천합니다" },
+            { num: "03", title: "상담 및 매칭", desc: "스승님 진행 여부 선택" },
+            { num: "04", title: "체험 레슨", desc: "1회 레슨 후 추가 여부 결정하세요" }
+          ],
+          []
+        );
+
+        const handleSubmit = async (e) => {
+          e.preventDefault();
+          setStatus("SUBMITTING");
+
+          const formData = new FormData(e.currentTarget);
+          const data = Object.fromEntries(formData.entries());
+
+          try {
+            const response = await fetch(FORM_ENDPOINT, {
+              method: "POST",
+              body: JSON.stringify({ ...data, _subject: "[스승님] 맞춤 레슨 요청서 도착" }),
+              headers: { Accept: "application/json", "Content-Type": "application/json" }
+            });
+
+            if (response.ok) setStatus("SUCCESS");
+            else setStatus("ERROR");
+          } catch {
+            setStatus("ERROR");
+          }
+        };
+
+        return html`
+          <section id="custom-lesson" className="py-24 px-6 md:py-40 bg-[#F9FAFB] scroll-mt-20">
+            <div className="max-w-6xl mx-auto">
+              <${FadeIn} className="text-center mb-20 md:mb-32">
+                <span className="text-emerald-600 font-bold tracking-widest text-xs md:text-sm uppercase mb-6 block">Premium Matching Flow</span>
+                <h2 className="text-3xl md:text-5xl font-black mb-8 tracking-tighter leading-tight">
+                  내 조건에 딱 맞는 스승님,<br />찾을 때까지 '무료'입니다
+                </h2>
+                <p className="text-gray-500 text-lg md:text-xl font-medium max-w-2xl mx-auto break-keep">
+                  더 이상 프로님 비위 맞추는 레슨은 그만하세요.<br />이제 골퍼가 조건을 정하고 프로님이 신청합니다.
+                </p>
+              </${FadeIn}>
+
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-24 md:mb-32">
+                ${steps.map(
+                  (s, i) => html`
+                    <${FadeIn} key=${i}>
+                      <div
+                        className="relative bg-white p-8 rounded-[40px] border border-gray-100 shadow-sm flex flex-col items-center text-center"
+                      >
+                        <div className="text-emerald-500 font-black text-3xl mb-4 italic opacity-30">${s.num}</div>
+                        <h4 className="text-xl font-bold mb-3 text-gray-900">${s.title}</h4>
+                        <p className="text-gray-400 font-medium text-sm leading-relaxed break-keep">${s.desc}</p>
+                        ${i < 3
+                          ? html`
+                              <div className="hidden md:block absolute top-1/2 -right-4 translate-y-[-50%] z-10">
+                                <svg className="w-8 h-8 text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                              </div>
+                            `
+                          : null}
+                      </div>
+                    </${FadeIn}>
+                  `
+                )}
+              </div>
+
+              <${FadeIn} className="max-w-3xl mx-auto">
+                ${status === "SUCCESS"
+                  ? html`
+                      <div className="bg-white p-10 md:p-16 rounded-[48px] text-center border border-emerald-100 shadow-2xl">
+                        <div className="text-6xl mb-8">✨</div>
+                        <h4 className="text-2xl md:text-3xl font-black text-gray-900 mb-4">프로필 선별 중입니다</h4>
+                        <p className="text-gray-500 mb-10 font-medium text-lg leading-relaxed break-keep">
+                          가장 실력 있는 스승님들의 정보를 정리하여<br />1시간 내로 안내해 드리겠습니다.
+                        </p>
+                        <a
+                          href="http://pf.kakao.com/_kxawRn/chat"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-block px-12 py-5 bg-[#FEE500] text-[#3c1e1e] rounded-2xl font-black text-lg hover:scale-105 transition-transform"
+                        >
+                          카카오톡으로 빠른 상담받기
+                        </a>
+                      </div>
+                    `
+                  : html`
+                      <div className="bg-white p-8 md:p-16 rounded-[48px] shadow-2xl shadow-gray-200/50 border border-gray-100">
+                        <form onSubmit=${handleSubmit} className="space-y-8">
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div className="space-y-3">
+                              <label className="text-xs font-black text-gray-400 uppercase tracking-widest ml-1">희망 지역</label>
+                              <input
+                                required
+                                name="지역"
+                                type="text"
+                                placeholder="예: 서울 강남 / 판교"
+                                className="w-full px-6 py-5 bg-gray-50 border border-transparent rounded-2xl outline-none focus:bg-white focus:border-emerald-200 transition-all font-medium"
+                              />
+                            </div>
+                            <div className="space-y-3">
+                              <label className="text-xs font-black text-gray-400 uppercase tracking-widest ml-1">예산 (1회 기준)</label>
+                              <select
+                                name="예산"
+                                defaultValue="13"
+                                className="w-full px-6 py-5 bg-gray-50 border border-transparent rounded-2xl outline-none focus:bg-white focus:border-emerald-200 transition-all appearance-none font-medium cursor-pointer"
+                              >
+                                <option value="10">10만원 이하 (가성비 중심)</option>
+                                <option value="13">13만원 내외 (추천)</option>
+                                <option value="15">15만원 이상 (프리미엄)</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div className="space-y-3">
+                            <label className="text-xs font-black text-gray-400 uppercase tracking-widest ml-1">해결하고 싶은 고민</label>
+                            <textarea
+                              required
+                              name="고민사항"
+                              placeholder="예: 슬라이스 교정, 비거리 20m 늘리기, 숏게임 울렁증 등"
+                              className="w-full px-6 py-5 bg-gray-50 border border-transparent rounded-2xl outline-none focus:bg-white focus:border-emerald-200 transition-all h-32 md:h-40 resize-none font-medium"
+                            ></textarea>
+                          </div>
+
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div className="space-y-3">
+                              <label className="text-xs font-black text-gray-400 uppercase tracking-widest ml-1">연락처</label>
+                              <input
+                                required
+                                name="연락처"
+                                type="tel"
+                                placeholder="010-0000-0000"
+                                className="w-full px-6 py-5 bg-gray-50 border border-transparent rounded-2xl outline-none focus:bg-white focus:border-emerald-200 transition-all font-medium"
+                              />
+                            </div>
+                            <div className="flex items-end">
+                              <button
+                                disabled=${status === "SUBMITTING"}
+                                type="submit"
+                                className="w-full py-5 bg-black text-white rounded-2xl font-black text-lg hover:bg-gray-800 transition-all shadow-xl shadow-black/10 disabled:bg-gray-400"
+                              >
+                                ${status === "SUBMITTING" ? "전송 중..." : "맞춤 프로 추천받기"}
+                              </button>
+                            </div>
+                          </div>
+
+                          <div className="flex items-start gap-3 px-2">
+                            <input required id="consent_custom" name="개인정보동의" type="checkbox" className="mt-1 h-5 w-5 accent-black" />
+                            <label htmlFor="consent_custom" className="text-sm text-gray-600 font-medium leading-relaxed">
+                              [필수] 개인정보 수집·이용에 동의합니다.{" "}
+                              <a href="#privacy" className="text-gray-900 font-bold underline underline-offset-2">
+                                개인정보처리방침 보기
+                              </a>
+                            </label>
+                          </div>
+
+                          <p className="text-center text-xs text-gray-400 font-medium">
+                            본 요청은 무료이며, 프로님의 정보를 먼저 확인하고 진행 여부를 결정하세요.
+                          </p>
+                          ${status === "ERROR"
+                            ? html`<p className="text-center text-xs text-red-500 font-semibold">전송에 실패했습니다. 다시 시도해주세요.</p>`
+                            : null}
+                        </form>
+                      </div>
+                    `}
+              </${FadeIn}>
+            </div>
+          </section>
+        `;
+      };
+
+      const FAQ = () => {
+        const faqs = useMemo(
+          () => [
+            {
+              q: "맞춤 요청을 하면 바로 레슨이 시작되나요?",
+              a: "아닙니다. 먼저 프로님의 프로필과 가능한 일정을 안내드립니다. 확인 후 진행 의사를 밝혀주시면 연결됩니다."
+            },
+            {
+              q: "여러 프로님께 연락이 오면 번거롭지 않을까요?",
+              a: "운영팀이 최적의 프로님 최대 3분만 엄선하여 안내드리며, 스승님 카카오톡 채널을 통해서만 연락을 주고받으실 수 있습니다."
+            },
+            { q: "결제는 언제 어떻게 진행하나요?", a: "매칭된 프로님과 일정을 최종 확정한 뒤 결제하시면 됩니다. 체험형은 1회분만 먼저 결제 가능합니다." },
+            { q: "환불이나 취소 규정은 어떻게 되나요?", a: "레슨 24시간 전까지는 100% 환불이 가능하며, 운영팀이 중재하여 안전한 결제 환경을 보장합니다." },
+            { q: "완전 초보인데도 수강이 가능한가요?", a: "네. 기초 스윙부터 단계별로 지도하는 프로님들이 계시며, 맞춤 요청 시 '초보'임을 기재해주시면 더 적합한 분을 매칭해드립니다." },
+            { q: "전국 어디서나 가능한가요?", a: "현재 서울, 경기 지역을 중심으로 운영 중이며, 점차 확대하고 있습니다. 지역 정보를 남겨주시면 가능 여부를 확인해드립니다." }
+          ],
+          []
+        );
+
+        const [openIndex, setOpenIndex] = useState(null);
+
+        return html`
+          <section id="faq" className="py-24 px-6 md:py-32 bg-[#F9FAFB] scroll-mt-24">
+            <div className="max-w-3xl mx-auto">
+              <${FadeIn} className="text-center mb-16">
+                <h2 className="text-4xl font-bold tracking-tight">자주 묻는 질문</h2>
+              </${FadeIn}>
+
+              <div className="space-y-4">
+                ${faqs.map(
+                  (f, i) => html`
+                    <${FadeIn} key=${i}>
+                      <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                        <button
+                          onClick=${() => setOpenIndex(openIndex === i ? null : i)}
+                          className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
+                        >
+                          <span className="font-semibold text-gray-900">${f.q}</span>
+                          <span className=${`transform transition-transform ${openIndex === i ? "rotate-180" : ""}`}>
+                            <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </span>
+                        </button>
+                        ${openIndex === i
+                          ? html`<div className="px-8 pb-6 text-gray-500 text-sm leading-relaxed border-t border-gray-50 pt-4">${f.a}</div>`
+                          : null}
+                      </div>
+                    </${FadeIn}>
+                  `
+                )}
+              </div>
+            </div>
+          </section>
+        `;
+      };
+
+      const PrivacyPolicy = () => {
+        return html`
+          <section id="privacy" className="py-20 px-6 bg-white border-t border-gray-100 scroll-mt-24">
+            <div className="max-w-4xl mx-auto">
+              <${FadeIn}>
+                <h2 className="text-2xl md:text-3xl font-black tracking-tight mb-6">개인정보 수집·이용 안내</h2>
+
+                <div className="bg-gray-50 border border-gray-100 rounded-3xl p-8 space-y-4 text-gray-700">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <div className="text-xs font-black text-gray-400 uppercase tracking-widest mb-2">수집 항목</div>
+                      <div className="font-medium">이름, 연락처, (선택) 지역/예산/고민사항/인원</div>
+                    </div>
+                    <div>
+                      <div className="text-xs font-black text-gray-400 uppercase tracking-widest mb-2">수집 목적</div>
+                      <div className="font-medium">레슨 신청 및 상담 안내</div>
+                    </div>
+                    <div>
+                      <div className="text-xs font-black text-gray-400 uppercase tracking-widest mb-2">보유 기간</div>
+                      <div className="font-medium">상담 종료 후 3개월 보관 후 파기</div>
+                    </div>
+                    <div>
+                      <div className="text-xs font-black text-gray-400 uppercase tracking-widest mb-2">처리 위탁</div>
+                      <div className="font-medium">Formspree 문의 폼 사용</div>
+                    </div>
+                  </div>
+
+                  <div className="pt-4 border-t border-gray-200/60 text-sm text-gray-600">
+                    동의를 거부할 권리가 있으며, 거부 시 신청이 제한될 수 있습니다.
+                  </div>
+                </div>
+              </${FadeIn}>
+            </div>
+          </section>
+        `;
+      };
+
+      const Footer = () => {
+        return html`
+          <footer className="bg-white border-t border-gray-100 py-20 px-6 pb-28 md:pb-20">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+              <div className="space-y-4">
+                <div className="text-2xl font-bold tracking-tight">스승님</div>
+                <p className="text-gray-400 text-sm max-w-sm font-light">
+                  당신에게 가장 필요한 단 한 명의 스승을 연결합니다<br />
+                  실전과 맞춤형 연결을 통해 골프 라이프를 혁신하세요
+                </p>
+              </div>
+              <div className="grid grid-cols-2 gap-12 text-sm">
+                <div className="space-y-3">
+                  <h5 className="font-bold text-gray-900">COMPANY</h5>
+                  <ul className="text-gray-400 space-y-2 font-light">
+                    <li><a href="#terms" className="hover:text-black">이용약관</a></li>
+                    <li><a href="#privacy" className="hover:text-black">개인정보처리방침</a></li>
+                    <li><a href="#business" className="hover:text-black">사업자 정보</a></li>
+                  </ul>
+                </div>
+                <div className="space-y-3">
+                  <h5 className="font-bold text-gray-900">CONTACT</h5>
+                  <ul className="text-gray-400 space-y-2 font-light">
+                    <li>
+                      <a href="http://pf.kakao.com/_kxawRn/chat" className="hover:text-black" target="_blank" rel="noreferrer"
+                        >카카오톡 @스승님</a
+                      >
+                    </li>
+                    <li>
+                      <a href="mailto:contact@seuseungnim.com" className="hover:text-black">contact@seuseungnim.com</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div
+              className="max-w-7xl mx-auto mt-20 pt-8 border-t border-gray-50 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-gray-300 uppercase tracking-widest"
+            >
+              <span>© 2024 Seuseungnim All rights reserved</span>
+              <div className="flex gap-4">
+                <span className="hover:text-gray-600 cursor-pointer">Instagram</span>
+                <span className="hover:text-gray-600 cursor-pointer">Blog</span>
+              </div>
+            </div>
+          </footer>
+        `;
+      };
+
+      const MobileStickyCTA = () => {
+        const onNav = (e, id) => {
+          e.preventDefault();
+          scrollToId(id);
+        };
+
+        return html`
+          <div className="md:hidden fixed bottom-0 left-0 w-full p-4 bg-gradient-to-t from-white via-white/90 to-transparent z-50">
+            <div className="flex gap-2">
+              <a
+                href="#short-game"
+                onClick=${(e) => onNav(e, "short-game")}
+                className="flex-1 py-4 bg-gray-100 text-black text-center rounded-2xl font-bold text-sm"
+              >
+                숏게임 신청
+              </a>
+              <a
+                href="#custom-lesson"
+                onClick=${(e) => onNav(e, "custom-lesson")}
+                className="flex-1 py-4 bg-black text-white text-center rounded-2xl font-bold text-sm shadow-lg shadow-gray-200"
+              >
+                맞춤레슨 요청
+              </a>
+            </div>
+          </div>
+        `;
+      };
+
+      const App = () => {
+        return html`
+          <div className="relative min-h-screen bg-white">
+            <${Header} />
+            <main>
+              <${Hero} />
+              <${Features} />
+              <${ShortGameSection} />
+              <${Comparison} />
+              <${Reviews} />
+              <${CustomLessonSection} />
+              <${FAQ} />
+              <${PrivacyPolicy} />
+            </main>
+            <${Footer} />
+            <${MobileStickyCTA} />
+          </div>
+        `;
+      };
+
+      const rootEl = document.getElementById("root");
+      if (!rootEl) throw new Error("Could not find root element to mount to");
+      const root = ReactDOM.createRoot(rootEl);
+      root.render(html`<${App} />`);
     </script>
   </body>
 </html>
