@@ -17,7 +17,6 @@
       .text-gradient { background: linear-gradient(135deg, #065f46 0%, #10b981 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
       .pulse-soft { animation: pulse-soft 2s infinite; }
       @keyframes pulse-soft { 0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); } 70% { box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); } 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); } }
-      /* 모바일 가독성을 위한 줄간격 최적화 */
       p { line-height: 1.6; }
       h1, h2, h3 { line-height: 1.25; }
     </style>
@@ -89,7 +88,7 @@
             </div>
             <div className="hidden md:flex items-center gap-6 text-sm font-bold">
               <a href="#curriculum" onClick=${(e) => (e.preventDefault(), scrollToId('curriculum'))} className="hover:text-emerald-600 transition-colors">커리큘럼</a>
-              <a href="#app-benefit" onClick=${(e) => (e.preventDefault(), scrollToId('app-benefit'))} className="hover:text-emerald-600 transition-colors">앱 혜택</a>
+              <a href="#reviews" onClick=${(e) => (e.preventDefault(), scrollToId('reviews'))} className="hover:text-emerald-600 transition-colors">후기</a>
               <a href="#apply" onClick=${(e) => (e.preventDefault(), scrollToId('apply'))} className="bg-emerald-600 text-white px-5 py-2 rounded-xl hover:bg-emerald-700 transition-all shadow-md">상담신청</a>
             </div>
             <div className="md:hidden">
@@ -108,7 +107,7 @@
               <span className="text-gradient underline decoration-emerald-100 decoration-4 md:decoration-8 underline-offset-4">진짜 스코어</span>는<br /> 숏게임이 결정합니다😎
             </h1>
             <p className="text-sm md:text-xl text-slate-500 mb-8 md:mb-12 font-medium max-w-2xl mx-auto px-2 leading-relaxed">
-              연습장 10시간보다 강력한 120분 실전 노하우<br className="hidden md:block"/>
+              연습장 10시간보다 강력한 120분 실전 노하우.<br className="hidden md:block"/>
               서수연 프로가 무너진 필드 감각을 즉시 복구해 드립니다.
             </p>
             <div className="flex flex-col md:flex-row gap-3 justify-center items-center px-4">
@@ -130,7 +129,7 @@
               {l: "이번 주 잔여석", v: "4자리", c: "text-red-500"},
               {l: "누적 수강생", v: "280명+", c: "text-slate-900"},
               {l: "평균 타수 개선", v: "-8타", c: "text-emerald-600"},
-              {l: "레슨 후 만족도", v: "99%", c: "text-slate-900"}
+              {l: "상담 후 만족도", v: "99%", c: "text-slate-900"}
             ].map(item => html`
               <div key=${item.l} className="space-y-0.5">
                 <div className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-wider">${item.l}</div>
@@ -160,7 +159,7 @@
               </h3>
               <div className="space-y-4 text-sm md:text-lg text-slate-600 font-medium leading-relaxed">
                 <p>연습장 매트 위에서의 완벽한 샷, 필드에선 왜 안될까요? 경사면 셋업, 잔디 결 읽기, 바람을 이기는 컨트롤은 매트 위에서 배울 수 없습니다.</p>
-                <p>이번 3월 한정 패키지는 판교 백야드과 용인 야외 숏게임장/파3에서 여러분의 실전 감각을 최대치로 끌어올리는 과정입니다.</p>
+                <p>이번 3월 한정 패키지는 판교 백야드와 용인 야외 숏게임장/파3에서 여러분의 실전 감각을 최대치로 끌어올리는 과정입니다.</p>
               </div>
               <div className="pt-4 flex gap-3">
                  <a href="https://www.instagram.com/s.o_o.yeon/" target="_blank" className="flex-1 text-center py-4 bg-slate-50 text-slate-900 rounded-2xl font-black text-xs md:text-sm hover:bg-slate-100 transition-all">Instagram ↗</a>
@@ -253,6 +252,61 @@
         </${Section}>
       `;
 
+      const Reviews = () => html`
+        <${Section} id="reviews" className="bg-white">
+          <div className="text-center mb-12">
+            <${Badge} text="Real Reviews" />
+            <h2 className="text-[26px] md:text-4xl font-black mt-4 tracking-tighter italic leading-tight">수강생 리얼 후기</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            ${[
+              {name: "박*준", score: "내리막 트러블샷 교정", text: "항상 내리막 경사에서 뒤땅 쳐서 멘탈 나갔었는데, 무게 중심 잡는 법 하나로 공이 깨끗하게 맞기 시작했습니다. 진짜 신기해요!"},
+              {name: "이*혜", score: "벙커 공포 극복", text: "벙커에서 못 나오던 제가 이제 한 번에 핀 근처로 보냅니다. 모래 터치하는 감각이 뭔지 정확히 배웠어요. 서수연 프로님 최고!"},
+              {name: "김*태", score: "3퍼트 제로 달성", text: "롱 퍼트 거리감이 아예 없었는데 프로님이 알려주신 리듬 덕분에 이번 라운딩 3퍼트 한 번도 안 했습니다. 스코어가 확 줄었어요."}
+            ].map(r => html`
+              <div key=${r.name} className="bg-slate-50 p-6 md:p-8 rounded-[32px] border border-slate-100 flex flex-col justify-between">
+                <div>
+                  <div className="text-emerald-500 mb-3 text-[10px]">⭐⭐⭐⭐⭐</div>
+                  <p className="text-slate-700 font-medium mb-6 leading-relaxed italic text-sm md:text-base italic">"${r.text}"</p>
+                </div>
+                <div className="flex justify-between items-center pt-4 border-t border-slate-200">
+                  <span className="font-bold text-slate-900 text-xs md:text-sm">${r.name} 수강생</span>
+                  <span className="text-[9px] md:text-[10px] bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-black tracking-tight">${r.score}</span>
+                </div>
+              </div>
+            `)}
+          </div>
+        </${Section}>
+      `;
+
+      const FAQ = () => {
+        const [open, setOpen] = useState(null);
+        const items = [
+          {q: "카드 결제가 가능한가요?", a: "네, 모든 카드 결제가 가능하며 전 카드사 무이자 할부 혜택도 상담 시 확인하실 수 있습니다."},
+          {q: "초보도 수강 가능한가요?", a: "네, 구력에 상관없이 현재 본인의 가장 큰 고민(컨택, 거리감 등)에 맞춰 커리큘럼 난이도를 조절해 드립니다."},
+          {q: "준비물은 무엇인가요?", a: "평소 사용하시는 웨지와 퍼터, 장갑을 준비해 주세요. 장비가 없으신 경우 상담 시 미리 말씀해주시면 대여 안내를 도와드립니다."},
+          {q: "상담 후 취소 가능한가요?", a: "네, 상담은 100% 무료이며 일정 조율 단계에서 언제든 자유롭게 취소 가능합니다."}
+        ];
+        return html`
+          <${Section} className="bg-slate-50">
+            <div className="max-w-2xl mx-auto">
+              <h2 className="text-2xl md:text-4xl font-black mb-10 text-center tracking-tighter italic">자주 묻는 질문</h2>
+              <div className="space-y-3">
+                ${items.map((item, idx) => html`
+                  <div key=${idx} className="bg-white rounded-[20px] overflow-hidden shadow-sm border border-slate-100">
+                    <button onClick=${() => setOpen(open === idx ? null : idx)} className="w-full p-5 text-left flex justify-between items-center font-bold text-sm md:text-base">
+                      <span className=${open === idx ? 'text-emerald-600' : 'text-slate-900'}>${item.q}</span>
+                      <span className=${`transform transition-transform text-[10px] ${open === idx ? 'rotate-180 text-emerald-600' : 'text-slate-300'}`}>▼</span>
+                    </button>
+                    ${open === idx && html`<div className="p-5 pt-0 text-slate-500 text-xs md:text-sm leading-relaxed font-medium bg-slate-50/30">${item.a}</div>`}
+                  </div>
+                `)}
+              </div>
+            </div>
+          </${Section}>
+        `;
+      };
+
       const ApplicationForm = () => {
         const [status, setStatus] = useState("IDLE");
         const handleSubmit = async (e) => {
@@ -331,9 +385,6 @@
                         ${status === "SUBMITTING" ? "전송 중..." : "상담 예약하기 (무료)"}
                       </button>
                     </div>
-                    <p className="text-center text-[10px] md:text-xs text-slate-400 font-medium leading-relaxed italic">
-                      ※ 상담 중 언제든 자유롭게 취소가 가능합니다.
-                    </p>
                   </form>
                 `}
               </div>
@@ -348,7 +399,7 @@
           "서OO님 앱 포인트 5,000원 적립",
           "김OO님 1:1 채팅 문의 중",
           "최OO님 주말 저녁 상담 신청 완료",
-          "박OO님 평일 오전 숏게임 상담 신청"
+          "박OO님 평일 오전 상담 신청"
         ]), []);
         const [open, setOpen] = useState(true);
         const [idx, setIdx] = useState(0);
@@ -427,6 +478,8 @@
             <${InstructorIntro} />
             <${AppBenefit} />
             <${Curriculum} />
+            <${Reviews} />
+            <${FAQ} />
             <${ApplicationForm} />
           </main>
           <${Footer} />
@@ -440,7 +493,3 @@
     </script>
   </body>
 </html>
-
-
-
-
