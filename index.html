@@ -2,23 +2,27 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
     <title>스승님 | 3월 한정 숏게임 마스터 실전 레슨</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;900&display=swap" rel="stylesheet" />
     <style>
-      body { font-family: "Pretendard", sans-serif; scroll-behavior: smooth; word-break: keep-all; }
-      .glass-nav { backdrop-filter: blur(12px); background-color: rgba(255, 255, 255, 0.8); }
-      .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+      body { font-family: "Pretendard", sans-serif; scroll-behavior: smooth; word-break: keep-all; -webkit-font-smoothing: antialiased; }
+      .glass-nav { backdrop-filter: blur(16px); background-color: rgba(255, 255, 255, 0.9); }
+      .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
       .fade-in.visible { opacity: 1; transform: translateY(0); }
-      .timer-badge { animation: pulse 2s infinite; }
-      @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.7; } 100% { opacity: 1; } }
-      .app-gradient { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+      .app-gradient { background: linear-gradient(135deg, #059669 0%, #10b981 100%); }
+      .text-gradient { background: linear-gradient(135deg, #065f46 0%, #10b981 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+      .pulse-soft { animation: pulse-soft 2s infinite; }
+      @keyframes pulse-soft { 0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); } 70% { box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); } 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); } }
+      /* 모바일 가독성을 위한 줄간격 최적화 */
+      p { line-height: 1.6; }
+      h1, h2, h3 { line-height: 1.25; }
     </style>
   </head>
-  <body class="bg-slate-50 text-slate-900">
+  <body class="bg-[#F8FAFC] text-slate-900 overflow-x-hidden">
     <div id="root"></div>
 
     <script type="module">
@@ -28,40 +32,29 @@
 
       const html = htm.bind(React.createElement);
 
-      // --- Icons ---
-      const KakaoIcon = () => html`
-        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 3C6.477 3 2 6.48 2 10.77C2 13.52 3.84 15.93 6.64 17.33L5.47 21.64C5.41 21.84 5.51 22.04 5.71 22.1C5.81 22.13 5.91 22.11 5.99 22.05L11.23 18.52C11.48 18.53 11.74 18.54 12 18.54C17.52 18.54 22 15.06 22 10.77C22 6.48 17.52 3 12 3Z" fill="currentColor"/>
-        </svg>
-      `;
-
-      // --- Utility ---
       const scrollToId = (id) => {
         const el = document.getElementById(id);
-        if (el) window.scrollTo({ top: el.offsetTop - 80, behavior: "smooth" });
+        if (el) window.scrollTo({ top: el.offsetTop - 70, behavior: "smooth" });
       };
 
-      // --- Components ---
+      const Badge = ({ text, color = "bg-emerald-600" }) => html`
+        <span className=${`${color} text-white px-2.5 py-1 rounded-md text-[10px] md:text-xs font-black uppercase tracking-tight inline-block`}>${text}</span>
+      `;
+
       const Section = ({ id, className = "", children }) => {
         const ref = useRef(null);
         const [isVisible, setIsVisible] = useState(false);
-
         useEffect(() => {
           const observer = new IntersectionObserver(([entry]) => {
             if (entry.isIntersecting) { setIsVisible(true); observer.unobserve(entry.target); }
-          }, { threshold: 0.1 });
+          }, { threshold: 0.05 });
           if (ref.current) observer.observe(ref.current);
           return () => observer.disconnect();
         }, []);
-
-        return html`<section id=${id} ref=${ref} className=${`py-16 md:py-24 px-6 ${className} fade-in ${isVisible ? "visible" : ""}`}>
-          ${children}
+        return html`<section id=${id} ref=${ref} className=${`py-14 md:py-28 px-5 ${className} fade-in ${isVisible ? "visible" : ""}`}>
+          <div className="max-w-6xl mx-auto">${children}</div>
         </section>`;
       };
-
-      const Badge = ({ text, color = "bg-emerald-500" }) => html`
-        <span className=${`${color} text-white px-3 py-1 rounded-full text-[10px] md:text-xs font-bold mr-2 inline-block`}>${text}</span>
-      `;
 
       const CountdownTimer = () => {
         const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 0, seconds: 0 });
@@ -80,227 +73,182 @@
           }, 1000);
           return () => clearInterval(timer);
         }, []);
-
         return html`
-          <div className="bg-slate-900 text-white px-4 py-2 rounded-full text-xs font-black timer-badge flex items-center gap-2">
-            오늘 상담 신청 우선 배정 마감까지 ${timeLeft.hours.toString().padStart(2, '0')}:${timeLeft.minutes.toString().padStart(2, '0')}:${timeLeft.seconds.toString().padStart(2, '0')}
+          <div className="bg-slate-900 text-white px-3 py-1.5 rounded-lg text-[10px] md:text-xs font-black flex items-center gap-1.5 tabular-nums border border-slate-700">
+            <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse"></span>
+            3월 상담 마감 ${timeLeft.hours.toString().padStart(2, '0')}:${timeLeft.minutes.toString().padStart(2, '0')}:${timeLeft.seconds.toString().padStart(2, '0')}
           </div>
         `;
       };
 
       const Header = () => html`
-        <nav className="fixed top-0 left-0 w-full z-50 glass-nav border-b border-slate-100">
-          <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div className="text-xl font-black text-emerald-600 cursor-pointer" onClick=${() => window.scrollTo({top:0, behavior:'smooth'})}>스승님</div>
-            <div className="hidden md:flex space-x-6 text-sm font-bold items-center">
+        <nav className="fixed top-0 left-0 w-full z-50 glass-nav border-b border-slate-100/50">
+          <div className="max-w-6xl mx-auto px-5 py-3.5 flex justify-between items-center">
+            <div className="text-xl font-[900] tracking-tighter text-emerald-600 cursor-pointer" onClick=${() => window.scrollTo({top:0, behavior:'smooth'})}>
+              스승님<span className="text-slate-300 font-normal ml-0.5 text-sm italic">SSNIM</span>
+            </div>
+            <div className="hidden md:flex items-center gap-6 text-sm font-bold">
               <a href="#curriculum" onClick=${(e) => (e.preventDefault(), scrollToId('curriculum'))} className="hover:text-emerald-600 transition-colors">커리큘럼</a>
-              <a href="#app-benefit" onClick=${(e) => (e.preventDefault(), scrollToId('app-benefit'))} className="text-emerald-600 transition-colors">앱 혜택</a>
-              <a href="#apply" onClick=${(e) => (e.preventDefault(), scrollToId('apply'))} className="hover:text-emerald-600 transition-colors">상담신청</a>
-              <a href="https://ssnim.com/install.html" target="_blank" className="bg-slate-900 text-white px-5 py-2 rounded-xl hover:bg-slate-800 transition-all text-xs">앱 다운로드</a>
+              <a href="#app-benefit" onClick=${(e) => (e.preventDefault(), scrollToId('app-benefit'))} className="hover:text-emerald-600 transition-colors">앱 혜택</a>
+              <a href="#apply" onClick=${(e) => (e.preventDefault(), scrollToId('apply'))} className="bg-emerald-600 text-white px-5 py-2 rounded-xl hover:bg-emerald-700 transition-all shadow-md">상담신청</a>
             </div>
             <div className="md:hidden">
-               <${CountdownTimer} />
+              <${CountdownTimer} />
             </div>
           </div>
         </nav>
       `;
 
       const Hero = () => html`
-        <section className="pt-28 md:pt-40 pb-12 md:pb-20 px-6 bg-white overflow-hidden relative text-center">
-          <div className="max-w-7xl mx-auto relative z-10">
-            <div className="hidden md:flex justify-center mb-8">
-              <${CountdownTimer} />
-            </div>
-            <h1 className="text-[30px] md:text-7xl font-black tracking-tight leading-[1.2] md:leading-[1.1] mb-6 md:mb-8 text-slate-900">
-              올해 골프 라이프 베스트 스코어,<br />
-              <span className="text-emerald-600">숏게임에서 무너지지 마세요</span>
+        <section className="pt-28 md:pt-44 pb-12 md:pb-24 px-5 bg-white relative">
+          <div className="max-w-6xl mx-auto relative z-10 text-center">
+            <div className="mb-4 md:mb-6"><${Badge} text="March 2026 Season" /></div>
+            <h1 className="text-[28px] md:text-[72px] font-[900] tracking-tight mb-6 text-slate-900 leading-[1.2]">
+              올해 첫 라운딩,<br />
+              <span className="text-gradient underline decoration-emerald-100 decoration-4 md:decoration-8 underline-offset-4">진짜 스코어</span>는<br /> 숏게임이 결정합니다
             </h1>
-            <p className="text-base md:text-2xl text-slate-500 mb-10 md:mb-12 font-medium max-w-3xl mx-auto px-4">
-              라운드 가기 전 120분 집중 레슨으로,<br className="md:hidden" />
-              올 한 해 여러분의 <span className="text-slate-900 font-bold underline decoration-emerald-300 decoration-4">진짜 스코어</span>를 지켜드립니다.
+            <p className="text-sm md:text-xl text-slate-500 mb-8 md:mb-12 font-medium max-w-2xl mx-auto px-2 leading-relaxed">
+              연습장 10시간보다 강력한 120분 실전 노하우.<br className="hidden md:block"/>
+              서수연 프로가 무너진 필드 감각을 즉시 복구해 드립니다.
             </p>
-            <div className="flex flex-col gap-4 justify-center items-center px-4 max-w-md mx-auto">
-              <button onClick=${() => scrollToId('apply')} className="w-full px-10 py-5 bg-emerald-600 text-white rounded-2xl text-lg md:text-xl font-black shadow-xl hover:bg-emerald-700 transition-all active:scale-95">
-                3월 잔여석 무료 상담신청
+            <div className="flex flex-col md:flex-row gap-3 justify-center items-center px-4">
+              <button onClick=${() => scrollToId('apply')} className="w-full md:w-auto px-10 py-5 bg-emerald-600 text-white rounded-2xl text-base md:text-xl font-black shadow-xl hover:bg-emerald-700 transition-all active:scale-95 pulse-soft">
+                무료 상담 신청 (잔여석 확보)
               </button>
-              <div className="flex items-center gap-2 text-slate-400 text-[11px] md:text-sm font-bold">
-                 <span>✓ 카드 결제 가능</span>
-                 <span className="w-1 h-1 bg-slate-200 rounded-full"></span>
-                 <span>✓ 만족도 100% 보장 정책</span>
-              </div>
+              <a href="https://ssnim.com/install.html" target="_blank" className="w-full md:w-auto px-10 py-5 bg-slate-900 text-white rounded-2xl text-base md:text-xl font-black hover:bg-slate-800 transition-all">
+                앱 전용 혜택 확인
+              </a>
             </div>
           </div>
         </section>
       `;
 
-      const AppBenefit = () => html`
-        <${Section} id="app-benefit" className="bg-slate-900 text-white relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 blur-[100px]"></div>
-          <div className="max-w-7xl mx-auto relative z-10">
-            <div className="text-center mb-12 md:mb-16">
-              <Badge text="APP ONLY" color="bg-emerald-500" />
-              <h2 className="text-3xl md:text-5xl font-black mt-4 tracking-tighter">앱 설치 시 더 커지는 혜택</h2>
-            </div>
-            <div className="grid md:grid-cols-4 gap-4 md:gap-6 text-left">
-              ${[
-                {i: "💬", t: "서수연 프로 직접 채팅", d: "레슨 전 궁금한 점을 앱에서 직접 물어보세요"},
-                {i: "💰", t: "레슨 포인트 즉시 지급", d: "앱 회원 한정, 결제 시 사용 가능한 포인트 적립"},
-                {i: "☕", t: "메가커피 100% 증정", d: "앱 내 후기 작성 시 기프티콘 전원 발송(월 한정)"},
-                {i: "🔔", t: "3월 이벤트 우선 매칭", d: "마감 전 가장 빠르게 할인 소식 푸시 알림"}
-              ].map(item => html`
-                <div key=${item.t} className="bg-white/5 p-8 rounded-[32px] border border-white/10 hover:bg-white/10 transition-all">
-                  <div className="text-4xl mb-6">${item.i}</div>
-                  <h4 className="text-xl font-black mb-3 text-emerald-400">${item.t}</h4>
-                  <p className="text-slate-400 text-sm leading-relaxed font-medium">${item.d}</p>
-                </div>
-              `)}
-            </div>
-            <div className="mt-12 text-center">
-              <a href="https://ssnim.com/install.html" target="_blank" className="inline-block px-12 py-5 app-gradient rounded-2xl font-black text-xl shadow-2xl shadow-emerald-900/50 hover:scale-105 transition-all">
-                혜택 가득한 앱 다운로드 받기
-              </a>
-            </div>
+      const UrgencyStats = () => html`
+        <div className="bg-white border-y border-slate-50 py-10 px-5">
+          <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4 text-center">
+            ${[
+              {l: "이번 주 잔여석", v: "4자리", c: "text-red-500"},
+              {l: "누적 수강생", v: "280명+", c: "text-slate-900"},
+              {l: "평균 타수 개선", v: "-8타", c: "text-emerald-600"},
+              {l: "상담 후 진행률", v: "94%", c: "text-slate-900"}
+            ].map(item => html`
+              <div key=${item.l} className="space-y-0.5">
+                <div className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-wider">${item.l}</div>
+                <div className=${`text-2xl md:text-4xl font-[900] ${item.c}`}>${item.v}</div>
+              </div>
+            `)}
           </div>
-        </${Section}>
-      `;
-
-      const QuickSummary = () => html`
-        <${Section} className="py-8 md:py-12 bg-white border-b border-slate-100">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
-              ${[
-                {l: "결제", v: "카드 결제 가능*"},
-                {l: "장소", v: "판교 / 용인 인근"},
-                {l: "구성", v: "실내 2h or 야외 2h"},
-                {l: "혜택", v: "제주 항공비 지원*"},
-                {l: "보장", v: "상담 후 진행 결정"}
-              ].map(item => html`
-                <div key=${item.l} className="space-y-1">
-                  <div className="text-emerald-600 text-[10px] md:text-xs font-black uppercase tracking-widest">${item.l}</div>
-                  <div className="text-slate-900 text-sm md:text-lg font-bold">${item.v}</div>
-                </div>
-              `)}
-            </div>
-            <p className="text-center text-[10px] text-slate-300 mt-6 font-medium">*할부/무이자 및 상세 혜택 조건은 카드사 및 운영 정책에 따름</p>
-          </div>
-        </${Section}>
+        </div>
       `;
 
       const InstructorIntro = () => html`
-        <${Section} className="bg-white py-16 md:py-24">
-          <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-16">
-            <div className="relative">
-              <div className="w-48 h-48 md:w-64 md:h-64 bg-slate-100 rounded-[48px] overflow-hidden shadow-2xl border-4 border-white rotate-3">
-                 <img loading="lazy" src="https://images.unsplash.com/photo-1593111774240-d529f12cf4bb?auto=format&fit=crop&q=80&w=400" className="w-full h-full object-cover" alt="서수연 프로" />
+        <${Section} className="bg-white">
+          <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
+            <div className="w-full md:w-1/2">
+              <div className="aspect-[4/5] bg-slate-100 rounded-[40px] md:rounded-[60px] overflow-hidden shadow-xl relative">
+                <img src="https://images.unsplash.com/photo-1593111774240-d529f12cf4bb?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover" alt="서수연 프로" />
+                <div className="absolute bottom-5 left-5 right-5 bg-white/90 backdrop-blur-md p-5 md:p-8 rounded-[24px] md:rounded-[32px] border border-white/20">
+                   <div className="text-slate-400 font-bold text-[10px] md:text-xs mb-1 uppercase tracking-widest">Head Pro</div>
+                   <div className="text-xl md:text-3xl font-black text-slate-900">서수연 프로</div>
+                </div>
               </div>
             </div>
-            <div className="text-center md:text-left space-y-6 flex-1 px-4">
-              <div>
-                <h3 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter italic">서수연 프로</h3>
-                <p className="text-emerald-600 font-bold text-lg mt-2 underline decoration-emerald-200 decoration-4 underline-offset-4">"스코어의 차이는 필드 감각에서 옵니다"</p>
+            <div className="w-full md:w-1/2 space-y-6 md:space-y-10">
+              <h3 className="text-2xl md:text-5xl font-[900] tracking-tighter leading-tight italic">
+                "필드에서 먹히는<br />
+                <span className="text-emerald-600 underline decoration-emerald-100">실전 기술</span>만 가르칩니다"
+              </h3>
+              <div className="space-y-4 text-sm md:text-lg text-slate-600 font-medium leading-relaxed">
+                <p>연습장 매트 위에서의 완벽한 샷, 필드에선 왜 안될까요? 경사면 셋업, 잔디 결 읽기, 바람을 이기는 컨트롤은 매트 위에서 배울 수 없습니다.</p>
+                <p>이번 3월 한정 패키지는 판교 실내 분석실과 용인 야외 숏게임장을 오가며 여러분의 실전 감각을 최대치로 끌어올리는 과정입니다.</p>
               </div>
-              <p className="text-slate-600 font-medium leading-relaxed text-base md:text-lg">
-                연습장과 필드는 다릅니다. 경사지에서의 터치감,<br className="hidden md:block" /> 
-                상황별 클럽 선택, 그리고 그린 주변의 멘탈까지.<br />
-                당장 이번 주 라운딩에서 써먹을 수 있는 기술만 전수합니다.
-              </p>
-              <div className="flex flex-wrap justify-center md:justify-start gap-3">
-                <a href="https://www.instagram.com/s.o_o.yeon/" target="_blank" className="inline-flex items-center gap-2 bg-slate-100 px-6 py-3 rounded-xl font-bold text-sm hover:bg-slate-200 transition-all">
-                  인스타그램 확인하기
-                </a>
-                <a href="http://pf.kakao.com/_kxawRn/chat" target="_blank" className="inline-flex items-center gap-2 bg-[#FEE500] px-6 py-3 rounded-xl font-bold text-sm text-[#3c1e1e] hover:bg-[#F7DC00] transition-all">
-                  <${KakaoIcon} /> 스승님 운영팀 상담
-                </a>
+              <div className="pt-4 flex gap-3">
+                 <a href="https://www.instagram.com/s.o_o.yeon/" target="_blank" className="flex-1 text-center py-4 bg-slate-50 text-slate-900 rounded-2xl font-black text-xs md:text-sm hover:bg-slate-100 transition-all">Instagram ↗</a>
+                 <a href="http://pf.kakao.com/_kxawRn/chat" target="_blank" className="flex-1 text-center py-4 bg-[#FEE500] text-[#3c1e1e] rounded-2xl font-black text-xs md:text-sm hover:opacity-90 transition-all">카톡 문의</a>
               </div>
             </div>
+          </div>
+        </${Section}>
+      `;
+
+      const AppBenefit = () => html`
+        <${Section} id="app-benefit" className="bg-slate-900 text-white rounded-[40px] md:rounded-[60px] my-6 mx-4 md:mx-10 px-6 py-16 md:py-24">
+          <div className="text-center mb-12 md:mb-20">
+            <${Badge} text="Exclusive App Benefit" color="bg-emerald-500" />
+            <h2 className="text-2xl md:text-5xl font-black mt-4 tracking-tighter italic leading-tight">스승님 앱 단독 4가지 특권</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            ${[
+              {i: "✉️", t: "프로 1:1 채팅", d: "레슨 전 궁금증과 영상 피드백 실시간 상담"},
+              {i: "💎", t: "포인트 즉시 지급", d: "앱 회원 한정, 결제 시 사용하는 포인트 적립"},
+              {i: "✈️", t: "항공비 지원", d: "3월 패키지 수료 시 제주 캠프 항공권 지원*"},
+              {i: "🔔", t: "우선 예약 알림", d: "마감된 프로의 잔여 일정을 가장 먼저 푸시 알림"}
+            ].map(item => html`
+              <div key=${item.t} className="bg-white/5 border border-white/10 p-7 md:p-10 rounded-[32px] md:rounded-[40px] hover:bg-white/10 transition-all">
+                <div className="text-3xl md:text-4xl mb-4 md:mb-6">${item.i}</div>
+                <h4 className="text-lg md:text-xl font-black mb-2 text-emerald-400">${item.t}</h4>
+                <p className="text-xs md:text-sm text-slate-400 leading-relaxed font-medium">${item.d}</p>
+              </div>
+            `)}
+          </div>
+          <div className="mt-12 md:mt-20 text-center">
+             <a href="https://ssnim.com/install.html" target="_blank" className="inline-block px-10 py-4 app-gradient rounded-2xl font-black text-base md:text-xl shadow-2xl hover:scale-105 transition-all">
+               혜택 받고 앱으로 시작하기
+             </a>
           </div>
         </${Section}>
       `;
 
       const Curriculum = () => html`
-        <${Section} id="curriculum" className="bg-slate-50">
-          <div className="max-w-7xl mx-auto text-center">
-            <h2 className="text-3xl md:text-5xl font-black mb-16 tracking-tighter leading-tight italic">실전 마스터 120분 패키지</h2>
-            <div className="grid md:grid-cols-2 gap-6 md:gap-8 text-left">
-              <div className="bg-white p-8 md:p-12 rounded-[48px] shadow-sm border border-slate-100">
-                <div className="mb-10 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <Badge text="PART 1" color="bg-blue-600" />
-                    <span className="text-xl font-black text-slate-900">실내 판교 백야드</span>
-                  </div>
-                  <a href="https://maps.google.com/?q=성남시+분당구+판교역로+백야드" target="_blank" className="text-xs text-slate-400 font-bold underline">분당구 위치보기</a>
-                </div>
-                <ul className="space-y-8">
-                  ${[
-                    {t: "뒤땅/탑볼 컨택 교정", d: "볼 위치와 체중 이동의 근본적 문제 해결"},
-                    {t: "20m 이내 '붙이는' 거리감", d: "손목 제어와 일관성 있는 몸통 리듬 습득"},
-                    {t: "퍼터 방향성 스트로크 교정", d: "정확한 에이밍과 스퀘어 임팩트 습득"},
-                    {t: "벙커 탈출 기초 다지기", d: "모래 스윙 원리와 셋업의 정석"}
-                  ].map((item, idx) => html`
-                    <li key=${idx} className="flex gap-5">
-                      <span className="text-blue-500 font-black text-2xl italic">${(idx + 1).toString().padStart(2, '0')}</span>
-                      <div>
-                        <h4 className="font-bold text-lg text-slate-900">${item.t}</h4>
-                        <p className="text-slate-500 text-sm mt-1 leading-relaxed">${item.d}</p>
-                      </div>
-                    </li>
-                  `)}
-                </ul>
-              </div>
-              <div className="bg-emerald-600 p-8 md:p-12 rounded-[48px] shadow-2xl text-white">
-                <div className="mb-10 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <Badge text="PART 2" color="bg-white/20" />
-                    <span className="text-xl font-black">야외 숏게임힐스 or 파3</span>
-                  </div>
-                  <a href="https://maps.google.com/?q=용인시+처인구+숏게임힐스" target="_blank" className="text-xs text-emerald-100 font-bold underline">모현 인근 위치보기</a>
-                </div>
-                <ul className="space-y-8">
-                  ${[
-                    {t: "30~90m 웨지 컨트롤", d: "거리별 클럽 선택과 비거리 정밀 조절"},
-                    {t: "경사지 트러블샷 대응", d: "내리막/오르막 상황별 에이밍 노하우"},
-                    {t: "3퍼트 방지 실전 퍼팅", d: "그린 경사 분석과 롱 퍼트 거리감 매칭"},
-                    {t: "스코어 매니지먼트 전략", d: "상황별 타수를 지키는 코스 공략법"}
-                  ].map((item, idx) => html`
-                    <li key=${idx} className="flex gap-5">
-                      <span className="text-emerald-200 font-black text-2xl italic">${(idx + 1).toString().padStart(2, '0')}</span>
-                      <div>
-                        <h4 className="font-bold text-lg text-white">${item.t}</h4>
-                        <p className="text-emerald-50/70 text-sm mt-1 leading-relaxed">${item.d}</p>
-                      </div>
-                    </li>
-                  `)}
-                </ul>
-              </div>
-            </div>
+        <${Section} id="curriculum" className="bg-slate-50 rounded-[40px] md:rounded-[60px] mx-4 md:mx-10 my-6">
+          <div className="text-center mb-12 md:mb-24 px-2">
+            <${Badge} text="Practical Mastery" />
+            <h2 className="text-2xl md:text-5xl font-black mt-4 tracking-tighter italic">실전 마스터 120분 커리큘럼</h2>
           </div>
-        </${Section}>
-      `;
-
-      const Process = () => html`
-        <${Section} id="process" className="bg-white">
-          <div className="max-w-7xl mx-auto text-center">
-            <h2 className="text-2xl md:text-5xl font-black mb-16 tracking-tighter">신청부터 레슨까지</h2>
-            <div className="relative grid md:grid-cols-5 gap-8">
-              <div className="hidden md:block absolute top-6 left-0 w-full h-0.5 bg-slate-100 z-0"></div>
-              ${[
-                {i: "📝", t: "상담 신청", d: "폼 작성 (10초)"},
-                {i: "💬", t: "카톡/문자 안내", d: "10분 내 세부 안내"},
-                {i: "📅", t: "일정/장소 확정", d: "희망 일정 조율"},
-                {i: "💳", t: "상담 후 결제", d: "확정 시 카드/포인트"},
-                {i: "⛳", t: "레슨 진행", d: "실전 실력 완성"}
-              ].map((step, idx) => html`
-                <div key=${idx} className="relative z-10 space-y-4">
-                  <div className="w-12 h-12 bg-white border-2 border-slate-100 rounded-full flex items-center justify-center mx-auto text-xl shadow-sm">
-                    ${step.i}
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-slate-900 text-sm md:text-base">${step.t}</h4>
-                    <p className="text-slate-400 text-[11px] mt-1 font-medium">${step.d}</p>
-                  </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12">
+            ${[
+              {
+                title: "Indoor: 감각 복구 (60분)",
+                loc: "판교 백야드 분석실",
+                theme: "blue",
+                steps: [
+                  {t: "뒤땅/탑볼 정밀 컨택 교정", d: "고속 카메라 기반 볼 위치와 체중 이동 분석"},
+                  {t: "20m 이내 '붙이는' 거리감", d: "일관된 몸통 리듬과 손목 제어법 습득"},
+                  {t: "퍼터 방향성 & 에이밍 정렬", d: "셋업 체크와 스퀘어 임팩트 스트로크 교정"},
+                  {t: "벙커 탈출 메커니즘", d: "폭발력을 이용하는 기초 스윙 원리 습득"}
+                ]
+              },
+              {
+                title: "Outdoor: 실전 적용 (60분)",
+                loc: "용인 숏게임힐스 / 파3",
+                theme: "emerald",
+                steps: [
+                  {t: "30~90m 웨지 컨트롤", d: "거리별 클럽 선택과 비거리 조절 리듬"},
+                  {t: "경사지 트러블샷 대응", d: "오르막/내리막 상황별 에이밍 노하우"},
+                  {t: "그린 경사 분석 & 퍼팅", d: "홀컵 주변 라이 분석과 롱 퍼트 거리감"},
+                  {t: "매니지먼트 전략", d: "리스크 관리로 타수를 지키는 코스 공략"}
+                ]
+              }
+            ].map(part => html`
+              <div key=${part.title} className="bg-white p-8 md:p-14 rounded-[40px] md:rounded-[56px] shadow-sm border border-slate-100">
+                <div className="flex items-center justify-between mb-8 md:mb-12">
+                   <div className=${`px-3 py-1 rounded-full text-[10px] md:text-[11px] font-black uppercase tracking-widest bg-${part.theme}-50 text-${part.theme}-600`}>Part . ${part.theme === 'blue' ? '01' : '02'}</div>
+                   <div className="text-slate-400 font-bold text-[10px] md:text-xs underline underline-offset-4 decoration-slate-200">${part.loc}</div>
                 </div>
-              `)}
-            </div>
+                <h3 className="text-xl md:text-3xl font-black mb-8 md:mb-12 text-slate-900">${part.title}</h3>
+                <div className="space-y-6 md:space-y-10">
+                  ${part.steps.map((step, idx) => html`
+                    <div key=${idx} className="flex gap-4 md:gap-6 group">
+                      <div className=${`text-xl md:text-3xl font-[900] italic text-${part.theme}-500/20`}>${(idx + 1).toString().padStart(2, '0')}</div>
+                      <div>
+                         <h4 className="text-base md:text-lg font-black text-slate-900 mb-1">${step.t}</h4>
+                         <p className="text-xs md:text-sm text-slate-500 font-medium leading-relaxed">${step.d}</p>
+                      </div>
+                    </div>
+                  `)}
+                </div>
+              </div>
+            `)}
           </div>
         </${Section}>
       `;
@@ -317,179 +265,155 @@
               body: JSON.stringify(Object.fromEntries(formData)),
               headers: { Accept: "application/json", "Content-Type": "application/json" }
             });
-            if (response.ok) setStatus("SUCCESS");
-            else setStatus("ERROR");
+            if (response.ok) setStatus("SUCCESS"); else setStatus("ERROR");
           } catch { setStatus("ERROR"); }
         };
 
         return html`
           <${Section} id="apply" className="bg-white">
-            <div className="max-w-5xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-tighter italic">3월 숏게임 상담예약</h2>
-                <p className="text-slate-500 font-bold px-4">예약 주소는 확정 시 카카오톡으로 개별 안내드립니다.</p>
-              </div>
-
-              <div className="grid lg:grid-cols-5 gap-8 items-start">
-                <div className="lg:col-span-2 space-y-4">
-                  <div className="bg-slate-900 text-white p-8 rounded-[48px] shadow-2xl relative overflow-hidden">
-                    <h4 className="font-black text-xl mb-8 text-emerald-400">레슨 패키지 요약</h4>
-                    <ul className="space-y-6 text-sm md:text-base font-bold">
-                      <li className="flex justify-between border-b border-white/10 pb-4 italic">
-                         <span>3월 할인가</span> <span>185,000원</span>
-                      </li>
-                      <li className="flex justify-between border-b border-white/10 pb-4">
-                         <span>장소</span> <span>판교 / 용인 인근</span>
-                      </li>
-                      <li className="flex justify-between border-b border-white/10 pb-4">
-                         <span>결제 방식</span> <span>카드 / 앱 포인트*</span>
-                      </li>
-                      <li className="flex justify-between text-emerald-400">
-                         <span>보장 제도</span> <span>만족 보장 정책*</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="bg-emerald-50 p-6 rounded-[32px] border border-emerald-100 text-center">
-                     <p className="text-emerald-800 text-sm font-bold leading-relaxed">
-                       👥 3월 스승님 이벤트 <br/>
-                       <span className="text-xl text-emerald-600 font-black italic">참여자 전원 제주도 캠프 항공비 지원!</span>
-                     </p>
-                  </div>
+            <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-start">
+              <div className="space-y-8 md:space-y-12">
+                <div>
+                  <${Badge} text="Reservation" />
+                  <h2 className="text-2xl md:text-6xl font-black mt-4 md:mt-6 tracking-tighter italic">3월 숏게임 상담예약</h2>
+                  <p className="text-sm md:text-lg text-slate-500 font-medium mt-4 md:mt-6 leading-relaxed">
+                    상담을 신청하시면 프로와 매니저가 <br className="md:hidden"/>
+                    최적의 일정과 장소를 조율해 드립니다. <br />
+                    <span className="text-emerald-600 font-bold underline decoration-emerald-100 decoration-2 md:decoration-4 underline-offset-2">상담은 무료이며, 진행 여부는 자유롭게 결정하세요.</span>
+                  </p>
                 </div>
 
-                <div className="lg:col-span-3 bg-slate-50 p-6 md:p-10 rounded-[48px] border border-slate-200">
-                  ${status === "SUCCESS" ? html`
-                    <div className="text-center py-10">
-                      <div className="text-6xl mb-6">🎯</div>
-                      <h3 className="text-2xl font-black mb-2">상담 예약 완료!</h3>
-                      <p className="text-slate-500 font-medium">확인 후 순차적으로 상세 안내 드립니다.</p>
+                <div className="bg-slate-900 text-white p-8 md:p-12 rounded-[32px] md:rounded-[48px] shadow-2xl space-y-6 md:space-y-8 relative overflow-hidden">
+                   <h4 className="text-base md:text-xl font-black text-emerald-400 italic">3월 패키지 혜택 요약</h4>
+                   <ul className="space-y-4 md:space-y-5 text-xs md:text-base font-bold">
+                      <li className="flex justify-between border-b border-white/10 pb-3 md:pb-4"><span>프로그램</span> <span>실내+야외 120분</span></li>
+                      <li className="flex justify-between border-b border-white/10 pb-3 md:pb-4"><span>상담가</span> <span className="text-emerald-400">185,000원</span></li>
+                      <li className="flex justify-between border-b border-white/10 pb-3 md:pb-4"><span>특별 지원</span> <span className="text-yellow-400">제주 항공비*</span></li>
+                      <li className="flex justify-between"><span>만족 보장</span> <span>100% 재레슨/환불</span></li>
+                   </ul>
+                </div>
+              </div>
+
+              <div className="bg-slate-50 p-7 md:p-14 rounded-[32px] md:rounded-[56px] border border-slate-200">
+                ${status === "SUCCESS" ? html`
+                  <div className="text-center py-12 md:py-20">
+                    <div className="text-5xl md:text-7xl mb-6 md:mb-10">🏌️‍♂️</div>
+                    <h3 className="text-xl md:text-3xl font-black mb-2 md:mb-4">상담 예약 접수 완료</h3>
+                    <p className="text-xs md:text-base text-slate-500 font-medium">매니저가 확인 후 30분 내로 <br/> 카카오톡 안내를 보내드립니다.</p>
+                  </div>
+                ` : html`
+                  <form onSubmit=${handleSubmit} className="space-y-6 md:space-y-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+                      <div className="space-y-1.5 md:space-y-2">
+                         <label className="text-[10px] md:text-[11px] font-black text-slate-400 ml-1 tracking-widest uppercase">성함</label>
+                         <input required name="이름" placeholder="홍길동" className="w-full p-4 md:p-5 rounded-xl md:rounded-2xl bg-white border-none focus:ring-2 focus:ring-emerald-500 shadow-sm text-base" />
+                      </div>
+                      <div className="space-y-1.5 md:space-y-2">
+                         <label className="text-[10px] md:text-[11px] font-black text-slate-400 ml-1 tracking-widest uppercase">연락처</label>
+                         <input required name="연락처" type="tel" placeholder="010-0000-0000" className="w-full p-4 md:p-5 rounded-xl md:rounded-2xl bg-white border-none focus:ring-2 focus:ring-emerald-500 shadow-sm text-base" />
+                      </div>
                     </div>
-                  ` : html`
-                    <form onSubmit=${handleSubmit} className="space-y-6">
-                      <div className="grid md:grid-cols-2 gap-4">
-                        <div className="space-y-1">
-                          <label className="text-[10px] font-black text-slate-400 ml-1 uppercase">성함</label>
-                          <input required name="이름" placeholder="홍길동" className="w-full p-4 rounded-2xl bg-white border-none outline-none focus:ring-2 focus:ring-emerald-500 shadow-sm" />
-                        </div>
-                        <div className="space-y-1">
-                          <label className="text-[10px] font-black text-slate-400 ml-1 uppercase">연락처</label>
-                          <input required name="연락처" type="tel" placeholder="010-0000-0000" className="w-full p-4 rounded-2xl bg-white border-none outline-none focus:ring-2 focus:ring-emerald-500 shadow-sm" />
-                        </div>
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-black text-emerald-600 ml-1 uppercase tracking-widest italic">희망 일정 (중복 선택 가능 - 최대 2개)</label>
-                        <div className="grid grid-cols-2 gap-2">
-                          ${["평일 오전/오후", "평일 저녁", "주말 오전/오후", "주말 저녁"].map(time => html`
-                            <label key=${time} className="flex items-center gap-2 p-3 bg-white rounded-xl cursor-pointer hover:bg-emerald-50 transition-all shadow-sm">
-                              <input type="checkbox" name="희망시간[]" value=${time} className="w-4 h-4 accent-emerald-600" />
-                              <span className="text-xs font-bold text-slate-700">${time}</span>
-                            </label>
-                          `)}
-                        </div>
-                      </div>
-                      <button disabled=${status==="SUBMITTING"} className="w-full py-5 md:py-6 bg-emerald-600 text-white rounded-2xl text-lg md:text-2xl font-black shadow-xl shadow-emerald-200 hover:bg-emerald-700 transition-all active:scale-95">
-                        ${status === "SUBMITTING" ? "전송 중..." : "상담 신청하기 (결제 아님)"}
+
+                    <div className="space-y-3 md:space-y-4">
+                       <label className="text-[10px] md:text-[11px] font-black text-emerald-600 ml-1 tracking-widest uppercase italic">희망 일정 (중복 선택)</label>
+                       <div className="grid grid-cols-2 gap-2 md:gap-3">
+                         ${["평일 낮", "평일 저녁", "주말 낮", "주말 저녁"].map(time => html`
+                           <label key=${time} className="flex items-center gap-2 md:gap-3 p-3.5 md:p-4 bg-white rounded-xl md:rounded-2xl cursor-pointer hover:bg-emerald-50 transition-all shadow-sm border border-transparent">
+                             <input type="checkbox" name="희망시간[]" value=${time} className="w-4 h-4 md:w-5 md:h-5 accent-emerald-600 rounded-md" />
+                             <span className="text-[11px] md:text-sm font-bold text-slate-700">${time}</span>
+                           </label>
+                         `)}
+                       </div>
+                    </div>
+
+                    <div className="pt-2 md:pt-4">
+                      <button disabled=${status==="SUBMITTING"} className="w-full py-5 md:py-6 bg-emerald-600 text-white rounded-xl md:rounded-[24px] text-lg md:text-2xl font-[900] shadow-xl hover:bg-emerald-700 transition-all active:scale-95">
+                        ${status === "SUBMITTING" ? "전송 중..." : "상담 예약하기 (무료)"}
                       </button>
-                      <p className="text-center text-[10px] md:text-xs text-slate-400 font-bold leading-tight px-4">
-                         ※ 신청 후 상담 과정에서 <span className="text-red-400 underline decoration-red-200 underline-offset-2">언제든 취소 가능</span>하며 불이익이 없습니다.
-                      </p>
-                    </form>
-                  `}
+                    </div>
+                    <p className="text-center text-[10px] md:text-xs text-slate-400 font-medium leading-relaxed italic">
+                      ※ 상담 중 언제든 자유롭게 취소가 가능합니다.
+                    </p>
+                  </form>
+                `}
+              </div>
+            </div>
+          </${Section}>
+        `;
+      };
+
+      const RecentSignupToast = () => {
+        const messages = useMemo(() => ([
+          "이OO님 방금 주말 오후 상담 신청",
+          "서OO님 앱 포인트 5,000점 적립",
+          "김OO님 1:1 채팅 문의 중",
+          "최OO님 평일 저녁 상담 신청 완료",
+          "박OO님 제주 캠프 지원 확정"
+        ]), []);
+        const [open, setOpen] = useState(true);
+        const [idx, setIdx] = useState(0);
+
+        useEffect(() => {
+          if (!open) return;
+          const t = setInterval(() => setIdx((v) => (v + 1) % messages.length), 6000);
+          return () => clearInterval(t);
+        }, [open, messages.length]);
+
+        if (!open) return null;
+
+        return html`
+          <div className="fixed left-4 bottom-20 md:bottom-8 z-[60] max-w-[280px] md:max-w-sm w-full">
+            <div className="bg-white/95 backdrop-blur border border-slate-200 shadow-xl rounded-2xl px-4 py-3 md:px-5 md:py-4 flex items-center justify-between gap-3">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 font-black text-xs">✓</div>
+                <div>
+                  <div className="text-[11px] md:text-sm font-black text-slate-900 leading-none">${messages[idx]}</div>
+                  <div className="text-[9px] md:text-[11px] text-slate-400 font-bold mt-1 tracking-tight">실시간 현황</div>
                 </div>
               </div>
+              <button className="text-slate-300 hover:text-slate-600 font-black text-lg" onClick=${() => setOpen(false)}>×</button>
             </div>
-          </${Section}>
-        `;
-      };
-
-      const Reviews = () => {
-        const reviews = [
-          {name: "박*준", score: "내리막 트러블샷 교정", text: "항상 내리막 경사에서 뒤땅 쳐서 멘탈 나갔었는데, 무게 중심 잡는 법 하나로 공이 깨끗하게 맞기 시작했습니다."},
-          {name: "이*혜", score: "벙커 공포 극복", text: "벙커에서 못 나오던 제가 이제 한 번에 핀 근처로 보냅니다. 모래 터치하는 감각이 뭔지 정확히 배웠어요."},
-          {name: "김*태", score: "3퍼트 제로 달성", text: "롱 퍼트 거리감이 아예 없었는데 프로님이 알려주신 리듬 덕분에 이번 라운딩 3퍼트 한 번도 안 했습니다."}
-        ];
-
-        return html`
-          <${Section} className="bg-slate-50">
-            <div className="max-w-7xl mx-auto">
-              <h2 className="text-2xl md:text-4xl font-black text-center mb-12 tracking-tighter italic underline decoration-emerald-200 decoration-8 underline-offset-8">수강생 리얼 후기</h2>
-              <div className="grid md:grid-cols-3 gap-6">
-                ${reviews.map(r => html`
-                  <div className="bg-white p-8 rounded-[40px] shadow-sm border border-slate-100 flex flex-col justify-between">
-                    <div>
-                      <div className="text-emerald-500 mb-4 text-sm">⭐⭐⭐⭐⭐</div>
-                      <p className="text-slate-700 font-medium mb-8 leading-relaxed italic">"${r.text}"</p>
-                    </div>
-                    <div className="flex justify-between items-center pt-4 border-t border-slate-50">
-                      <span className="font-bold text-slate-900">${r.name} 님</span>
-                      <span className="text-[10px] bg-emerald-50 text-emerald-600 px-3 py-1 rounded-full font-black uppercase tracking-tight">${r.score}</span>
-                    </div>
-                  </div>
-                `)}
-              </div>
-            </div>
-          </${Section}>
-        `;
-      };
-
-      const FAQ = () => {
-        const [open, setOpen] = useState(null);
-        const items = [
-          {q: "카드 결제가 가능한가요?", a: "네, 모든 카드 결제가 가능하며 전 카드사 무이자 할부 혜택도 상담 시 확인하실 수 있습니다. (카드사별 정책 상이)"},
-          {q: "앱으로 신청하면 어떤 점이 좋나요?", a: "앱에서는 서수연 프로와 1:1 채팅이 가능하며, 신청 시 포인트 지급, 후기 작성 시 기프티콘 전원 증정 등 더 많은 혜택을 누릴 수 있습니다."},
-          {q: "만족 보장 정책이 무엇인가요?", a: "레슨 종료 후 24시간 이내에 만족스럽지 못한 사유와 함께 요청 시, 1회에 한해 무료 재레슨 또는 상담 후 100% 환불 중 선택하실 수 있습니다."}
-        ];
-        return html`
-          <${Section} className="bg-white">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl md:text-4xl font-black mb-12 text-center tracking-tighter">궁금한 점 확인</h2>
-              <div className="space-y-4 px-2">
-                ${items.map((item, idx) => html`
-                  <div key=${idx} className="bg-slate-50 rounded-[24px] overflow-hidden transition-all shadow-sm border border-slate-100">
-                    <button onClick=${() => setOpen(open === idx ? null : idx)} className="w-full p-6 text-left flex justify-between items-center font-bold text-sm md:text-base">
-                      <span className=${open === idx ? 'text-emerald-600' : 'text-slate-900'}>${item.q}</span>
-                      <span className=${`transform transition-transform text-xs ${open === idx ? 'rotate-180' : ''}`}>▼</span>
-                    </button>
-                    ${open === idx && html`<div className="p-6 pt-0 text-slate-500 text-sm leading-relaxed font-medium">${item.a}</div>`}
-                  </div>
-                `)}
-              </div>
-            </div>
-          </${Section}>
+          </div>
         `;
       };
 
       const Footer = () => html`
-        <footer className="bg-slate-900 text-slate-500 py-16 px-6 text-[11px] md:text-sm">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
-            <div>
-              <div className="text-white text-xl font-black mb-4 tracking-tighter italic uppercase">Seuseungnim</div>
-              <p className="max-w-xs leading-relaxed opacity-60">당신에게 필요한 단 한 명의 실전 스승을 연결합니다.</p>
-              <p className="mt-12 opacity-30 text-[10px]">© 2024 Seuseungnim Corp. All rights reserved.</p>
+        <footer className="bg-slate-900 text-white py-16 md:py-24 px-6 rounded-t-[40px] md:rounded-t-[60px]">
+          <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 md:gap-16">
+            <div className="space-y-4 md:space-y-6">
+              <div className="text-2xl font-black italic tracking-tighter uppercase text-emerald-500 leading-none">Seuseungnim</div>
+              <p className="max-w-xs text-xs md:text-sm text-slate-400 font-medium leading-relaxed">대한민국에서 가장 실질적인 레슨 솔루션을 제공하는 플랫폼, 스승님입니다.</p>
             </div>
-            <div className="flex gap-16">
-              <div>
-                <h5 className="text-white font-bold mb-4 uppercase tracking-widest text-xs opacity-50">Support</h5>
-                <p className="mb-2">카카오톡: @스승님</p>
-                <p>평일 10:00 - 18:00</p>
-              </div>
-              <div>
-                <h5 className="text-white font-bold mb-4 uppercase tracking-widest text-xs opacity-50">Legal</h5>
-                <a href="#" className="block mb-2 hover:text-white">이용약관</a>
-                <a href="#" className="block hover:text-white font-black">개인정보처리방침</a>
-              </div>
+            <div className="flex gap-12 md:gap-20">
+               <div className="space-y-4">
+                  <h5 className="text-[10px] md:text-xs font-black uppercase tracking-widest text-slate-500">Legal</h5>
+                  <ul className="space-y-2 text-xs md:text-sm font-bold text-slate-300">
+                    <li><a href="#" className="hover:text-emerald-400">이용약관</a></li>
+                    <li><a href="#" className="hover:text-emerald-400 font-black text-white">개인정보처리방침</a></li>
+                  </ul>
+               </div>
+               <div className="space-y-4">
+                  <h5 className="text-[10px] md:text-xs font-black uppercase tracking-widest text-slate-500">Contact</h5>
+                  <ul className="space-y-2 text-xs md:text-sm font-bold text-slate-300">
+                    <li><a href="#" className="hover:text-emerald-400">채널: @스승님</a></li>
+                    <li><a href="#" className="hover:text-emerald-400">02-000-0000</a></li>
+                  </ul>
+               </div>
             </div>
+          </div>
+          <div className="max-w-6xl mx-auto mt-12 pt-8 border-t border-white/5 text-[9px] md:text-[10px] text-slate-700 font-bold uppercase tracking-widest">
+             © 2026 Seuseungnim Corp. All rights reserved.
           </div>
         </footer>
       `;
 
       const MobileStickyCTA = () => html`
-        <div className="md:hidden fixed bottom-6 left-6 right-6 z-50 flex gap-2">
-          <a href="https://ssnim.com/install.html" target="_blank" className="flex-1 py-4 bg-slate-900 text-white rounded-2xl font-black text-xs flex items-center justify-center shadow-2xl border border-white/20">
-             앱설치(혜택)
+        <div className="md:hidden fixed bottom-4 left-4 right-4 z-50 flex gap-2">
+          <a href="https://ssnim.com/install.html" target="_blank" className="flex-1 py-3.5 bg-slate-900 text-white rounded-xl font-black text-[11px] flex items-center justify-center shadow-lg border border-white/10">
+             앱설치(포인트)
           </a>
-          <button onClick=${() => scrollToId('apply')} className="flex-[2.5] py-4 bg-emerald-600 text-white rounded-2xl font-black text-sm shadow-2xl active:scale-95 transition-transform">
-            3월 잔여석 상담신청
+          <button onClick=${() => scrollToId('apply')} className="flex-[2.5] py-3.5 bg-emerald-600 text-white rounded-xl font-black text-[13px] shadow-lg active:scale-95 transition-transform pulse-soft">
+            3월 잔여석 상담 예약 (무료)
           </button>
         </div>
       `;
@@ -499,17 +423,15 @@
           <${Header} />
           <main>
             <${Hero} />
-            <${QuickSummary} />
-            <${AppBenefit} />
+            <${UrgencyStats} />
             <${InstructorIntro} />
+            <${AppBenefit} />
             <${Curriculum} />
-            <${Process} />
-            <${Reviews} />
             <${ApplicationForm} />
-            <${FAQ} />
           </main>
           <${Footer} />
           <${MobileStickyCTA} />
+          <${RecentSignupToast} />
         </div>
       `;
 
