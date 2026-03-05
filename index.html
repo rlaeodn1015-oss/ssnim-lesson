@@ -158,7 +158,7 @@
           <div className="max-w-6xl mx-auto">
             <div className="mb-4"><Badge text="스승님 March 2026 Season" /></div>
             <h1 className="text-[34px] font-black tracking-tight mb-5 text-slate-900 leading-[1.25]">올해 라베 스코어,<br /><span className="text-gradient underline decoration-emerald-100 decoration-4 underline-offset-4">진짜 실력</span>은<br /> 숏게임이 결정합니다😎</h1>
-            <p className="text-sm text-slate-500 mb-10 font-medium leading-relaxed">연습장 10시간보다 강력한 120분 실전 노하우.<br />서수연 스승님이 무너진 필드 감각을 복구해 드립니다✨</p>
+            <p className="text-sm text-slate-500 mb-10 font-medium leading-relaxed">연습장 10시간보다 강력한 120분 실전 숏게임 노하우<br />서수연 스승님이 무너진 필드 감각을 복구해 드립니다✨</p>
             <div className="flex flex-col gap-3">
               <button onClick={() => scrollToId('apply')} className="w-full py-4.5 bg-emerald-600 text-white rounded-2xl text-lg font-black shadow-xl hover:bg-emerald-700 transition-all pulse-soft h-14">숏게임 상담 신청</button>
               <a href="https://ssnim.com/install.html" target="_blank" className="w-full py-4.5 bg-slate-900 text-white rounded-2xl text-lg font-black h-14 flex items-center justify-center">앱 전용 혜택 확인</a>
@@ -190,14 +190,14 @@
           <div className="aspect-[4/5] bg-slate-100 rounded-[32px] overflow-hidden shadow-xl relative mb-8">
             <img src="https://images.unsplash.com/photo-1593111774240-d529f12cf4bb?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover" alt="서수연 프로" />
             <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md p-5 rounded-2xl border border-white/20">
-              <div className="text-slate-400 font-bold text-[9px] mb-0.5 uppercase tracking-widest">Head Pro</div>
-              <div className="text-xl font-black text-slate-900">서수연 프로</div>
+              <div className="text-slate-400 font-bold text-[9px] mb-0.5 uppercase tracking-widest">Lesson Pro</div>
+              <div className="text-xl font-black text-slate-900">서수연 스승님</div>
             </div>
           </div>
-          <h3 className="text-2xl font-black tracking-tighter leading-tight italic text-slate-900 mb-6 px-1">"필드에서 먹히는<br /><span className="text-emerald-600 underline decoration-emerald-100 decoration-4 underline-offset-4">실전 기술</span>만 가르칩니다"</h3>
+          <h3 className="text-2xl font-black tracking-tighter leading-tight italic text-slate-900 mb-6 px-1">"필드에서 실수하지 않는<br /><span className="text-emerald-600 underline decoration-emerald-100 decoration-4 underline-offset-4">실전 기술&노하우</span>만 가르칩니다"</h3>
           <p className="text-sm text-slate-500 mb-8 font-medium leading-relaxed px-1">연습장 매트 위에서의 완벽한 샷, 필드에선 왜 안될까요? 경사면 셋업, 잔디 결 읽기, 바람을 이기는 컨트롤은 매트 위에서 배울 수 없습니다.</p>
           <div className="grid grid-cols-2 gap-2 px-1">
-            <a href="https://www.instagram.com/s.o_o.yeon/" target="_blank" className="text-center py-4 bg-slate-100 text-slate-900 rounded-2xl font-black text-xs h-14 flex items-center justify-center">인스타그램 ↗</a>
+            <a href="https://www.instagram.com/s.o_o.yeon/" target="_blank" className="text-center py-4 bg-slate-100 text-slate-900 rounded-2xl font-black text-xs h-14 flex items-center justify-center">서수연 스승님 정보 ↗</a>
             <a href="http://pf.kakao.com/_kxawRn/chat" target="_blank" className="text-center py-4 bg-[#FEE500] text-[#3c1e1e] rounded-2xl font-black text-xs h-14 flex items-center justify-center">카톡 문의</a>
           </div>
         </Section>
@@ -271,9 +271,9 @@
           </div>
           <div className="space-y-4">
             {[
-              {n: "박*준", s: "트러블샷 교정", t: "무게 중심 잡는 법 하나로 공이 깨끗하게 맞기 시작했습니다. 진짜 신기해요!"},
-              {n: "이*혜", s: "벙커 공포 극복", t: "벙커에서 못 나오던 제가 이제 한 번에 보냅니다. 터치 감각이 뭔지 정확히 배웠어요."},
-              {n: "김*태", s: "3퍼트 제로", t: "알려주신 리듬 덕분에 이번 라운딩 3퍼트 한 번도 안 했습니다. 스코어가 확 줄었어요."}
+              {n: "박*준", s: "트러블샷 교정", t: "어드레스 무게 배분 하나로 공의 임팩트가 깨끗하게 변했습니다. 진짜 신기해요!"},
+              {n: "이*혜", s: "벙커 공포 극복", t: "벙커에서 못 나오던 제가 이제 한 번에 탈출하고 핀 근처에도 보냅니다. 벙커 샷 감각이 뭔지 정확히 배웠어요!"},
+              {n: "김*태", s: "3퍼트 제로", t: "알려주신 퍼터 리듬과 거리감 교정 덕분에 최근 라운딩 3퍼트 한 번도 안 했습니다. 스코어 8타 줄였네요."}
             ].map(r => (
               <div key={r.n} className="bg-slate-50 p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between h-full">
                 <div className="text-emerald-500 mb-3 text-[10px]">⭐⭐⭐⭐⭐</div>
@@ -291,9 +291,9 @@
       const FAQ = () => {
         const [open, setOpen] = useState(null);
         const items = [
-          {q: "카드 결제가 가능한가요?", a: "네, 모든 카드 결제가 가능하며 상담 시 무이자 할부 혜택도 확인 가능합니다."},
-          {q: "초보도 수강 가능한가요?", a: "네, 구력에 상관없이 현재 고민에 맞춰 커리큘럼 난이도를 조절해 드립니다."},
-          {q: "준비물은 무엇인가요?", a: "사용하시는 웨지와 퍼터, 장갑을 준비해 주세요. 장비 대여 안내도 도와드립니다."}
+          {q: "카드 결제가 가능한가요?", a: "네, 모든 카드 결제가 가능하며 상담 시 무이자 할부 혜택 확인도 가능합니다. 법인카드는 할부지원이 되지 않습니다"},
+          {q: "초보도 수강 가능한가요?", a: "네, 구력에 상관없이 현재 고민과 실력에 맞춰 커리큘럼이 정해져 있습니다 :D"},
+          {q: "준비물은 무엇인가요?", a: "사용하시는 웨지와 퍼터, 골프공을 넉넉하게 준비해 주세요. 날씨가 추울 수 있으니 바람막이도 필수!"}
         ];
         return (
           <Section className="bg-slate-50 py-12">
@@ -338,9 +338,9 @@
             <div className="bg-slate-900 text-white p-7 rounded-[28px] shadow-2xl mb-8 relative overflow-hidden text-left">
                <h4 className="text-base font-black text-emerald-400 italic mb-4 uppercase tracking-tighter text-emerald-400">3월 패키지 혜택 요약</h4>
                <ul className="space-y-3.5 text-[13px] font-bold">
-                  <li className="flex justify-between border-b border-white/10 pb-3"><span>프로그램</span> <span>실내/야외 120분</span></li>
-                  <li className="flex justify-between border-b border-white/10 pb-3"><span>상담가</span> <span className="text-emerald-400">185,000원</span></li>
-                  <li className="flex justify-between border-b border-white/10 pb-3"><span>특별 지원</span> <span className="text-yellow-400">제주 항공비*</span></li>
+                  <li className="flex justify-between border-b border-white/10 pb-3"><span>프로그램</span> <span>실내/야외 숏게임 마스터 120분 레슨</span></li>
+                  <li className="flex justify-between border-b border-white/10 pb-3"><span>레슨비</span> <span className="text-emerald-400">185,000원</span></li>
+                  <li className="flex justify-between border-b border-white/10 pb-3"><span>특별 지원</span> <span className="text-yellow-400">참여자 전원 제주 캠프 항공비 10만원</span></li>
                   <li className="flex justify-between"><span>만족 보장</span> <span>100% 재레슨/환불</span></li>
                </ul>
             </div>
@@ -403,4 +403,5 @@
     </script>
   </body>
 </html>
+
 
