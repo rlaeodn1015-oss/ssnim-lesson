@@ -316,18 +316,27 @@
       const Apply = () => {
         const [status, setStatus] = useState("IDLE");
         const handleSubmit = async (e) => {
-          e.preventDefault();
-          setStatus("SUBMITTING");
-          const data = Object.fromEntries(new FormData(e.currentTarget));
-          try {
-            const res = await fetch("https://formspree.io/f/mbdakbon", {
-              method: "POST",
-              body: JSON.stringify(data),
-              headers: { Accept: "application/json", "Content-Type": "application/json" }
-            });
-            if (res.ok) setStatus("SUCCESS"); else setStatus("ERROR");
-          } catch { setStatus("ERROR"); }
-        };
+  e.preventDefault();
+  setStatus("SUBMITTING");
+
+  try {
+    const res = await fetch("https://formspree.io/f/mbdakbon", {
+      method: "POST",
+      body: new FormData(e.currentTarget),
+      headers: { Accept: "application/json" }
+    });
+
+    if (res.ok) {
+      setStatus("SUCCESS");
+    } else {
+      setStatus("ERROR");
+    }
+
+  } catch (err) {
+    setStatus("ERROR");
+  }
+};
+        
         return (
           <Section id="apply" className="bg-white py-12 px-5 pb-32 text-slate-900">
             <div className="mb-10 text-left">
