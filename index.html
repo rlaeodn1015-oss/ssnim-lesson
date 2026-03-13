@@ -153,19 +153,49 @@
         );
       };
 
-      const Hero = () => (
-        <section className="pt-24 pb-12 px-5 bg-white text-center">
-          <div className="max-w-6xl mx-auto">
-            <div className="mb-4"><Badge text="스승님 March 2026 Season" /></div>
-            <h1 className="text-[34px] font-black tracking-tight mb-5 text-slate-900 leading-[1.25]">올해 라베 스코어,<br /><span className="text-gradient underline decoration-emerald-100 decoration-4 underline-offset-4">진짜 실력</span>은<br /> 숏게임이 결정합니다😎</h1>
-            <p className="text-sm text-slate-500 mb-10 font-medium leading-relaxed">연습장 10시간보다 강력한 120분 실전 숏게임 노하우<br />서수연 스승님이 무너진 필드 감각을 복구해 드립니다✨</p>
-            <div className="flex flex-col gap-3">
-              <button onClick={() => scrollToId('apply')} className="w-full py-4.5 bg-emerald-600 text-white rounded-2xl text-lg font-black shadow-xl hover:bg-emerald-700 transition-all pulse-soft h-14">숏게임 상담 신청</button>
-              <a href="https://ssnim.com/install.html" target="_blank" className="w-full py-4.5 bg-slate-900 text-white rounded-2xl text-lg font-black h-14 flex items-center justify-center">앱 전용 혜택 확인</a>
-            </div>
-          </div>
-        </section>
-      );
+      const Hero = ({ sharePage }) => (
+<section className="pt-24 pb-12 px-5 bg-white text-center">
+  <div className="max-w-6xl mx-auto">
+    <div className="mb-4"><Badge text="스승님 March 2026 Season" /></div>
+
+    <h1 className="text-[34px] font-black tracking-tight mb-5 text-slate-900 leading-[1.25]">
+      올해 라베 스코어,<br />
+      <span className="text-gradient underline decoration-emerald-100 decoration-4 underline-offset-4">
+      진짜 실력
+      </span>은<br />
+      숏게임이 결정합니다😎
+    </h1>
+
+    <p className="text-sm text-slate-500 mb-10 font-medium leading-relaxed">
+      연습장 10시간보다 강력한 120분 실전 숏게임 노하우<br />
+      서수연 스승님이 무너진 필드 감각을 복구해 드립니다✨
+    </p>
+
+    <div className="flex flex-col gap-3">
+
+      <button
+      onClick={() => scrollToId('apply')}
+      className="w-full py-4.5 bg-emerald-600 text-white rounded-2xl text-lg font-black shadow-xl hover:bg-emerald-700 transition-all pulse-soft h-14">
+      숏게임 상담 신청
+      </button>
+
+      <a
+      href="https://ssnim.com/install.html"
+      target="_blank"
+      className="w-full py-4.5 bg-slate-900 text-white rounded-2xl text-lg font-black h-14 flex items-center justify-center">
+      앱 전용 혜택 확인
+      </a>
+
+      <button
+      onClick={sharePage}
+      className="w-full py-4.5 bg-white border border-slate-200 text-slate-800 rounded-2xl text-lg font-black shadow-md hover:bg-slate-50 transition-all h-14">
+      친구에게 공유
+      </button>
+
+    </div>
+  </div>
+</section>
+);
 
       const Stats = () => (
         <div className="bg-white border-y border-slate-50 py-8 px-5">
@@ -412,6 +442,7 @@
     </script>
   </body>
 </html>
+
 
 
 
