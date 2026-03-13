@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
     <title>스승님 | 3월 한정 숏게임 마스터 실전 레슨</title>
+    <meta property="og:type" content="website">
+<meta property="og:title" content="스승님 숏게임 마스터 레슨">
+<meta property="og:description" content="연습장 10시간보다 강력한 120분 실전 숏게임 레슨">
+<meta property="og:image" content="https://ssnim.com/images/shortgame.jpg">
+<meta property="og:url" content="https://rlaeodn1015-oss.github.io/ssnim-lesson/">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
@@ -56,6 +61,53 @@
           </section>
         );
       };
+
+      const sharePage = async () => {
+
+const shareData = {
+title: "스승님 숏게임 마스터 레슨",
+text: "연습장 10시간보다 강력한 120분 실전 숏게임 레슨",
+url: window.location.href
+};
+
+if (navigator.share) {
+
+try {
+await navigator.share(shareData);
+} catch (err) {}
+
+} else {
+
+const url = window.location.href;
+await navigator.clipboard.writeText(url);
+
+alert("링크가 복사되었습니다.\n골프 친구에게 보내보세요 ⛳");
+
+}
+
+};
+
+const shareData = {
+title: "스승님 숏게임 마스터 레슨",
+text: "연습장 10시간보다 강력한 120분 실전 숏게임 레슨",
+url: window.location.href
+};
+
+if (navigator.share) {
+try {
+await navigator.share(shareData);
+} catch (err) {}
+} else {
+
+const url = window.location.href;
+
+await navigator.clipboard.writeText(url);
+
+alert("링크가 복사되었습니다.\n골프 친구에게 보내보세요 ⛳");
+
+}
+
+};
 
       const ViewerCount = () => {
         const [count, setCount] = useState(6);
@@ -417,20 +469,20 @@
       };
 
       const App = () => (
-        <div className="bg-white min-h-screen pb-10 text-slate-900">
-          <Header />
-          <ViewerCount />
-          <LiveNotice />
-          <main>
-            <Hero />
-            <Stats />
-            <Instructor />
-            <Benefit />
-            <Curriculum />
-            <Reviews />
-            <FAQ />
-            <Apply />
-          </main>
+  <div className="bg-white min-h-screen pb-10 text-slate-900">
+    <Header />
+    <ViewerCount />
+    <LiveNotice />
+    <main>
+      <Hero sharePage={sharePage} />
+      <Stats />
+      <Instructor />
+      <Benefit />
+      <Curriculum />
+      <Reviews />
+      <FAQ />
+      <Apply />
+    </main>
           <footer className="bg-slate-900 text-white py-16 px-6 text-center text-[10px] font-medium text-slate-500 rounded-t-[32px] uppercase">© 2026 SSNIM. All rights reserved.</footer>
           <div className="fixed bottom-6 left-4 right-4 z-[50] flex gap-2">
             <a href="https://ssnim.com/install.html" target="_blank" className="flex-1 py-4 bg-slate-900 text-white rounded-2xl font-black text-[11px] flex items-center justify-center shadow-2xl border border-white/10 active:scale-95">앱설치(포인트)</a>
@@ -442,6 +494,7 @@
     </script>
   </body>
 </html>
+
 
 
 
